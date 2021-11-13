@@ -1,6 +1,7 @@
 .footer{
-    color: seashell;
+    color: rgb(15, 15, 15);
     font-size: large;
+    font-weight: bold;
     position:fixed;
     bottom: 0;
     width: 100%;
