@@ -1,4 +1,4 @@
-.loginForm{
+#createMeme{
     width: 350px;
     margin-top: 100px;
     margin-bottom: auto;
@@ -8,7 +8,7 @@
     font-size:larger;
 }
  
-.loginBtn{
+.createBtn{
     background-color: rgba(188, 204, 114, 0.952);
     border-radius: 5px;
 }
