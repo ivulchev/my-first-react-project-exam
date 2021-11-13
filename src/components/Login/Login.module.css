@@ -1,0 +1,14 @@
+.loginForm{
+    width: 350px;
+    margin-top: 100px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+    font-size:larger;
+}
+ 
+.loginBtn{
+    background-color: rgba(188, 204, 114, 0.952);
+    border-radius: 5px;
+  }
