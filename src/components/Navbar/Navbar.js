@@ -1,3 +1,4 @@
+import  "./Navbar.module.css"
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light ">
