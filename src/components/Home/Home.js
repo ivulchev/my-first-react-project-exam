@@ -1,7 +1,8 @@
+import styles from "./Home.module.css"
 function Home() {
     return (
-        <header id="header">
-            <p id="home-paragraph">"First, you have to finish." – Michael Schumacher</p>
+        <header className="header">
+            <p className={styles.homeParagraph}>"First, you have to finish." – Michael Schumacher</p>
         </header>
     )
 }
