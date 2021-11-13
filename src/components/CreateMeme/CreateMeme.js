@@ -2,6 +2,8 @@ import styles from "./CreateMeme.module.css"
 function CreateMeme() {
     return (
         <div id = {styles.createMeme}>
+            <h1 id={styles.pageTitle}><mark>Creating Meme</mark></h1>
+            <div className="labels">
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label"><mark>Title</mark></label>
                 <input type="email" className="form-control" id="exampleFormControlInput1" />
@@ -12,7 +14,8 @@ function CreateMeme() {
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label"><mark>Image URL</mark></label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
             </div>
         </div>
     )
