@@ -1,5 +1,5 @@
-import styles from "./PilotDetails.module.css"
-function PilotDetails(props) {
+import styles from "./TeamDetails.module.css"
+function TeamDetails(props) {
     return (
         <div className="card" id={styles.details} >
             <img src={props.img} className="card-img-top" alt="..."/>
@@ -14,4 +14,4 @@ function PilotDetails(props) {
         </div>
     )
 }
-export default PilotDetails
+export default TeamDetails
