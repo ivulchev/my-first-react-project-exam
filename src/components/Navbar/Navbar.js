@@ -18,7 +18,7 @@ function Navbar() {
                         <a className="nav-link" href="/legends"><strong><mark>Legends</mark></strong></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/profile"><strong><mark>Profile</mark></strong></a>
+                        <a className="nav-link" href="/posts/my-posts"><strong><mark>My Posts</mark></strong></a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/posts/create"><strong><mark>Create Post</mark></strong></a>
