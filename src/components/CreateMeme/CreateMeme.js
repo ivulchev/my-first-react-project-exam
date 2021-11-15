@@ -3,7 +3,6 @@ function CreateMeme() {
     return (
         <div id = {styles.createMeme}>
             <h1 id={styles.pageTitle}><mark>Creating Meme</mark></h1>
-            <h1 id={styles.pageTitle}><mark>Creating Meme</mark></h1>
             <div className="labels">
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label"><mark>Title</mark></label>
