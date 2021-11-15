@@ -12,14 +12,15 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 //import CreateMeme from './components/CreateMeme/CreateMeme';
 //import AllMEMES from './components/AllMEMES/AllMEMES';
-import MyMEMES from './components/MyMEMES/MyMEMES';
+//import MyMEMES from './components/MyMEMES/MyMEMES';
+import Error from './components/Error/Error';
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />,
-      <MyMEMES/>,
+      <Error/>,
       <Footer/>
     </div>
   );
