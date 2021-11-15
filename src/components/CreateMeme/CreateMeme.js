@@ -8,10 +8,6 @@ function CreateMeme() {
                 <input type="email" className="form-control" id="titleMEME" aria-describedby="emailHelp" placeholder="Add Title"/>
             </div>
             <div className="form-group">
-                <label for="descriptionMEME"><mark>Description</mark></label>
-                <input type="description" className="form-control" id="descriptionMEME" placeholder="Add short description"/>
-            </div>
-            <div className="form-group">
                 <label for="imageMEME"><mark>Image URL</mark></label>
                 <input type="text" className="form-control" id="imageMEME" placeholder="Add image URL "/>
             </div>

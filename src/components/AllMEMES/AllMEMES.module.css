@@ -1,0 +1,29 @@
+#cardPartial {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap; 
+    border: 3px solid #000000;
+    border-image: fill;
+}
+
+.upBtn{
+    border-radius: 5px;
+    width: 85px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    margin-right: auto;
+    background-color:darkgreen
+}
+.downBtn{
+    border-radius: 5px;
+    width: 85px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    margin-right: auto;;
+    background-color:red
+}
