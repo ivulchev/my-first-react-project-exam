@@ -11,14 +11,15 @@ import Footer from './components/Footer/Footer';
 //import LegendDetails from './components/LegendDetails/LegendDetails';
 import './App.css';
 //import CreateMeme from './components/CreateMeme/CreateMeme';
-import AllMEMES from './components/AllMEMES/AllMEMES';
+//import AllMEMES from './components/AllMEMES/AllMEMES';
+import MyMEMES from './components/MyMEMES/MyMEMES';
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />,
-      <AllMEMES/>,
+      <MyMEMES/>,
       <Footer/>
     </div>
   );
