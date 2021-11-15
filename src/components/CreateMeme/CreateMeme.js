@@ -1,23 +1,22 @@
 import styles from "./CreateMeme.module.css"
 function CreateMeme() {
     return (
-        <div id = {styles.createMeme}>
-            <h1 id={styles.pageTitle}><mark>Creating Meme</mark></h1>
-            <div className="labels">
-            <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label"><mark>Title</mark></label>
-                <input type="email" className="form-control" id="exampleFormControlInput1" />
+        <form className={styles.loginForm} id={styles.createMeme}>
+            <h1 id={styles.pageTitle}><mark>Create MEME</mark></h1>
+            <div className="form-group">
+                <label for="titleMEME"><mark>Title</mark></label>
+                <input type="email" className="form-control" id="titleMEME" aria-describedby="emailHelp" placeholder="Add Title"/>
             </div>
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label"><mark>Description</mark></label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div className="form-group">
+                <label for="descriptionMEME"><mark>Description</mark></label>
+                <input type="description" className="form-control" id="descriptionMEME" placeholder="Add short description"/>
             </div>
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label"><mark>Image URL</mark></label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            <div className="form-group">
+                <label for="imageMEME"><mark>Image URL</mark></label>
+                <input type="text" className="form-control" id="imageMEME" placeholder="Add image URL "/>
             </div>
-            </div>
-        </div>
+            <button type="submit" className={styles.loginBtn}>Submit</button>
+        </form>
     )
 }
 
