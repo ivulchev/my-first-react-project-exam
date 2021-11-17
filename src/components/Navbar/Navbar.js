@@ -1,42 +1,43 @@
 import  "./Navbar.module.css"
+import { Link} from "react-router-dom";
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light ">
-            <a className="navbar-brand" href="/"><mark>F1 FanHome</mark></a>
+            <Link className="navbar-brand" to="/"><mark>F1 FanHome</mark></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link" href="/pilots"><strong><mark>Pilots</mark></strong></a>
+                        <Link className="nav-link" to="/pilots"><strong><mark>Pilots</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/teams"><strong><mark>Teams</mark></strong></a>
+                        <Link className="nav-link" to="/teams"><strong><mark>Teams</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/legends"><strong><mark>Legends</mark></strong></a>
+                        <Link className="nav-link" to="/legends"><strong><mark>Legends</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/posts/my-posts"><strong><mark>My Posts</mark></strong></a>
+                        <Link className="nav-link" to="/posts/my-posts"><strong><mark>My Posts</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/posts/create"><strong><mark>Create Post</mark></strong></a>
+                        <Link className="nav-link" to="/posts/create"><strong><mark>Create Post</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/posts/all"><strong><mark>All Posts</mark></strong></a>
+                        <Link className="nav-link" to="/posts/all"><strong><mark>All Posts</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/calendar"><strong><mark>Calendar</mark></strong></a>
+                        <Link className="nav-link" to="/calendar"><strong><mark>Calendar</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/login"><strong><mark>Login</mark></strong></a>
+                        <Link className="nav-link" to="/login"><strong><mark>Login</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/logout"><strong><mark>Logout</mark></strong></a>
+                        <Link className="nav-link" to="/logout"><strong><mark>Logout</mark></strong></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/register"><strong><mark>Register</mark></strong></a>
+                        <Link className="nav-link" to="/register"><strong><mark>Register</mark></strong></Link>
                     </li>
                 </ul>
             </div>
