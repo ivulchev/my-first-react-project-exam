@@ -16,7 +16,8 @@ import CreateMeme from './components/CreateMeme/CreateMeme';
 import AllMEMES from './components/AllMEMES/AllMEMES';
 import MyMEMES from './components/MyMEMES/MyMEMES';
 import ErrorPage from './components/Error/ErrorPage';
-import EditMeme from './components/Edit/Edit';
+//import EditMeme from './components/Edit/Edit';
+import Calendar from "./components/Calendar/Calendar"
 
 
 
@@ -34,7 +35,7 @@ function App() {
       <Route exact path="/posts/all" ><AllMEMES/></Route>,
       <Route exact path="/login" ><Login/></Route>,
       <Route exact path="/register"><Register/></Route>,
-      <Route exact path="/calendar"><EditMeme/></Route>,
+      <Route exact path="/calendar"><Calendar/></Route>,
       <Route exact path="*"><ErrorPage/></Route>
       </Switch>
       <Footer/>
