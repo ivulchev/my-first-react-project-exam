@@ -1,4 +1,4 @@
-import styles from "./TeamCard.module.css"
+import styles from "./TeamCard.module.css";
 
 function TeamCard({team}) {
     return (

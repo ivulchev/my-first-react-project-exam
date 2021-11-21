@@ -20,8 +20,7 @@ import ErrorPage from './components/Error/ErrorPage';
 import Calendar from "./components/Calendar/Calendar"
 
 
-
-function App() {
+ function App() {
   return (
     <div className="App">
       <Navbar />,
