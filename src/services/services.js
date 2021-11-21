@@ -12,22 +12,24 @@ function getAllPilots() {
     return requester.get(allPilotsUrl);
 }
 function getOnePilot(id) {
-    return requester.get(`${baseUrl}/data/pilot/${id}`)
+    return requester.get(`${baseUrl}/data/pilots/${id}`)
 }
 function getAllTeams() {
     return requester.get(allTeamsUrl);
 }
 function getOneTeam(id) {
-    return requester.get(`${baseUrl}/data/team/${id}`)
+    return requester.get(`${baseUrl}/data/teams/${id}`)
 }
 
 function getAllLegends() {
     return requester.get(allLegendsUrl);
 }
 function getOneLegend(id) {
-    return requester.get(`${baseUrl}/data/legend/${id}`)
+    return requester.get(`${baseUrl}/data/legends/${id}`)
 }
-
+function voteUpPilot(id) {
+    return requester.put(`${allPilotsUrl}/${id}`, {rating: +1})
+}
 // function createMEME(title, imageUrl) {
 //     return requester.post(`${baseUrl}/data/memes`, { title, imageUrl,})
 // }
@@ -52,7 +54,8 @@ export const services = {
     getAllTeams,
     getOneTeam,
     getAllLegends,
-    getOneLegend
+    getOneLegend,
+    voteUpPilot
 }
 
 export const endpoints = {
