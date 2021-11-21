@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function Pilots() {
     const [pilots, setPilots] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/data/teams`)
+        fetch(`http://localhost:3030/data/pilots`)
             .then(res => res.json())
             .then(result => {
                 setPilots(result)
