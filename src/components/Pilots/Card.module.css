@@ -42,3 +42,7 @@
     margin-right: auto;;
     background-color:rgb(111, 0, 255)
 }
+
+button:hover{
+    background-color: rgb(186, 236, 93);
+}

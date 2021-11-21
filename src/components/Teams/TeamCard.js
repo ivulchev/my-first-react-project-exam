@@ -7,7 +7,7 @@ function TeamCard({team}) {
             <div className="card-body">
                 <h5 className="card-title">{team.name}</h5>
                 <p className="card-text" id={styles.description} >{team.description}</p>
-                <p className="rating">Rating: </p>
+                <p className="rating">Rating: {team.rating} </p>
                 <button href="/details"className={styles.detailsBtn} >
                     Details
                 </button>

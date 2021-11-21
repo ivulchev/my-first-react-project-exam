@@ -6,8 +6,8 @@ function Card({pilot}) {
             <div className="card-body">
                 <h5 className="card-title">{pilot.name}</h5>
                 <p className="card-text" id={styles.description} >{pilot.description}</p>
-                <p className="rating">Rating: </p>
-                <button href="/details"className={pilot._id} >
+                <p className="rating">Rating: {pilot.rating} </p>
+                <button href="/details"className={styles.detailsBtn} >
                     Details
                 </button>
                 <button className={styles.upBtn} >

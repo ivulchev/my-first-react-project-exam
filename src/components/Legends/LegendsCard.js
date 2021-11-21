@@ -6,7 +6,7 @@ function LegendsCard({legend}) {
             <div className="card-body">
                 <h5 className="card-title">{legend.name}</h5>
                 <p className="card-text" id={styles.description} >{legend.description}</p>
-                <p className="rating">Rating: </p>
+                <p className="rating">Rating: {legend.rating} </p>
                 <button href="/details"className={styles.detailsBtn} >
                     Details
                 </button>
