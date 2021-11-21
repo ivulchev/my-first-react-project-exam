@@ -1,10 +1,21 @@
 import Card from "./Card"
+//import getAllPilots from "../../services/f1Services";
+import { useEffect, useState } from "react";
+
 
 function Pilots() {
+    const [pilots, setPilots] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:3030/data/teams`)
+            .then(res => res.json())
+            .then(result => {
+                setPilots(result)
+            });
+    },[]);
     return (
         <header>
             <div className="row">
-                <Card img="https://www.formula1.com/content/fom-website/en/drivers/max-verstappen/_jcr_content/image.img.640.medium.jpg/1617101447981.jpg" name="Max Verstappen" description="Born 30 September 1997. Verstappen is a Belgian-Dutch racing driver currently competing in Formula One, under the Dutch flag, with Red Bull Racing. At the 2015 Australian Grand Prix, when he was aged 17 years, 166 days, he became the youngest driver to compete in Formula One. "/>, 
+                {pilots.map(x => <Card key={x._id} pilot={x} />)}
             </div>
         </header>
     )
