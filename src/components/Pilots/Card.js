@@ -3,7 +3,7 @@ import * as requester from "../../services/requester"
 function Card({ pilot }) {
         function handleClick(e) {
           e.preventDefault();
-          return requester.put(`http://localhost:3030//data/pilots/${pilot._id}`, {rating: +1});
+          return requester.put(`http://localhost:3030/data/pilots/${pilot._id}`, {rating: +1});
         }  
     return (
         <div className="card" id={styles.cardPartial}>

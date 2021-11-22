@@ -30,6 +30,7 @@ function getOneLegend(id) {
 function voteUpPilot(id) {
     return requester.put(`${allPilotsUrl}/${id}`, {rating: +1})
 }
+
 // function createMEME(title, imageUrl) {
 //     return requester.post(`${baseUrl}/data/memes`, { title, imageUrl,})
 // }
@@ -67,3 +68,5 @@ export const endpoints = {
     allTeamsUrl,
     allLegendsUrl
 }
+
+

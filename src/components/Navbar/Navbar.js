@@ -19,6 +19,9 @@ function Navbar() {
                         <NavLink className="nav-link" activeClassName="active" to="/legends">Legends</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/vote-standings">Vote Standings</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts">My Posts</NavLink>
                     </li>
                     <li className="nav-item">

@@ -1,4 +1,4 @@
-import styles from "./Home.module.css"
+import styles from "./Home.module.css";
 function Home() {
     return (
         <header className="header">
