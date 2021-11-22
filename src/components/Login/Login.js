@@ -18,13 +18,13 @@ function Login() {
     }
     return (
         <form onSubmit={onSubmit} className={styles.loginForm}>
-            <h1 id={styles.pageTitle}><mark>Login</mark></h1>
+            <h1 id={styles.pageTitle}>Login</h1>
             <div className="form-group">
-                <label for="exampleInputEmail1"><mark>Email address</mark></label>
+                <label for="exampleInputEmail1" id={styles.pageTitle}>Email address</label>
                 <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
             </div>
             <div className="form-group">
-                <label for="exampleInputPassword1"><mark>Password</mark></label>
+                <label for="exampleInputPassword1" id={styles.pageTitle}>Password</label>
                 <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
             </div>
             <button type="submit" className={styles.loginBtn}>Submit</button>

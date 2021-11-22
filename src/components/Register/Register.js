@@ -3,16 +3,17 @@ function Register() {
     return (
         <form className={styles.registerForm}>
             <div className="form-group">
-                <label for="exampleInputEmail1"><mark>Email address</mark></label>
+                <h1>Register</h1>
+                <label for="exampleInputEmail1">Email address</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                <small id="emailHelp" className ="form-text"><mark>We'll never share your email with anyone else.</mark></small>
+                <small id="emailHelp" className ="form-text">We'll never share your email with anyone else.</small>
             </div>
             <div className="form-group">
-                <label for="exampleInputPassword1"><mark>Password</mark></label>
+                <label for="exampleInputPassword1">Password</label>
                 <input type="password" className="form-control" id="password" placeholder="Password"/>
             </div>
             <div className="form-group">
-                <label for="exampleInputPassword1"><mark>Repeat Password</mark></label>
+                <label for="exampleInputPassword1">Repeat Password</label>
                 <input type="password" className="form-control" id="rePassword" placeholder="Password"/>
             </div>
             <button type="submit" className={styles.registerBtn}>Submit</button>
