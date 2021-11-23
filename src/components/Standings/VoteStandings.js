@@ -27,6 +27,7 @@ function VoteStandings() {
     return (
         <header>
             <div className="card" id={styles.standings}>
+                <h3>Top Drivers</h3>
             <img src={first.logoUrl} alt="Card img cap" />
             <ul className="list-group list-group-flush">
                 {drivers.map((driver)=> <li className="list-group-item" key={driver._id} ><strong>{(drivers.indexOf(driver) + 1 )}:</strong> {driver.name}: {driver.rating}</li> )}
