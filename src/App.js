@@ -18,7 +18,6 @@ import MyMEMES from './components/MyMEMES/MyMEMES';
 import ErrorPage from './components/Error/ErrorPage';
 //import EditMeme from './components/Edit/Edit';
 import Calendar from "./components/Calendar/Calendar"
-import VoteStandings from './components/Standings/VoteStandings';
 
 
  function App() {
@@ -30,7 +29,6 @@ import VoteStandings from './components/Standings/VoteStandings';
       <Route exact path="/pilots" ><Pilots/></Route>,
       <Route exact path="/teams" ><Teams/></Route>,
       <Route exact path="/legends" ><Legends/></Route>,
-      <Route exact path="/vote-standings" ><VoteStandings/></Route>,
       <Route exact path="/posts/my-posts" ><MyMEMES/></Route>,
       <Route exact path="/posts/create" ><CreateMeme/></Route>,
       <Route exact path="/posts/all" ><AllMEMES/></Route>,
