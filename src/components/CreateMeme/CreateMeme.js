@@ -11,7 +11,7 @@ function CreateMeme() {
                 <label htmlFor="imageMEME" id={styles.pageTitle}>Image URL</label>
                 <input type="text" className="form-control" id="imageMEME" placeholder="Add image URL "/>
             </div>
-            <button type="submit" id={styles.createBtn}>Submit</button>
+            <button type="submit" className={styles.createBtn}>Submit</button>
         </form>
     )
 }
