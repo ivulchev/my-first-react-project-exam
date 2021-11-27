@@ -46,3 +46,11 @@
 button:hover{
     background-color: rgb(186, 236, 93);
 }
+
+#img{
+    height: 350px;
+    width: 100%;
+}
+#teams{
+    overflow-x: scroll;
+}
