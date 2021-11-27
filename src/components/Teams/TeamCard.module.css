@@ -46,3 +46,12 @@
 button:hover{
     background-color: rgb(186, 236, 93);
 }
+
+#img{
+    height: 250px;
+    width: 100%;
+}
+
+#text{
+    overflow-x: scroll;
+}
