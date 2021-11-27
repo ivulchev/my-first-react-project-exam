@@ -1,5 +1,4 @@
 import Card from "./Card"
-//import getAllPilots from "../../services/f1Services";
 import { useEffect, useState } from "react";
 
 
