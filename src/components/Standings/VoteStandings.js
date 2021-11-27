@@ -32,7 +32,14 @@ function VoteStandings() {
                 <h3>Top Drivers</h3>
             <img src={first.logoUrl} alt="Card img cap" />
             <ul className="list-group list-group-flush">
-                {drivers.map((driver)=> <li className="list-group-item" key={driver._id} ><strong>{(drivers.indexOf(driver) + 1 )}:</strong> {driver.name}: {driver.rating}</li> )}
+                {(!drivers.length == 0)?
+                <ul className="list-group list-group-flush">
+                <li className="list-group-item" key={drivers[0]._id} ><strong>1st:</strong> {drivers[0].name}: {drivers[0].rating}</li> 
+                <li className="list-group-item" key={drivers[1]._id} ><strong>2nd:</strong> {drivers[1].name}: {drivers[1].rating}</li> 
+                <li className="list-group-item" key={drivers[2]._id} ><strong>3rd:</strong> {drivers[2].name}: {drivers[2].rating}</li> 
+                </ul>
+                :
+                <li>Loading...</li>}
             </ul>
         </div>
         </header>
