@@ -1,6 +1,6 @@
 import styles from "./Login.module.css";
 import {authServices} from "../../services/authService";
-import { Redirect } from "react-router-dom";
+
 
 
 function Login() {
@@ -11,7 +11,6 @@ function Login() {
         let password = formData.get('password');
         if (email.length > 0 && password.length > 0) {
             authServices.login(email, password);
-                <Redirect to="/" />
         } else {
             window.alert("Empty Fields!")
         }

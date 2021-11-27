@@ -1,7 +1,8 @@
 import "./Navbar.css"
 import { NavLink } from "react-router-dom";
-import { authServices } from "../../services/authService";
+
 function Navbar() {
+
     return (
         <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink className="navbar-brand" activeClassName="active" to="/">F1 FanHome</NavLink>
@@ -25,7 +26,7 @@ function Navbar() {
                     <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/calendar">Calendar</NavLink>
                     </li>
-                    {authServices.isAuthenticated ?
+                    {localStorage.email ?
                         (<ul className="navbar-nav">
                             <li className="nav-item">
                                 <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts">My Posts</NavLink>
@@ -46,6 +47,9 @@ function Navbar() {
                                 <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>
                             </li>
                         </ul>)}
+                    <li className="nav-item">
+                        <p className="nav-link" id="greeting" >Welcome, {localStorage.email ? localStorage.email : "guest"}!</p>
+                    </li>
                 </ul>
             </div>
         </nav>

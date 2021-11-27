@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 function Legends() {
     const [legends, setLegends] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/data/legends`)
+        fetch(`http://localhost:3030/jsonstore/legends`)
             .then(res => res.json())
             .then(result => {
-                setLegends(result)
+                let array = Object.values(result)
+                setLegends(array)
             });
     },[]);
     return (
