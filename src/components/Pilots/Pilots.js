@@ -6,10 +6,11 @@ import { useEffect, useState } from "react";
 function Pilots() {
     const [pilots, setPilots] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/data/pilots`)
+        fetch(`http://localhost:3030/jsonstore/drivers`)
             .then(res => res.json())
             .then(result => {
-                setPilots(result)
+                let array = Object.values(result)
+                setPilots(array)
             });
     },[]);
     return (

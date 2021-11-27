@@ -1,24 +1,29 @@
 import styles from "./Card.module.css"
 import * as requester from "../../services/requester"
 function Card({ pilot }) {
-        function handleClick(e) {
+        function voteUp(e) {
           e.preventDefault();
-          return requester.put(`http://localhost:3030/data/pilots/${pilot._id}`, {rating: +1});
+          requester.put(`http://localhost:3030/jsonstore/drivers/${pilot._id}`, {pilot:pilot.name, team:pilot.team, logoUrl:pilot.logoUrl, number:pilot.number, description:pilot.description, rating:Number(pilot.rating) + 1, _id:pilot._id})
         }  
+        function voteDown(e) {
+            e.preventDefault();
+            requester.put(`http://localhost:3030/jsonstore/drivers/${pilot._id}`, {pilot:pilot.name, team:pilot.team, logoUrl:pilot.logoUrl, number:pilot.number, description:pilot.description, rating:Number(pilot.rating) - 1, _id:pilot._id})
+          }
     return (
         <div className="card" id={styles.cardPartial}>
             <img src={pilot.logoUrl} alt="Card img cap" />
             <div className="card-body">
                 <h5 className="card-title">{pilot.name}</h5>
+                <p className="card-title">Team: {pilot.team} </p>
                 <p className="card-text" id={styles.description} >{pilot.description}</p>
                 <p className="rating">Rating: {pilot.rating} </p>
                 <button href="/details" className={styles.detailsBtn} >
                     Details
                 </button>
-                <button className={styles.upBtn} onClick={handleClick}>
+                <button className={styles.upBtn} onClick={voteUp}>
                     Up
                 </button>
-                <button className={styles.downBtn} >
+                <button className={styles.downBtn} onClick={voteDown}>
                     Down
                 </button>
             </div>

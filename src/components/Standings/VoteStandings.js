@@ -4,24 +4,26 @@ import { useEffect, useState } from "react";
 function VoteStandings() { 
     const [first, setFirst] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/data/pilots`)
+        fetch(`http://localhost:3030/jsonstore/drivers`)
             .then(res => res.json())
             .then(result => {
-                result.sort((a,b) => {
+                let array = Object.values(result)
+                array.sort((a,b) => {
                     return b.rating - a.rating
                 } )
-                setFirst(result[0])
+                setFirst(array[0])
             });
     }, []);
     const [drivers, setDrivers] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/data/pilots`)
+        fetch(`http://localhost:3030/jsonstore/drivers`)
             .then(res => res.json())
             .then(result => {
-                result.sort((a,b) => {
+                let array = Object.values(result)
+                array.sort((a,b) => {
                     return b.rating - a.rating
                 } )
-                setDrivers(result)
+                setDrivers(array)
             });
     }, []);
     return (
