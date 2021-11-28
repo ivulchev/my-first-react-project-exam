@@ -28,12 +28,17 @@ function getOneLegend(id) {
     return requester.get(`${baseUrl}/data/legends/${id}`)
 }
 function voteUpPilot(id) {
-    return requester.put(`${allPilotsUrl}/${id}`, {rating: +1})
+    return requester.put(`${allPilotsUrl}/${id}`, { rating: +1 })
 }
 
-// function createMEME(title, imageUrl) {
-//     return requester.post(`${baseUrl}/data/memes`, { title, imageUrl,})
-// }
+function createMEME(ownerId, title, imageUrl) {
+    return requester.post(`${baseUrl}/jsonstore/memes`, {
+        _ownerId: ownerId,
+        title: title,
+        image: imageUrl,
+        rating: 0
+    })
+}
 // function editBook(bookId, title, description, imageUrl, type) {
 //     return requester.put(`${baseUrl}/data/books/${bookId}`, { title, description, imageUrl, type })
 // }
@@ -56,7 +61,8 @@ export const services = {
     getOneTeam,
     getAllLegends,
     getOneLegend,
-    voteUpPilot
+    voteUpPilot,
+    createMEME
 }
 
 export const endpoints = {
