@@ -19,7 +19,6 @@ async function request(method, url, data) {
     //         ...(options.headers),
     //         'X-Authorization': token
     //     };
-    //     console.log(options.headers)
     // }
 
     const res = await fetch(url, options);

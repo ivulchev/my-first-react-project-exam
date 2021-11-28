@@ -1,8 +1,10 @@
 import "./Navbar.css"
 import { NavLink } from "react-router-dom";
 
+
 function Navbar() {
 
+        
     return (
         <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink className="navbar-brand" activeClassName="active" to="/">F1 FanHome</NavLink>

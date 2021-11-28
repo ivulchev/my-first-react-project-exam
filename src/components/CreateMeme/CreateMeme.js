@@ -1,5 +1,3 @@
-import { authServices } from "../../services/authService";
-// import * as requester from "../../services/requester";
 import styles from "./CreateMeme.module.css";
 import { services } from "../../services/services";
 
@@ -10,8 +8,7 @@ function CreateMeme() {
         let title = formData.get('title');
         let imageUrl = formData.get('imageUrl');
         if (title.length > 0 && imageUrl.length > 0) {
-            let user = authServices.getData()
-            services.createMEME(user._id, title, imageUrl);
+            services.createMEME(localStorage._id, title, imageUrl);
         } else {
             window.alert("Empty Fields!")
         }

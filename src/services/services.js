@@ -4,32 +4,10 @@ const baseUrl = 'http://localhost:3030';
 const registerUrl = `${baseUrl}/users/register`;
 const loginUrl = `${baseUrl}/users/login`;
 const logoutUrl = `${baseUrl}/users/logout`;
-const allPilotsUrl = `${baseUrl}/data/pilots`;
-const allTeamsUrl = `${baseUrl}/data/teams`;
-const allLegendsUrl = `${baseUrl}/data/legends`;
+const allPilotsUrl = `${baseUrl}/jsonstore/pilots`;
+const allTeamsUrl = `${baseUrl}/jsonstore/teams`;
+const allLegendsUrl = `${baseUrl}/jsonstore/legends`;
 
-function getAllPilots() {
-    return requester.get(allPilotsUrl);
-}
-function getOnePilot(id) {
-    return requester.get(`${baseUrl}/data/pilots/${id}`)
-}
-function getAllTeams() {
-    return requester.get(allTeamsUrl);
-}
-function getOneTeam(id) {
-    return requester.get(`${baseUrl}/data/teams/${id}`)
-}
-
-function getAllLegends() {
-    return requester.get(allLegendsUrl);
-}
-function getOneLegend(id) {
-    return requester.get(`${baseUrl}/data/legends/${id}`)
-}
-function voteUpPilot(id) {
-    return requester.put(`${allPilotsUrl}/${id}`, { rating: +1 })
-}
 
 function createMEME(ownerId, title, imageUrl) {
     return requester.post(`${baseUrl}/jsonstore/memes`, {
@@ -55,13 +33,6 @@ function createMEME(ownerId, title, imageUrl) {
 // }
 
 export const services = {
-    getAllPilots,
-    getOnePilot,
-    getAllTeams,
-    getOneTeam,
-    getAllLegends,
-    getOneLegend,
-    voteUpPilot,
     createMEME
 }
 
