@@ -1,8 +1,8 @@
-// import { getToken } from "./authService.js";
+import { getToken } from "./authService.js";
 
 async function request(method, url, data) {
     let options = {}
-    // let token = getToken();
+    let token = getToken();
     
     if (method !== 'GET') {
         options = {
@@ -14,12 +14,12 @@ async function request(method, url, data) {
         }
     }
 
-    // if (token) {
-    //     options.headers = {
-    //         ...(options.headers),
-    //         'X-Authorization': token
-    //     };
-    // }
+    if (url.endsWith("logout")) {
+        options.headers = {
+            ...(options.headers),
+            'X-Authorization': token
+        };
+    }
 
     const res = await fetch(url, options);
     if (res.url.endsWith('logout')) {

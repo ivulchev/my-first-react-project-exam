@@ -1,10 +1,20 @@
 import "./Navbar.css"
-import { NavLink } from "react-router-dom";
-
+import { NavLink, Link } from "react-router-dom";
+import { authServices } from "../../services/authService";
+import { useHistory } from 'react-router';
+import { useEffect, useState } from "react/cjs/react.development";
 
 function Navbar() {
+    let history = useHistory();
+    function logout() {
+        authServices.logout()
+        return history.push("/")
+    }
 
-        
+    const [user, setUser] = useState("")
+    useEffect(() => {
+        setUser(localStorage.email)
+    }, [user])
     return (
         <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink className="navbar-brand" activeClassName="active" to="/">F1 FanHome</NavLink>
@@ -38,7 +48,7 @@ function Navbar() {
                             </li>
 
                             <li className="nav-item" >
-                                <NavLink className="nav-link" activeClassName="active" to="/logout">Logout</NavLink>
+                                <Link className="nav-link" to="/login" onClick={logout}>Logout</Link>
                             </li>
                         </ul>) :
                         (<ul className="navbar-nav">
@@ -50,7 +60,7 @@ function Navbar() {
                             </li>
                         </ul>)}
                     <li className="nav-item">
-                        <p className="nav-link" id="greeting" >Welcome, {localStorage.email ? localStorage.email : "guest"}!</p>
+                        <p className="nav-link" id="greeting" >Welcome, {user ? user : "guest"}!</p>
                     </li>
                 </ul>
             </div>

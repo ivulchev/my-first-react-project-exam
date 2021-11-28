@@ -18,7 +18,7 @@ import MyMEMES from './components/MyMEMES/MyMEMES';
 import ErrorPage from './components/Error/ErrorPage';
 //import EditMeme from './components/Edit/Edit';
 import Calendar from "./components/Calendar/Calendar";
-// import { authServices } from './services/authService';
+
 
 
 
@@ -35,7 +35,6 @@ import Calendar from "./components/Calendar/Calendar";
       <Route exact path="/posts/create" ><CreateMeme/></Route>,
       <Route exact path="/posts/all" ><AllMEMES/></Route>,
       <Route exact path="/login" ><Login/></Route>,
-      {/* <Route exact path="/logout" >{() => authServices.logout}</Route>, */}
       <Route exact path="/register"><Register/></Route>,
       <Route exact path="/calendar"><Calendar/></Route>,
       <Route exact path="*"><ErrorPage/></Route>
