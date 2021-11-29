@@ -1,7 +1,9 @@
 import styles from "./CreateMeme.module.css";
 import { services } from "../../services/services";
+import { useHistory } from "react-router";
 
 function CreateMeme() {
+    let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
         let formData = new FormData(e.currentTarget);
@@ -9,6 +11,7 @@ function CreateMeme() {
         let imageUrl = formData.get('imageUrl');
         if (title.length > 0 && imageUrl.length > 0) {
             services.createMEME(localStorage._id, title, imageUrl);
+            history.push("/posts/all")
         } else {
             window.alert("Empty Fields!")
         }
