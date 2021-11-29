@@ -1,4 +1,5 @@
 import styles from "./LegendsCard.module.css"
+import { Link } from "react-router-dom"
 function LegendsCard({legend}) {
     return (
         <div className="card" id={styles.cardPartial}>
@@ -7,8 +8,9 @@ function LegendsCard({legend}) {
                 <h5 className="card-title">{legend.name}</h5>
                 <p className="card-text" id={styles.teams}><strong>Teams:</strong> {legend.teams}</p>
                 <p className="rating">Rating: {legend.rating} </p>
-                <button href="/details"className={styles.detailsBtn} >
+                <button className={styles.detailsBtn} > <Link to={`/legends/${legend._id}`}  >
                     Details
+                    </Link>
                 </button>
                 <button className={styles.upBtn} >
                     Up
