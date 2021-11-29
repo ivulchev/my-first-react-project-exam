@@ -15,13 +15,13 @@ function LegendsCard({legend}) {
                 <h5 className="card-title">{legend.name}</h5>
                 <p className="card-text" id={styles.teams}><strong>Teams:</strong> {legend.teams}</p>
                 <p className="rating">Rating: {legend.rating} </p>
-                <button className={styles.detailsBtn} > <Link to={`/legends/${legend._id}`}  >
+                <button className={styles.detailsBtn} > <Link to={`/legends/${legend._id}`} id={styles.loginLink} >
                     Details
                     </Link>
                 </button>
                 {localStorage.email ?
                 buttons :
-                <Link to="/login">  Please, login to vote!</Link>}
+                <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
         </div>
     )

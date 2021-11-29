@@ -34,15 +34,24 @@
 }
 
 .detailsBtn{
+    color: black;
     border-radius: 5px;
     width: 85px;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;;
-    background-color:rgb(111, 0, 255)
+    background-color:rgb(111, 0, 255);
 }
 
 button:hover{
     background-color: rgb(186, 236, 93);
+}
+
+#loginLink{
+    color: black;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }

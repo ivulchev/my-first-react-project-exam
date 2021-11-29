@@ -1,5 +1,4 @@
 import styles from "./TeamCard.module.css";
-import * as requester from "../../services/requester"
 import { Link } from "react-router-dom";
 
 function TeamCard({ team }) {
@@ -19,13 +18,13 @@ function TeamCard({ team }) {
                 <p className="card-text" id={styles.text} ><strong>Drivers:</strong> {team.drivers}</p>
                 <p className="card-text" id={styles.text} ><strong>Constructor Championships:</strong> {team.championships}</p>
                 <p className="rating">Rating: {team.rating} </p>
-                <button className={styles.detailsBtn} > <Link to={`/teams/${team._id}`}  >
+                <button className={styles.detailsBtn} > <Link to={`/teams/${team._id}`} id={styles.loginLink} >
                     Details
                     </Link>
                 </button>
                 {localStorage.email ?
                 buttons :
-                <Link to="/login">  Please, login to vote!</Link>}
+                <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
         </div>
     )
