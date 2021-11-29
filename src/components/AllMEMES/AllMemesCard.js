@@ -16,7 +16,7 @@ function allMemesCard({meme}){
                 <p className="rating">Rating: {meme.rating} </p>
                 {localStorage.email ?
                 buttons :
-                <Link to="/login">  Please, login to vote!</Link>}
+                <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
         </div>
     )

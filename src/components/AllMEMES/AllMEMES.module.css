@@ -32,3 +32,10 @@
     height: 300px;
     width: 100%;
 }
+#loginLink{
+    color: black;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
