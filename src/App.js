@@ -9,7 +9,7 @@ import Register from "./components/Register/Register";
 import Pilots from './components/Pilots/Pilots';
 import PilotDetails from './components/PilotDetails/PilotDetails';
 import Teams from './components/Teams/Teams';
-//import TeamDetails from './components/TeamDetails/TeamDetails';
+import TeamDetails from './components/TeamDetails/TeamDetails';
 import Legends from './components/Legends/Legends';
 //import LegendDetails from './components/LegendDetails/LegendDetails';
 import CreateMeme from './components/CreateMeme/CreateMeme';
@@ -31,6 +31,7 @@ import Calendar from "./components/Calendar/Calendar";
       <Route exact path="/pilots" ><Pilots/></Route>,
       <Route exact path="/pilots/:id" ><PilotDetails/></Route>,
       <Route exact path="/teams" ><Teams/></Route>,
+      <Route exact path="/teams/:id" ><TeamDetails/></Route>,
       <Route exact path="/legends" ><Legends/></Route>,
       <Route exact path="/posts/my-posts" ><MyMEMES/></Route>,
       <Route exact path="/posts/create" ><CreateMeme/></Route>,

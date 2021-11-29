@@ -1,7 +1,6 @@
 import styles from "./PilotDetails.module.css"
-import { services } from "../../services/services";
 import { useParams } from "react-router";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function PilotDetails() {
     
