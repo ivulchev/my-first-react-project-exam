@@ -1,6 +1,7 @@
 import styles from "./Card.module.css"
 import * as requester from "../../services/requester";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function Card({ pilot }) {
     const [rating, setRating] = useState(pilot.rating);
         function voteUp(e) {
@@ -21,9 +22,9 @@ function Card({ pilot }) {
                 <p className="card-title">Team: {pilot.team} </p>
                 <p className="card-text" id={styles.description} >{pilot.description}</p>
                 <p className="rating">Rating: {rating} </p>
-                <button href="/details" className={styles.detailsBtn} >
+                <button className={styles.detailsBtn} ><Link to={`/pilots/${pilot._id}`} >
                     Details
-                </button>
+                </Link></button>
                 <button className={styles.upBtn} onClick={voteUp}>
                     Up
                 </button>

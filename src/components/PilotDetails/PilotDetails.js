@@ -1,15 +1,30 @@
 import styles from "./PilotDetails.module.css"
-function PilotDetails(props) {
+import { services } from "../../services/services";
+import { useParams } from "react-router";
+import { useEffect, useState } from "react/cjs/react.development";
+import { Link } from "react-router-dom";
+function PilotDetails() {
+    
+    const [pilot, setPilot] = useState({})
+    let {id} = useParams()
+    useEffect(() => {
+        fetch(`http://localhost:3030/jsonstore/drivers/${id}`)
+            .then(res => res.json())
+            .then(result => {
+                setPilot(result)
+            });
+    },[]);
     return (
         <div className="card" id={styles.details} >
-            <img src={props.img} className="card-img-top" alt="..."/>
+            <img src={pilot.logoUrl} className="card-img-top" alt="..."/>
             <div className ="card-body">
-            <h5 className ="card-title">{props.name}</h5>
-            <p className ="card-text">{props.description}</p>
+            <h5 className ="card-title">{pilot.name}</h5>
+            <p className ="card-text">Number: {pilot.number}</p>
+            <p className ="card-text">{pilot.description}</p>
             </div>
             
             <div className ="card-body">
-            <a href="/pilots" className ="card-link">Go Back</a>
+            <Link to="/pilots" className ="card-link">Go Back</Link>
             </div>
         </div>
     )
