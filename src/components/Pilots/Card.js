@@ -2,18 +2,27 @@ import styles from "./Card.module.css"
 import * as requester from "../../services/requester";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { authServices } from "../../services/authService";
 function Card({ pilot }) {
     const [rating, setRating] = useState(pilot.rating);
-        function voteUp(e) {
-          e.preventDefault();
-          requester.put(`http://localhost:3030/jsonstore/drivers/${pilot._id}`, {pilot:pilot.name, team:pilot.team, logoUrl:pilot.logoUrl, number:pilot.number, description:pilot.description, rating:Number(pilot.rating) + 1, _id:pilot._id})
-            setRating(Number(pilot.rating) + 1)
-        }  
-        function voteDown(e) {
-            e.preventDefault();
-            requester.put(`http://localhost:3030/jsonstore/drivers/${pilot._id}`, {pilot:pilot.name, team:pilot.team, logoUrl:pilot.logoUrl, number:pilot.number, description:pilot.description, rating:Number(pilot.rating) - 1, _id:pilot._id})
-            setRating(Number(pilot.rating) - 1)
-        }
+    function voteUp(e) {
+        e.preventDefault();
+        requester.put(`http://localhost:3030/jsonstore/drivers/${pilot._id}`, { pilot: pilot.name, team: pilot.team, logoUrl: pilot.logoUrl, number: pilot.number, description: pilot.description, rating: Number(pilot.rating) + 1, _id: pilot._id })
+        setRating(Number(pilot.rating) + 1)
+    }
+    function voteDown(e) {
+        e.preventDefault();
+        requester.put(`http://localhost:3030/jsonstore/drivers/${pilot._id}`, { pilot: pilot.name, team: pilot.team, logoUrl: pilot.logoUrl, number: pilot.number, description: pilot.description, rating: Number(pilot.rating) - 1, _id: pilot._id })
+        setRating(Number(pilot.rating) - 1)
+    }
+
+    let upButton = <button className={styles.upBtn} onClick={voteUp}>
+        Up
+    </button>
+    let downButton = <button className={styles.downBtn} onClick={voteDown}>
+        Down
+    </button>
+    let buttons = [upButton, downButton]
     return (
         <div className="card" id={styles.cardPartial}>
             <img src={pilot.logoUrl} alt="Card img cap" />
@@ -25,12 +34,11 @@ function Card({ pilot }) {
                 <button className={styles.detailsBtn} ><Link to={`/pilots/${pilot._id}`} >
                     Details
                 </Link></button>
-                <button className={styles.upBtn} onClick={voteUp}>
-                    Up
-                </button>
-                <button className={styles.downBtn} onClick={voteDown}>
-                    Down
-                </button>
+                {localStorage.email ?
+                    buttons :
+                    <Link to="/login">  Please, login to vote!</Link>
+                }
+
             </div>
         </div>
     )
