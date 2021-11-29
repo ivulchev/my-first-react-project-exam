@@ -30,7 +30,7 @@ function isAuthenticated() {
 
     return Boolean(token);
 }
-function register(email, password,) {
+function register(email, password) {
     return request.post(endpoints.registerUrl, { email, password, })
         .then(data => {
             saveData(data)
