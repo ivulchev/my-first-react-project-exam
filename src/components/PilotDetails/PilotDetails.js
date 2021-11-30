@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function PilotDetails() {
-    
     const [pilot, setPilot] = useState({})
     let {id} = useParams()
     useEffect(() => {

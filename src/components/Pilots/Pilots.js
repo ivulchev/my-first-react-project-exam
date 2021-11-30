@@ -15,7 +15,7 @@ function Pilots() {
     return (
         <header>
             <div className="row">
-                {pilots.map(x => <Card key={x._id} pilot={x} />)}
+                {pilots.map(x => <Card key={x._id} driver={x} />)}
             </div>
         </header>
     )

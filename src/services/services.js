@@ -20,10 +20,9 @@ function createMEME(ownerId, title, imageUrl) {
 function getPilot(id){
     return requester.get(`${allPilotsUrl}/${id}`)
 }
-
 export const services = {
     getPilot,
-    createMEME
+    createMEME,
 }
 
 export const endpoints = {
