@@ -27,40 +27,40 @@ function Card({ driver }) {
                     return setIsVoted(false)
                 }
             })
-}, [rating])
-let upButton = <button className={styles.upBtn} onClick={voteUp}>
-    Up
-</button>
-let downButton = <button className={styles.downBtn} onClick={voteDown}>
-    Down
-</button>
-let buttons = [upButton, downButton]
-let Voted = () => {
-    if (isVoted) {
-        return <p id={styles.loginLink}> <strong>Thank you for voting!</strong></p>
-    } else {
-        return buttons
+    }, [rating])
+    let upButton = <button className={styles.upBtn} onClick={voteUp}>
+        Up
+    </button>
+    let downButton = <button className={styles.downBtn} onClick={voteDown}>
+        Down
+    </button>
+    let buttons = [upButton, downButton]
+    let Voted = () => {
+        if (isVoted) {
+            return <p id={styles.loginLink}> <strong>Thank you for voting!</strong></p>
+        } else {
+            return buttons
+        }
     }
-}
-return (
-    <div className="card" id={styles.cardPartial}>
-        <img src={driver.logoUrl} alt="Card img cap" />
-        <div className="card-body">
-            <h5 className="card-title">{driver.name}</h5>
-            <p className="card-title">Team: {driver.team} </p>
-            <p className="card-text" id={styles.description} >{driver.description}</p>
-            <p className="rating">Rating: {rating} </p>
-            <button className={styles.detailsBtn} ><Link to={`/pilots/${driver._id}`} id={styles.loginLink} >
-                Details
-            </Link></button>
-            {localStorage.email ?
-                <Voted key="1" /> :
-                <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>
-            }
+    return (
+        <div className="card" id={styles.cardPartial}>
+            <img src={driver.logoUrl} alt="Card img cap" />
+            <div className="card-body">
+                <h5 className="card-title">{driver.name}</h5>
+                <p className="card-title">Team: {driver.team} </p>
+                <p className="card-text" id={styles.description} >{driver.description}</p>
+                <p className="rating">Rating: {rating} </p>
+                <button className={styles.detailsBtn} ><Link to={`/pilots/${driver._id}`} id={styles.loginLink} >
+                    Details
+                </Link></button>
+                {localStorage.email ?
+                    <Voted key="1" /> :
+                    <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>
+                }
 
+            </div>
         </div>
-    </div>
-)
+    )
 }
 
 

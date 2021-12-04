@@ -19,10 +19,13 @@ function getData() {
     }
 }
 function login(email, password) {
-    return request.post(endpoints.loginUrl, { email, password })
+    try {return  request.post(endpoints.loginUrl, { email, password })
         .then(data => {
             saveData(data);
         });
+    } catch {
+        window.alert(Error)
+    }  
 }
 
 function isAuthenticated() {

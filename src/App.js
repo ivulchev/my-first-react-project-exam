@@ -1,8 +1,6 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import { useEffect, useState } from "react";
-import { authServices } from "./services/authService";
-import { useHistory } from 'react-router';
+import { useState } from "react";
 import { AuthContext } from './contexts/AuthContext';
 
 import Home from './components/Home/Home';
@@ -22,40 +20,44 @@ import MyMEMES from './components/MyMEMES/MyMEMES';
 import ErrorPage from './components/Error/ErrorPage';
 //import EditMeme from './components/Edit/Edit';
 import Calendar from "./components/Calendar/Calendar";
+import { useEffect } from 'react';
 
 
 
 
 function App() {
-  const [user, setUser] = useState("")
-  const login = (email) => {
-    setUser(email);
+  const [user, setUser] = useState(localStorage.email)
+  const login = () => {
+    setUser(localStorage.email);
   }
   const logout = () => {
     setUser("");
   };
+  useEffect(() => {
+    setUser(localStorage.email)
+  },[])
   return (
-    <AuthContext.Provider value={{user, login, logout}}>
-    <div className="App">
-      <Navbar/>,
-      <Switch>
-        <Route exact path="/" ><Home /></Route>,
-        <Route exact path="/pilots" ><Pilots /></Route>,
-        <Route exact path="/pilots/:id" ><PilotDetails /></Route>,
-        <Route exact path="/teams" ><Teams /></Route>,
-        <Route exact path="/teams/:id" ><TeamDetails /></Route>,
-        <Route exact path="/legends" ><Legends /></Route>,
-        <Route exact path="/legends/:id" ><LegendDetails /></Route>,
-        <Route exact path="/posts/my-posts" ><MyMEMES /></Route>,
-        <Route exact path="/posts/create" ><CreateMeme /></Route>,
-        <Route exact path="/posts/all" ><AllMEMES /></Route>,
-        <Route exact path="/login" ><Login/></Route>,
-        <Route exact path="/register"><Register /></Route>,
-        <Route exact path="/calendar"><Calendar /></Route>,
-        <Route exact path="*"><ErrorPage /></Route>
-      </Switch>
-      <Footer />
-    </div>
+    <AuthContext.Provider value={{ user, login, logout }}>
+      <div className="App">
+        <Navbar />,
+        <Switch>
+          <Route exact path="/" ><Home /></Route>,
+          <Route exact path="/pilots" ><Pilots /></Route>,
+          <Route exact path="/pilots/:id" ><PilotDetails /></Route>,
+          <Route exact path="/teams" ><Teams /></Route>,
+          <Route exact path="/teams/:id" ><TeamDetails /></Route>,
+          <Route exact path="/legends" ><Legends /></Route>,
+          <Route exact path="/legends/:id" ><LegendDetails /></Route>,
+          <Route exact path="/posts/my-posts" ><MyMEMES /></Route>,
+          <Route exact path="/posts/create" ><CreateMeme /></Route>,
+          <Route exact path="/posts/all" ><AllMEMES /></Route>,
+          <Route exact path="/login" ><Login /></Route>,
+          <Route exact path="/register"><Register /></Route>,
+          <Route exact path="/calendar"><Calendar /></Route>,
+          <Route exact path="*"><ErrorPage /></Route>
+        </Switch>
+        <Footer />
+      </div>
     </AuthContext.Provider>
   );
 }

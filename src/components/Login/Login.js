@@ -1,9 +1,10 @@
 import styles from "./Login.module.css";
-import {authServices} from "../../services/authService";
+
 import { useHistory } from "react-router";
-import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 
+import { AuthContext } from '../../contexts/AuthContext';
+import {authServices} from "../../services/authService";
 
 
 function Login() {

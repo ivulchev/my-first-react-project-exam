@@ -1,8 +1,10 @@
 import "./Navbar.css"
 import { NavLink, Link } from "react-router-dom";
-import { authServices } from "../../services/authService";
+
 import { useHistory } from 'react-router';
 import { useContext } from 'react';
+
+import { authServices } from "../../services/authService";
 import { AuthContext } from '../../contexts/AuthContext';
 
 function Navbar( ) {
@@ -12,7 +14,7 @@ function Navbar( ) {
         authServices.logout()
         .then(()=>{
             logout()
-            history.push("/")
+            history.push("/login")
         })
       }
     return (
