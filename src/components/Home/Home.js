@@ -1,9 +1,9 @@
 import styles from "./Home.module.css";
-import VoteStandings from "../Standings/VoteStandings";
+import DriverStandings from "../Standings/DriverStandings";
 function Home() {
     return (
         <header className="header">
-            <VoteStandings/>
+            <DriverStandings/>
             <p className={styles.homeParagraph}>"First, you have to finish." – Michael Schumacher</p>
         </header>
     )

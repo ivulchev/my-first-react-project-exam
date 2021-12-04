@@ -1,7 +1,7 @@
-import styles from "./VoteStandings.module.css"
+import styles from "./DriverStandings.module.css"
 import { useEffect, useState } from "react";
 
-function VoteStandings() { 
+function DriverStandings() { 
     const [first, setFirst] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/drivers`)
@@ -9,7 +9,7 @@ function VoteStandings() {
             .then(result => {
                 let array = Object.values(result)
                 array.sort((a,b) => {
-                    return b.rating - a.rating
+                    return b.rating - a.rating || a.name.localeCompare(b.name)
                 } )
                 setFirst(array[0])
             });
@@ -21,7 +21,7 @@ function VoteStandings() {
             .then(result => {
                 let array = Object.values(result)
                 array.sort((a,b) => {
-                    return b.rating - a.rating
+                    return b.rating - a.rating || a.name.localeCompare(b.name)
                 } )
                 setDrivers(array)
             });
@@ -46,4 +46,4 @@ function VoteStandings() {
     )
 }
 
-export default VoteStandings
+export default DriverStandings
