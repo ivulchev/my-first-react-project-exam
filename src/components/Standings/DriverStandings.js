@@ -24,9 +24,9 @@ function DriverStandings() {
             <ul className="list-group list-group-flush">
                 {(!drivers.length == 0)?
                 <ul className="list-group list-group-flush">
-                <li className="list-group-item" key={drivers[0]._id} ><strong>1st:</strong> {drivers[0].name}: {drivers[0].rating}</li> 
-                <li className="list-group-item" key={drivers[1]._id} ><strong>2nd:</strong> {drivers[1].name}: {drivers[1].rating}</li> 
-                <li className="list-group-item" key={drivers[2]._id} ><strong>3rd:</strong> {drivers[2].name}: {drivers[2].rating}</li> 
+                <li className="list-group-item" key={drivers[0]._id} ><strong>1st:</strong> {drivers[0].name}: <strong>{drivers[0].rating}</strong></li> 
+                <li className="list-group-item" key={drivers[1]._id} ><strong>2nd:</strong> {drivers[1].name}: <strong>{drivers[1].rating}</strong></li> 
+                <li className="list-group-item" key={drivers[2]._id} ><strong>3rd:</strong> {drivers[2].name}: <strong>{drivers[2].rating}</strong></li> 
                 </ul>
                 :
                 <li>Loading...</li>}
