@@ -18,7 +18,7 @@ import CreateMeme from './components/CreateMeme/CreateMeme';
 import AllMEMES from './components/AllMEMES/AllMEMES';
 import MyMEMES from './components/MyMEMES/MyMEMES';
 import ErrorPage from './components/Error/ErrorPage';
-//import EditMeme from './components/Edit/Edit';
+import EditMeme from './components/Edit/Edit';
 import Calendar from "./components/Calendar/Calendar";
 import { useEffect } from 'react';
 
@@ -49,6 +49,7 @@ function App() {
           <Route exact path="/legends" ><Legends /></Route>,
           <Route exact path="/legends/:id" ><LegendDetails /></Route>,
           <Route exact path="/posts/my-posts" ><MyMEMES /></Route>,
+          <Route exact path="/posts/my-posts/edit/:id" ><EditMeme /></Route>,
           <Route exact path="/posts/create" ><CreateMeme /></Route>,
           <Route exact path="/posts/all" ><AllMEMES /></Route>,
           <Route exact path="/login" ><Login /></Route>,

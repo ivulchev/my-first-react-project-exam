@@ -15,4 +15,14 @@
 
 #pageTitle{
     margin-bottom: 20px;
+    color: aliceblue;
+    font-style:oblique;
 }
+
+.backLink{
+    margin-left: 10px;
+}
+#input:read-write{
+    margin-left: 5px;
+}
+    

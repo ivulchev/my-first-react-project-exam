@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./MyMEMES.module.css";
 function MyMemesCard({meme}){
     return (
@@ -6,9 +7,10 @@ function MyMemesCard({meme}){
             <div className="card-body">
                 <h5 className="card-title">{meme.title}</h5>
                 <p className="rating">Rating: {meme.rating} </p>
-                <button className={styles.upBtn} >
+                <Link to={`/posts/my-posts/edit/${meme._id}`} ><button className={styles.upBtn} >
                     Edit
                 </button>
+                </Link>
                 <button className={styles.downBtn} >
                     Delete
                 </button>
