@@ -1,5 +1,9 @@
 import './App.css';
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { authServices } from "./services/authService";
+import { useHistory } from 'react-router';
+import { AuthContext } from './contexts/AuthContext';
 
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
@@ -22,28 +26,37 @@ import Calendar from "./components/Calendar/Calendar";
 
 
 
- function App() {
+function App() {
+  const [user, setUser] = useState("")
+  const login = (email) => {
+    setUser(email);
+  }
+  const logout = () => {
+    setUser("");
+  };
   return (
+    <AuthContext.Provider value={{user, login, logout}}>
     <div className="App">
-      <Navbar />,
+      <Navbar/>,
       <Switch>
-      <Route exact path="/" ><Home/></Route>,
-      <Route exact path="/pilots" ><Pilots/></Route>,
-      <Route exact path="/pilots/:id" ><PilotDetails/></Route>,
-      <Route exact path="/teams" ><Teams/></Route>,
-      <Route exact path="/teams/:id" ><TeamDetails/></Route>,
-      <Route exact path="/legends" ><Legends/></Route>,
-      <Route exact path="/legends/:id" ><LegendDetails/></Route>,
-      <Route exact path="/posts/my-posts" ><MyMEMES/></Route>,
-      <Route exact path="/posts/create" ><CreateMeme/></Route>,
-      <Route exact path="/posts/all" ><AllMEMES/></Route>,
-      <Route exact path="/login" ><Login/></Route>,
-      <Route exact path="/register"><Register/></Route>,
-      <Route exact path="/calendar"><Calendar/></Route>,
-      <Route exact path="*"><ErrorPage/></Route>
+        <Route exact path="/" ><Home /></Route>,
+        <Route exact path="/pilots" ><Pilots /></Route>,
+        <Route exact path="/pilots/:id" ><PilotDetails /></Route>,
+        <Route exact path="/teams" ><Teams /></Route>,
+        <Route exact path="/teams/:id" ><TeamDetails /></Route>,
+        <Route exact path="/legends" ><Legends /></Route>,
+        <Route exact path="/legends/:id" ><LegendDetails /></Route>,
+        <Route exact path="/posts/my-posts" ><MyMEMES /></Route>,
+        <Route exact path="/posts/create" ><CreateMeme /></Route>,
+        <Route exact path="/posts/all" ><AllMEMES /></Route>,
+        <Route exact path="/login" ><Login/></Route>,
+        <Route exact path="/register"><Register /></Route>,
+        <Route exact path="/calendar"><Calendar /></Route>,
+        <Route exact path="*"><ErrorPage /></Route>
       </Switch>
-      <Footer/>
+      <Footer />
     </div>
+    </AuthContext.Provider>
   );
 }
 

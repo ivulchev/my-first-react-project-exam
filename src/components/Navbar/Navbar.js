@@ -2,19 +2,19 @@ import "./Navbar.css"
 import { NavLink, Link } from "react-router-dom";
 import { authServices } from "../../services/authService";
 import { useHistory } from 'react-router';
-import { useEffect, useState } from "react/cjs/react.development";
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
-function Navbar() {
+function Navbar( ) {
+    const { user, logout } = useContext(AuthContext);
     let history = useHistory();
-    function logout() {
+    function onLogout() {
         authServices.logout()
-        return history.push("/")
-    }
-
-    const [user, setUser] = useState("")
-    useEffect(() => {
-        setUser(localStorage.email)
-    }, [user])
+        .then(()=>{
+            logout()
+            history.push("/")
+        })
+      }
     return (
         <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink className="navbar-brand" activeClassName="active" to="/">F1 FanHome</NavLink>
@@ -48,12 +48,12 @@ function Navbar() {
                             </li>
 
                             <li className="nav-item" >
-                                <Link className="nav-link" to="/login" onClick={logout}>Logout</Link>
+                                <Link className="nav-link" to="/login" onClick={onLogout}>Logout</Link>
                             </li>
                         </ul>) :
                         (<ul className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeClassName="active" to="/login">Login</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/login" >Login</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>

@@ -1,10 +1,13 @@
 import styles from "./Login.module.css";
 import {authServices} from "../../services/authService";
 import { useHistory } from "react-router";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
 
 
 
 function Login() {
+    const { login } = useContext(AuthContext);
     let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -12,8 +15,12 @@ function Login() {
         let email = formData.get('email');
         let password = formData.get('password');
         if (email.length > 0 && password.length > 0) {
-            authServices.login(email, password);
+            authServices.login(email, password)
+            .then(() => {
+                login(email)
+            })
             history.push("/")
+            
         } else {
             window.alert("Empty Fields!")
         }
