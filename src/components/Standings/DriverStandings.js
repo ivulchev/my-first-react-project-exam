@@ -3,17 +3,6 @@ import { useEffect, useState } from "react";
 
 function DriverStandings() { 
     const [first, setFirst] = useState([]);
-    useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/drivers`)
-            .then(res => res.json())
-            .then(result => {
-                let array = Object.values(result)
-                array.sort((a,b) => {
-                    return b.rating - a.rating || a.name.localeCompare(b.name)
-                } )
-                setFirst(array[0])
-            });
-    }, []);
     const [drivers, setDrivers] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/drivers`)
@@ -23,6 +12,7 @@ function DriverStandings() {
                 array.sort((a,b) => {
                     return b.rating - a.rating || a.name.localeCompare(b.name)
                 } )
+                setFirst(array[0])
                 setDrivers(array)
             });
     }, []);
