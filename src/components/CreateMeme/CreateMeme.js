@@ -20,7 +20,7 @@ function CreateMeme() {
             window.alert("Empty Fields!")
         }
     }
-    return ( user ? <ErrorPage/> :
+    return ( !user ? <ErrorPage/> :
         <form onSubmit={onSubmit} id={styles.createMeme}>
             <h1 id={styles.pageTitle}>Create MEME</h1>
             <div className="form-group">
