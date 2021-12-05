@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useHistory } from "react-router";
+import ErrorPage from "../Error/ErrorPage";
 function EditMeme() {
     const [title, setTitle] = useState();
     const [image, setImage] = useState();
@@ -34,7 +35,7 @@ function EditMeme() {
             window.alert("Empty Fields!")
         }
     }
-    return (
+    return ( title === undefined ? <ErrorPage/> :
         <form onSubmit={onSubmit} id={styles.editMeme}>
             <h1 id={styles.pageTitle}>Edit MEME</h1>
             <div className="form-group">

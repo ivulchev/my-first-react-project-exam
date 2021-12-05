@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import styles from "./ErrorPage.module.css"
+import styles from "./ErrorPage.module.css";
 function ErrorPage() {
     return (
         <div className="card" id={styles.card}>
