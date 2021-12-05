@@ -1,8 +1,12 @@
 import styles from "./CreateMeme.module.css";
 import { services } from "../../services/services";
 import { useHistory } from "react-router";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
+import ErrorPage from "../Error/ErrorPage";
 
 function CreateMeme() {
+    const {user} = useContext(AuthContext);
     let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -16,7 +20,7 @@ function CreateMeme() {
             window.alert("Empty Fields!")
         }
     }
-    return (
+    return ( user ? <ErrorPage/> :
         <form onSubmit={onSubmit} id={styles.createMeme}>
             <h1 id={styles.pageTitle}>Create MEME</h1>
             <div className="form-group">
