@@ -14,7 +14,8 @@ function createMEME(ownerId, title, imageUrl) {
         _ownerId: ownerId,
         title: title,
         image: imageUrl,
-        rating: 0
+        rating: 0,
+        voters: []
     })
 }
 function getPilot(id){

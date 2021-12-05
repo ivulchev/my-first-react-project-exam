@@ -5,10 +5,11 @@ import { useContext } from 'react';
 
 import { AuthContext } from '../../contexts/AuthContext';
 import {authServices} from "../../services/authService";
+import ErrorPage from "../Error/ErrorPage";
 
 
 function Login() {
-    const { login } = useContext(AuthContext);
+    const {user, login } = useContext(AuthContext);
     let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -26,7 +27,7 @@ function Login() {
             window.alert("Empty Fields!")
         }
     }
-    return (
+    return ( user ? <ErrorPage/> :
         <form onSubmit={onSubmit} className={styles.loginForm}>
             <h1 id={styles.pageTitle}>Login</h1>
             <div className="form-group">

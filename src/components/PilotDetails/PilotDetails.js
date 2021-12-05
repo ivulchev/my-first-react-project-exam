@@ -2,6 +2,7 @@ import styles from "./PilotDetails.module.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ErrorPage from "../Error/ErrorPage";
 function PilotDetails() {
     const [pilot, setPilot] = useState({})
     let {id} = useParams()
@@ -12,7 +13,7 @@ function PilotDetails() {
                 setPilot(result)
             });
     },[]);
-    return (
+    return ( pilot.name === undefined ? <ErrorPage/> :
         <div className="card" id={styles.details} >
             <img src={pilot.logoUrl} className="card-img-top" alt="..."/>
             <div className ="card-body">
@@ -24,7 +25,8 @@ function PilotDetails() {
             <div className ="card-body">
             <Link to="/pilots" className ="card-link">Go Back</Link>
             </div>
-        </div>
+        </div> 
+        
     )
 }
 export default PilotDetails
