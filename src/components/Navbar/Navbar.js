@@ -40,6 +40,9 @@ function Navbar( ) {
                     <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/calendar">Calendar</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/standings">Standings</NavLink>
+                    </li>
                     {localStorage.email ?
                         (<ul className="navbar-nav">
                             <li className="nav-item">

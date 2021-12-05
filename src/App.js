@@ -21,6 +21,7 @@ import ErrorPage from './components/Error/ErrorPage';
 import EditMeme from './components/Edit/Edit';
 import Calendar from "./components/Calendar/Calendar";
 import { useEffect } from 'react';
+import LiveTable from './components/LiveTable/LiveTable';
 
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/login" ><Login /></Route>,
           <Route exact path="/register"><Register /></Route>,
           <Route exact path="/calendar"><Calendar /></Route>,
+          <Route exact path="/standings"><LiveTable /></Route>,
           <Route exact path="*"><ErrorPage /></Route>
         </Switch>
         <Footer />
