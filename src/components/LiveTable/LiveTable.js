@@ -20,37 +20,52 @@ function LiveTable() {
                 'x-rapidapi-key': '556f5e858amsh84ff367d8aa60e4p1e7e01jsne580e77a8b45'
             }
         })
-        .then(res => res.json())
-        .then(result => {
-            setConstructors(result.results)
-        });
+            .then(res => res.json())
+            .then(result => {
+                setConstructors(result.results)
+            });
     }, []);
     return (
-        <header className = "row">
-            <div className="card" id={styles.driverStandings}>
-                <h3>Live Time Drivers Standings Season 2021</h3>
-                <ul className="list-group list-group-flush">
-                    {(!drivers.length == 0) ?
-                        <ul className="list-group list-group-flush">
-                            {drivers.map((driver) => <li className="list-group-item" key={driver.driver_id} id={styles.driversLi} ><strong>{driver.position}:</strong> {driver.driver_name}: <strong>{driver.points}</strong> Team: <strong>{driver.team_name}</strong> Nationality: <strong>{driver.nationality}</strong></li>)}
+        <header className="row" id={styles.standings}>
+            
+            <h3 id={styles.tableHeader}> <strong>Drivers Leaderboard Season 2021 </strong> </h3>
+            <table className="table table-striped table-dark" >
+                <thead>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">Team</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {drivers.map((driver) => <tr key={driver.driver_id}>
+                        <th scope="row">{driver.position}</th>
+                        <td>{driver.driver_name}</td>
+                        <td>{driver.points}</td>
+                        <td>{driver.team_name}</td>
+                    </tr>)}
 
-                        </ul>
-                        :
-                        <li>Loading...</li>}
-                </ul>
-            </div>
-            <div className="card" id={styles.constructorsStandings}>
-                <h3>Live Time Constructors Standings Season 2021</h3>
-                <ul className="list-group list-group-flush">
-                    {(!constructors.length == 0) ?
-                        <ul className="list-group list-group-flush">
-                            {constructors.map((constructor) => <li className="list-group-item" key={constructor.team_id} id={styles.constructorsLi}><strong>{constructor.position}:</strong> {constructor.team_name}: <strong>{constructor.points}</strong></li>)}
+                </tbody>
+            </table>
+            <h3 id={styles.tableHeader}> <strong>Teams Leaderboard Season 2021 </strong></h3>
+            <table className="table table-striped table-dark" id={styles.teamStandings}>
+                <thead>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {constructors.map((x) => <tr key={x.team_id}>
+                        <th scope="row">{x.position}</th>
+                        <td>{x.team_name}</td>
+                        <td>{x.points}</td>
+                    </tr>)}
 
-                        </ul>
-                        :
-                        <li>Loading...</li>}
-                </ul>
-            </div>
+                </tbody>
+            </table>
         </header>
     )
 }

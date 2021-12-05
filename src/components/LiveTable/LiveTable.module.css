@@ -1,22 +1,11 @@
-#driverStandings{
-    background-color: royalblue;
+#standings{
     width: 600px;
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
     font-style: oblique;
 }
 
-#driversLi{
-    text-align: left;
-}
-
-#constructorsStandings{
-    background-color: royalblue;
-    width: 600px;
-    height: 400px;
-    margin-left: 40px;
-    font-style: oblique;
-}
-
-#constructorsLi{
-    text-align: center;
+#tableHeader{
+    color:aliceblue ;
+    margin-left: 70px;
 }
