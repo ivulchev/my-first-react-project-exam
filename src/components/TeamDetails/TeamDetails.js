@@ -2,7 +2,8 @@ import styles from "./TeamDetails.module.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-function TeamDetails(props) {
+import ErrorPage from "../Error/ErrorPage";
+function TeamDetails() {
     const [team, setTeam] = useState({})
     let {id} = useParams()
     useEffect(() => {
@@ -12,7 +13,7 @@ function TeamDetails(props) {
                 setTeam(result)
             });
     },[]);
-    return (
+    return (team.name === undefined ? <ErrorPage/> :
         <div className="card" id={styles.details} >
             <img src={team.image} className="card-img-top" alt="..."/>
             <div className ="card-body">
