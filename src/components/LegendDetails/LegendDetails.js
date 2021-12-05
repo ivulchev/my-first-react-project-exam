@@ -2,6 +2,7 @@ import styles from "./LegendDetails.module.css";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ErrorPage from "../Error/ErrorPage";
 function LegendDetails() {
     const [legend, setLegend] = useState({})
     let {id} = useParams()
@@ -12,7 +13,7 @@ function LegendDetails() {
                 setLegend(result)
             });
     },[]);
-    return (
+    return ( legend.name === undefined ? <ErrorPage/> :
         <div className="card" id={styles.details} >
             <img src={legend.image} className="card-img-top" alt="..."/>
             <div className ="card-body">
