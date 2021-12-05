@@ -40,11 +40,11 @@ function EditMeme() {
             <h1 id={styles.pageTitle}>Edit MEME</h1>
             <div className="form-group">
                 <label for="titleMEME" id={styles.pageTitle}>Title</label>
-                <input className="form-control" type="text" aria-label="default input example" value={title? title : "Loading"} name="title" />
+                <input className="form-control" type="text" aria-label="default input example" value={title} name="title" onChange={ (event) => setTitle(event.target.value) }/>
             </div>
             <div className="form-group">
                 <label for="imageMEME" id={styles.pageTitle}>Image URL</label>
-                <input type="text" className="form-control" id={styles.input} value={image? image : "Loading"} name="image"/>
+                <input type="text" className="form-control" id={styles.input} value={image} name="image" onChange={ (event) => setImage(event.target.value)}/>
             </div>
             <button type="submit" className={styles.editBtn}>Edit</button>
             <Link to="/posts/my-posts" className ={styles.backLink}>Go Back</Link>
