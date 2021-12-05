@@ -1,8 +1,12 @@
 import { useHistory } from "react-router";
 import { authServices } from "../../services/authService";
-import styles from "./Register.module.css"
+import styles from "./Register.module.css";
+import ErrorPage from "../Error/ErrorPage";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
 function Register() {
     let history = useHistory()
+    const {user} = useContext(AuthContext);
     function onSubmit(e){
         e.preventDefault()
         let formData = new FormData(e.currentTarget)
@@ -20,7 +24,7 @@ function Register() {
             window.alert("Empty Fields!")
         }
     }
-    return (
+    return (user ? <ErrorPage/> :
         <form onSubmit={onSubmit} className={styles.registerForm}>
             <div className="form-group">
                 <h1>Register</h1>
