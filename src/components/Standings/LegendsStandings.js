@@ -19,8 +19,8 @@ function LegendsStandings() {
     return (
         <header>
             <div className="card" id={styles.standings}>
-                <h3>Top Teams</h3>
-            <img src={first.image} alt="Card img cap" />
+                <h3>Top Legends</h3>
+            <img src={first.image} id={styles.img} alt="Card img cap" />
             <ul className="list-group list-group-flush">
                 {(!legends.length == 0)?
                 <ul className="list-group list-group-flush">

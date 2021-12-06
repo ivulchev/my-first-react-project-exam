@@ -20,7 +20,7 @@ function TeamsStandings() {
         <header>
             <div className="card" id={styles.standings}>
                 <h3>Top Teams</h3>
-            <img src={first.image} alt="Card img cap" />
+            <img src={first.image} id={styles.img} alt="Card img cap" />
             <ul className="list-group list-group-flush">
                 {(!teams.length == 0)?
                 <ul className="list-group list-group-flush">
