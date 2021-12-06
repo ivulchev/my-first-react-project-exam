@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
 function EditMeme() {
+    const {user} = useContext(AuthContext);
     const [title, setTitle] = useState();
     const [image, setImage] = useState();
     let {id} = useParams()
@@ -35,7 +38,7 @@ function EditMeme() {
             window.alert("Empty Fields!")
         }
     }
-    return ( title === undefined ? <ErrorPage/> :
+    return (!user || title === undefined ? <ErrorPage/> :
         <form onSubmit={onSubmit} id={styles.editMeme}>
             <h1 id={styles.pageTitle}>Edit MEME</h1>
             <div className="form-group">
