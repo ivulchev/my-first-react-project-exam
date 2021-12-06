@@ -1,5 +1,5 @@
 #standings{
-    width: 240px;
+    width: 250px;
     height: 340px;
     margin-left: 40px;
     font-style: oblique;
@@ -7,4 +7,11 @@
 #img{
     height: 240px;
     width: 100%;
+}
+#names{
+    color: black;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block
 }

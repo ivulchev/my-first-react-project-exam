@@ -1,9 +1,10 @@
 import styles from "./TeamDetails.module.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
 function TeamDetails() {
+    let history = useHistory()
     const [team, setTeam] = useState({})
     let {id} = useParams()
     useEffect(() => {
@@ -24,7 +25,7 @@ function TeamDetails() {
             </div>
             
             <div className ="card-body">
-            <Link to="/teams" className ="card-link">Go Back</Link>
+            <button onClick={() => history.goBack()} className ="card-link" id={styles.goBack}>Go Back</button>
             </div>
         </div>
     )

@@ -1,6 +1,13 @@
 #standings{
-    width: 240px;
+    width: 250px;
     height: 350px;
     margin-left: 40px;
     font-style: oblique;
+}
+#names{
+    color: black;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block
 }

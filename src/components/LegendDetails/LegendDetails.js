@@ -1,9 +1,10 @@
 import styles from "./LegendDetails.module.css";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
 function LegendDetails() {
+    let history = useHistory()
     const [legend, setLegend] = useState({})
     let { id } = useParams()
     useEffect(() => {
@@ -23,7 +24,7 @@ function LegendDetails() {
             </div>
 
             <div className="card-body">
-                <Link to="/legends" className="card-link">Go Back</Link>
+            <button onClick={() => history.goBack()} className ="card-link" id={styles.goBack}>Go Back</button>
             </div>
         </div>
     )

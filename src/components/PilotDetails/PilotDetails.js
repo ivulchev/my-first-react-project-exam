@@ -1,9 +1,10 @@
 import styles from "./PilotDetails.module.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ErrorPage from "../Error/ErrorPage";
+import { useHistory } from "react-router";
 function PilotDetails() {
+    let history = useHistory()
     const [pilot, setPilot] = useState({})
     let {id} = useParams()
     useEffect(() => {
@@ -23,8 +24,8 @@ function PilotDetails() {
             </div>
             
             <div className ="card-body">
-            <Link to="/pilots" className ="card-link">Go Back</Link>
-            </div>
+            <button onClick={() => history.goBack()} className ="card-link" id={styles.goBack}>Go Back</button>
+            </div> 
         </div> 
         
     )
