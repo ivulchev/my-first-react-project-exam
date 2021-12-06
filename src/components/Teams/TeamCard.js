@@ -22,7 +22,7 @@ function TeamCard({ team }) {
             .then((res) => res.json())
             .then((data) => {
                 let array = Object.values(data)
-                if (array[5].includes(localStorage._id)) {
+                if (array[6].includes(localStorage._id)) {
                     return setIsVoted(true)
                 } else {
                     return setIsVoted(false)

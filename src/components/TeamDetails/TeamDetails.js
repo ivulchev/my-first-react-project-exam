@@ -21,7 +21,7 @@ function TeamDetails() {
             <h5 className ="card-title">{team.name}</h5>
             <p className ="card-text">Drivers: {team.drivers}</p>
             <p className ="card-text">Constructor Championships: {team.championships}</p>
-            <p className ="card-text">History: {team.history}</p>
+            <p className ="card-text"> {team.description}</p>
             </div>
             
             <div className ="card-body">
