@@ -1,5 +1,5 @@
 import styles from "./LiveTable.module.css";
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 function LiveTable() {
     const [table, setTable] = useState("drivers")
     const [drivers, setDrivers] = useState([]);
