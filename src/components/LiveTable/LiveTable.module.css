@@ -8,4 +8,10 @@
 #tableHeader{
     color:aliceblue ;
     margin-left: 70px;
+    font-style: oblique;
+}
+#radio{
+    color:aliceblue ;
+    margin-right: 80px;
+    font-style: oblique;
 }

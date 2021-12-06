@@ -1,6 +1,7 @@
 import styles from "./LiveTable.module.css";
 import { useState, useEffect } from "react"
 function LiveTable() {
+    const [table, setTable] = useState("drivers")
     const [drivers, setDrivers] = useState([]);
     const [constructors, setConstructors] = useState([]);
     useEffect(() => {
@@ -25,9 +26,8 @@ function LiveTable() {
                 setConstructors(result.results)
             });
     }, []);
-    return (
-        <header className="row" id={styles.standings}>
-            
+    let driverLeaderboard = (
+        <div>
             <h3 id={styles.tableHeader}> <strong>Drivers Leaderboard Season 2021 </strong> </h3>
             <table className="table table-striped table-dark" >
                 <thead>
@@ -48,6 +48,11 @@ function LiveTable() {
 
                 </tbody>
             </table>
+        </div>
+    )
+
+    let teamLeaderboard = (
+        <div>
             <h3 id={styles.tableHeader}> <strong>Teams Leaderboard Season 2021 </strong></h3>
             <table className="table table-striped table-dark" id={styles.teamStandings}>
                 <thead>
@@ -66,7 +71,22 @@ function LiveTable() {
 
                 </tbody>
             </table>
-        </header>
+        </div>
+    )
+    return (
+        <div>
+            <div className="btn-group btn-group-toggle" data-toggle="buttons" id={styles.radio}>
+                <label className={"btn btn-secondary " + (table === "drivers" ? "active" : null)}>
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked={() => {setTable("drivers")}}   onClick={() => setTable("drivers")}/> Drivers
+                </label>
+                <label className={"btn btn-secondary " + (table === "teams" ? "active" : null)} >
+                    <input type="radio" name="options" id="option2" autocomplete="off" checked={() => {setTable("teams")}} onClick={() => setTable("teams")} /> Teams
+                </label>
+            </div>
+            <header className="row" id={styles.standings}>
+                {table === "drivers" ? driverLeaderboard : teamLeaderboard}
+            </header>
+        </div>
     )
 }
 
