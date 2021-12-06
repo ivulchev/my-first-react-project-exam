@@ -13,7 +13,7 @@ function Register() {
         let email = formData.get("email");
         let password = formData.get("password");
         let rePassword = formData.get("rePassword");
-        if(email.length > 0 && password.length > 0 && rePassword.length > 0){
+        if(email.length > 5 && password.length > 5 && rePassword.length > 5){
             if(password === rePassword){
                 authServices.register(email, password)
                 history.push("/login")
@@ -21,7 +21,7 @@ function Register() {
                 window.alert("Password and Repeat Password doesn't match!")
             }
         }else{
-            window.alert("Empty Fields!")
+            window.alert("You must enter minimum 6 symbols!")
         }
     }
     return (user ? <ErrorPage/> :
