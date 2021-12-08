@@ -7,16 +7,19 @@ import { useContext } from 'react';
 import { authServices } from "../../services/authService";
 import { AuthContext } from '../../contexts/AuthContext';
 
-function Navbar( ) {
+function Navbar() {
     const { user, logout } = useContext(AuthContext);
     let history = useHistory();
     function onLogout() {
-        authServices.logout()
-        .then(()=>{
-            logout()
-            history.push("/login")
-        })
-      }
+        if (window.confirm("Do you really want to logout?")) {
+            authServices.logout()
+                .then(() => {
+                    logout()
+                    history.push("/login")
+                })
+        }
+
+    }
     return (
         <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink className="navbar-brand" activeClassName="active" to="/">F1 FanHome</NavLink>
