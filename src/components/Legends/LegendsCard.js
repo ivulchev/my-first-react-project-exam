@@ -21,7 +21,7 @@ function LegendsCard({legend}) {
             .then((res) => res.json())
             .then((data) => {
                 let array = Object.values(data)
-                if (array[5].includes(localStorage._id)) {
+                if (array[6].includes(localStorage._id)) {
                     return setIsVoted(true)
                 } else {
                     return setIsVoted(false)
@@ -48,6 +48,7 @@ function LegendsCard({legend}) {
             <div className="card-body">
                 <h5 className="card-title">{legend.name}</h5>
                 <p className="card-text" id={styles.teams}><strong>Teams:</strong> {legend.teams}</p>
+                <p className="card-text" id={styles.teams}><strong>Championships:</strong> {legend.championships}</p>
                 <p className="rating">Rating: {rating} </p>
                 <button className={styles.detailsBtn} > <Link to={`/legends/${legend._id}`} id={styles.loginLink} >
                     Details
