@@ -3,12 +3,13 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
+import { endpoints } from "../../services/services";
 function LegendDetails() {
     let history = useHistory()
     const [legend, setLegend] = useState({})
     let { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/legends/${id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/legends/${id}`)
             .then(res => res.json())
             .then(result => {
                 setLegend(result)

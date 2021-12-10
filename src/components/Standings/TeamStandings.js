@@ -1,12 +1,13 @@
 import styles from "./TeamStandings.module.css"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { endpoints } from "../../services/services";
 
 function TeamsStandings() { 
     const [first, setFirst] = useState([]);
     const [teams, setTeams] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/teams`)
+        fetch(`${endpoints.baseUrl}jsonstore/teams`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

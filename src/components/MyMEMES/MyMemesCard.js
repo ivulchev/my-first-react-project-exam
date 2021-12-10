@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import styles from "./MyMEMES.module.css";
 import * as requester from "../../services/requester";
 import { useHistory } from "react-router";
+import { endpoints } from "../../services/services";
 function MyMemesCard({ meme }) {
     let history = useHistory()
     function deleteMeme() {
         if(window.confirm("Do you really want to delete this item?")){
-        requester.del(`http://localhost:3030/jsonstore/memes/${meme._id}`)
+        requester.del(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`)
         return history.push("/posts/create")
         }
 

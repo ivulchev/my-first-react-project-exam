@@ -3,21 +3,22 @@ import * as requester from "../../services/requester";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
+import { endpoints } from "../../services/services";
 function Card({ driver }) {
     const [rating, setRating] = useState(driver.rating);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/drivers/${driver._id}`, { name: driver.name, team: driver.team, logoUrl: driver.logoUrl, number: driver.number, description: driver.description, rating: rating + 1, voters: [...driver.voters, localStorage._id], _id: driver._id })
+        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { name: driver.name, team: driver.team, logoUrl: driver.logoUrl, number: driver.number, description: driver.description, rating: rating + 1, voters: [...driver.voters, localStorage._id], _id: driver._id })
         return setRating(rating + 1);
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/drivers/${driver._id}`, { name: driver.name, team: driver.team, logoUrl: driver.logoUrl, number: driver.number, description: driver.description, rating: rating - 1, voters: [...driver.voters, localStorage._id], _id: driver._id })
+        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { name: driver.name, team: driver.team, logoUrl: driver.logoUrl, number: driver.number, description: driver.description, rating: rating - 1, voters: [...driver.voters, localStorage._id], _id: driver._id })
         return setRating(rating - 1);
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/drivers/${driver._id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`)
             .then((res) => res.json())
             .then((data) => {
                 let array = Object.values(data)

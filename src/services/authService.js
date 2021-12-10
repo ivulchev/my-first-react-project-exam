@@ -21,7 +21,6 @@ function getData() {
 function login(email, password) {
    return request.post(endpoints.loginUrl, { email, password })
         .then(data => {
-            console.log(data)
             if(data.email !== undefined){
                  saveData(data)
             }else{

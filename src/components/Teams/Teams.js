@@ -1,10 +1,11 @@
 import TeamCard from "./TeamCard";
 import { useEffect, useState } from "react";
+import { endpoints } from "../../services/services";
 
 function Teams() {
     const [teams, setTeams] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/teams`)
+        fetch(`${endpoints.baseUrl}jsonstore/teams`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

@@ -1,12 +1,12 @@
 import * as requester from "./requester.js"
 
-const baseUrl = 'http://localhost:3030';
-const registerUrl = `${baseUrl}/users/register`;
-const loginUrl = `${baseUrl}/users/login`;
-const logoutUrl = `${baseUrl}/users/logout`;
-const allPilotsUrl = `${baseUrl}/jsonstore/drivers`;
-const allTeamsUrl = `${baseUrl}/jsonstore/teams`;
-const allLegendsUrl = `${baseUrl}/jsonstore/legends`;
+const baseUrl = 'https://server-for-my-project.herokuapp.com/';
+const registerUrl = `${baseUrl}users/register`;
+const loginUrl = `${baseUrl}users/login`;
+const logoutUrl = `${baseUrl}users/logout`;
+const allPilotsUrl = `${baseUrl}jsonstore/drivers`;
+const allTeamsUrl = `${baseUrl}jsonstore/teams`;
+const allLegendsUrl = `${baseUrl}jsonstore/legends`;
 
 
 function createMEME(ownerId, title, imageUrl) {

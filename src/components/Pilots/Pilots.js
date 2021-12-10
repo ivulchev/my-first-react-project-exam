@@ -1,11 +1,11 @@
 import Card from "./Card"
 import { useEffect, useState } from "react";
-
+import { endpoints } from "../../services/services";
 
 function Pilots() {
     const [pilots, setPilots] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/drivers`)
+        fetch(`${endpoints.baseUrl}jsonstore/drivers`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

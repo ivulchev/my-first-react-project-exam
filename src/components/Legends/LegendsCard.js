@@ -3,21 +3,22 @@ import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
+import { endpoints } from "../../services/services";
 function LegendsCard({legend}) {
     const [rating, setRating] = useState(legend.rating);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/legends/${legend._id}`, { rating: rating + 1, voters: [...legend.voters, localStorage._id]})
+        requester.put(`${endpoints.baseUrl}jsonstore/legends/${legend._id}`, { rating: rating + 1, voters: [...legend.voters, localStorage._id]})
         return setRating(rating + 1);
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/legends/${legend._id}`, { rating: rating - 1, voters: [...legend.voters, localStorage._id]})
+        requester.put(`${endpoints.baseUrl}jsonstore/legends/${legend._id}`, { rating: rating - 1, voters: [...legend.voters, localStorage._id]})
         return setRating(rating - 1);
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/legends/${legend._id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/legends/${legend._id}`)
             .then((res) => res.json())
             .then((data) => {
                 let array = Object.values(data)

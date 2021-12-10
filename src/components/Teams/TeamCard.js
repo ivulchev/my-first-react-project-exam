@@ -2,23 +2,24 @@ import styles from "./TeamCard.module.css";
 import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
+import { endpoints } from "../../services/services";
 
 function TeamCard({ team }) {
     const [rating, setRating] = useState(team.rating);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/teams/${team._id}`, { rating: rating + 1, voters: [...team.voters, localStorage._id]})
+        requester.put(`${endpoints.baseUrl}jsonstore/teams/${team._id}`, { rating: rating + 1, voters: [...team.voters, localStorage._id]})
         return setRating(rating + 1);
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/teams/${team._id}`, { rating: rating - 1, voters: [...team.voters, localStorage._id]})
+        requester.put(`${endpoints.baseUrl}jsonstore/teams/${team._id}`, { rating: rating - 1, voters: [...team.voters, localStorage._id]})
         return setRating(rating - 1);
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/teams/${team._id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/teams/${team._id}`)
             .then((res) => res.json())
             .then((data) => {
                 let array = Object.values(data)

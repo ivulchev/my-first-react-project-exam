@@ -1,9 +1,10 @@
 import LegendsCard from "./LegendsCard"
 import { useEffect, useState } from "react";
+import { endpoints } from "../../services/services";
 function Legends() {
     const [legends, setLegends] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/legends`)
+        fetch(`${endpoints.baseUrl}jsonstore/legends`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

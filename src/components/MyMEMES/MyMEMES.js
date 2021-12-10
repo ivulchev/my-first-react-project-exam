@@ -1,10 +1,11 @@
 import MyMemesCard from "./MyMemesCard"
 import { useEffect, useState } from "react";
 import ErrorPage from "../Error/ErrorPage";
+import { endpoints } from "../../services/services";
 function MyMEMES() {
     const [myMemes, setMyMemes] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/memes`)
+        fetch(`${endpoints.baseUrl}jsonstore/memes`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

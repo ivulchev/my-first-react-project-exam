@@ -3,12 +3,13 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
+import { endpoints } from "../../services/services";
 function TeamDetails() {
     let history = useHistory()
     const [team, setTeam] = useState({})
     let {id} = useParams()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/teams/${id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/teams/${id}`)
             .then(res => res.json())
             .then(result => {
                 setTeam(result)

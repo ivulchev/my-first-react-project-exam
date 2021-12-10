@@ -1,12 +1,13 @@
 import styles from "./DriverStandings.module.css"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { endpoints } from "../../services/services";
 
 function DriverStandings() {
     const [first, setFirst] = useState([]);
     const [drivers, setDrivers] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/drivers`)
+        fetch(`${endpoints.baseUrl}jsonstore/drivers`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

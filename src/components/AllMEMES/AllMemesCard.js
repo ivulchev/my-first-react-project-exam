@@ -2,23 +2,24 @@ import styles from "./AllMEMES.module.css"
 import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState, useEffect } from "react";
+import { endpoints } from "../../services/services";
 function AllMemesCard({meme}){
 
     const [rating, setRating] = useState(meme.rating);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/memes/${meme._id}`, { rating: rating + 1, voters: [ localStorage._id] })
+        requester.put(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`, { rating: rating + 1, voters: [ localStorage._id] })
         return setRating(rating + 1);
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`http://localhost:3030/jsonstore/memes/${meme._id}`, { rating: rating - 1, voters: [ localStorage._id] })
+        requester.put(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`, { rating: rating - 1, voters: [ localStorage._id] })
         return setRating(rating - 1);
     }
     const [isOwner, setIsOwner] = useState()
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/memes/${meme._id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`)
             .then((res) => res.json())
             .then((data) => {
                 let array = Object.values(data)

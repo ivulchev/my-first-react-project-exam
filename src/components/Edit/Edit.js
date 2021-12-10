@@ -7,13 +7,14 @@ import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
+import { endpoints } from "../../services/services";
 function EditMeme() {
     const { user } = useContext(AuthContext);
     const [title, setTitle] = useState();
     const [image, setImage] = useState();
     let { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/memes/${id}`)
+        fetch(`${endpoints.baseUrl}jsonstore/memes/${id}`)
             .then(res => res.json())
             .then(result => {
                 setTitle(result.title)
@@ -29,7 +30,7 @@ function EditMeme() {
         let image = formData.get('image');
         if (title.length > 0 && image.length > 0) {
             if (window.confirm("Do you really want to edit this item?")) {
-                requester.put(`http://localhost:3030/jsonstore/memes/${id}`, { title, image })
+                requester.put(`${endpoints.baseUrl}jsonstore/memes/${id}`, { title, image })
                     .then(() => {
                         history.push("/posts/my-posts")
                     })

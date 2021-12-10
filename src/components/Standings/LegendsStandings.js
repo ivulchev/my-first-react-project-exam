@@ -1,12 +1,13 @@
 import styles from "./LegendsStandings.module.css"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { endpoints } from "../../services/services";
 
 function LegendsStandings() { 
     const [first, setFirst] = useState([]);
     const [legends, setLegends] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/legends`)
+        fetch(`${endpoints.baseUrl}jsonstore/legends`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)
