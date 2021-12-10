@@ -8,7 +8,7 @@ function Home() {
             <DriverStandings/>,
             <TeamsStandings/>
             <LegendsStandings/>
-            <p className={styles.homeParagraph}>"First, you have to finish." – Michael Schumacher</p>
+            <p className={styles.homeParagraph}>"First, you have to finish." - Michael Schumacher</p>
         </header>
     )
 }

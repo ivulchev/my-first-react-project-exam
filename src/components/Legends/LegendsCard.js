@@ -2,10 +2,12 @@ import styles from "./LegendsCard.module.css"
 import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect,useContext } from "react";
 import { endpoints } from "../../services/services";
+import { AuthContext } from "../../contexts/AuthContext"
 function LegendsCard({legend}) {
     const [rating, setRating] = useState(legend.rating);
+    const { user } = useContext(AuthContext);
     function voteUp(e) {
         e.preventDefault();
         requester.put(`${endpoints.baseUrl}jsonstore/legends/${legend._id}`, { rating: rating + 1, voters: [...legend.voters, localStorage._id]})
@@ -55,7 +57,7 @@ function LegendsCard({legend}) {
                     Details
                     </Link>
                 </button>
-                {localStorage.email ?
+                {user ?
                 <Voted/> :
                 <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>

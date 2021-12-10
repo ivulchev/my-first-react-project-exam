@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useContext } from 'react';
 import { endpoints } from "../../services/services";
+import { AuthContext } from '../../contexts/AuthContext';
 
 function TeamCard({ team }) {
     const [rating, setRating] = useState(team.rating);
+    const { user } = useContext(AuthContext);
     function voteUp(e) {
         e.preventDefault();
         requester.put(`${endpoints.baseUrl}jsonstore/teams/${team._id}`, { rating: rating + 1, voters: [...team.voters, localStorage._id]})
@@ -56,7 +59,7 @@ function TeamCard({ team }) {
                     Details
                     </Link>
                 </button>
-                {localStorage.email ?
+                {user ?
                 <Voted/> :
                 <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>

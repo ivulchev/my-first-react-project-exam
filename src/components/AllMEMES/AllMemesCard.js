@@ -1,10 +1,11 @@
 import styles from "./AllMEMES.module.css"
 import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { endpoints } from "../../services/services";
+import { AuthContext } from "../../contexts/AuthContext"
 function AllMemesCard({meme}){
-
+    const { user } = useContext(AuthContext);
     const [rating, setRating] = useState(meme.rating);
     function voteUp(e) {
         e.preventDefault();
@@ -61,7 +62,7 @@ function AllMemesCard({meme}){
             <div className="card-body">
                 <h5 className="card-title">{meme.title}</h5>
                 <p className="rating">Rating: {rating} </p>
-                {localStorage.email ?
+                {user ?
                 <Voted/> :
                 <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>

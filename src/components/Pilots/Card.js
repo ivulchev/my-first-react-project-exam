@@ -2,18 +2,20 @@ import styles from "./Card.module.css"
 import * as requester from "../../services/requester";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect, useContext } from "react";
 import { endpoints } from "../../services/services";
+import { AuthContext } from "../../contexts/AuthContext"
 function Card({ driver }) {
     const [rating, setRating] = useState(driver.rating);
+    const { user } = useContext(AuthContext);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { name: driver.name, team: driver.team, logoUrl: driver.logoUrl, number: driver.number, description: driver.description, rating: rating + 1, voters: [...driver.voters, localStorage._id], _id: driver._id })
+        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { rating: rating + 1, voters: [...driver.voters, localStorage._id], })
         return setRating(rating + 1);
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { name: driver.name, team: driver.team, logoUrl: driver.logoUrl, number: driver.number, description: driver.description, rating: rating - 1, voters: [...driver.voters, localStorage._id], _id: driver._id })
+        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, {  rating: rating - 1, voters: [...driver.voters, localStorage._id], })
         return setRating(rating - 1);
     }
     const [isVoted, setIsVoted] = useState()
@@ -54,7 +56,7 @@ function Card({ driver }) {
                 <button className={styles.detailsBtn} ><Link to={`/pilots/${driver._id}`} id={styles.loginLink} >
                     Details
                 </Link></button>
-                {localStorage.email ?
+                {user ?
                     <Voted key="1" /> :
                     <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>
                 }
