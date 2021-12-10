@@ -1,0 +1,114 @@
+{
+    "421fa9a1-11g3-490d-b299-21f119b2f46a": {
+
+        "name": "Mercedes AMG Motorsport",
+        "drivers": "Lewis Hamilton and Valtteri Bottas",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/logo.img.jpg/1582638425211.jpg",
+        "championships": "7 (2014, 2015, 2016, 2017, 2018, 2019, 2020)",
+        "description": "Mercedes’ modern F1 revival started with the creation of a works squad for 2010 - the platform for a meteoric rise up the Grand Prix order. The team generated huge excitement from the off with the sensational return of Michael Schumacher, but headlines soon followed on track: three podiums in their debut season, all via Nico Rosberg - who then claimed a breakthrough pole/victory double at China in 2012. The following season he was paired with Lewis Hamilton, the duo going on to stage some epic title battles as the Silver Arrows swept all before them to become one of the most dominant forces of the modern F1 era. And with Hamilton now partnered by steely Finn Valtteri Bottas, Mercedes remain very much the team to beat…",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-11g3-490d-b299-21f119b2f46a"
+    },
+    "421fa9a1-11g3-490d-1s9w-21f119b2f46a": {
+
+        "name": "Red Bull Racing",
+        "drivers": "Max Verstapen and Sergio Perez",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/logo.img.jpg/1610719164360.jpg",
+        "championships": "4 (2010, 2011, 2012, 2013)",
+        "description" : "Red Bull were no strangers to F1 - as sponsors - prior to formally entering as a works team in 2004. Nonetheless, the scale of their success over the following decade was staggering. After a first podium in 2006, the team hit their stride in 2009, claiming six victories and second in the constructors' standings. Over the next four seasons they were a tour de force, claiming consecutive title doubles between 2010 and 2013, with Sebastian Vettel emerging as the sport's youngest quadruple champion. Now their hopes of recapturing that glory lie with an equally exciting talent – one named Max Verstappen…",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-11g3-490d-1s9w-21f119b2f46a"
+    },
+    "421fa9a1-1h13-490d-b299-21f119b2f46a": {
+
+        "name": "Mclaren Racing",
+        "drivers": "Lando Norris and Daniel Ricciardo",
+        "image": "https://cdn-8.motorsport.com/images/mgl/YEQJgyLY/s800/mclaren-f1-team-logo-1.jpg",
+        "championships": "8 (1974, 1984, 1985, 1988, 1989, 1990, 1991, 1998)",
+        "description": "Since entering the sport in 1966 under the guidance and restless endeavour of eponymous founder Bruce, McLaren's success has been nothing short of breathtaking. Five glittering decades have yielded countless victories, pole positions and podiums, not to mention eight constructors' championships. What's more, some of the sport's greatest drivers made their names with the team, including Emerson Fittipaldi, Ayrton Senna, Mika Hakkinen and Lewis Hamilton...",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-1h13-490d-b299-21f119b2f46a"
+    },
+    "421fa9a1-11g3-n31d-b299-21f119b2f46a": {
+
+        "name": "Aston Martin F1 Team",
+        "drivers": "Sebastian Vettel and Lance Stroll",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Aston-Martin/_jcr_content/logo.img.png/1636626797971.png",
+        "championships": "0",
+        "description": "Aston Martin’s original Formula 1 foray – over half a century ago – lasted just five races. This time, though, it’s serious. This F1 squad are no strangers to success, having won in their original guise of Jordan and most recently as Racing Point in 2020. Renowned for their ability to punch above their weight, and now with a four-time champion leading their driver line-up, Aston Martin are very much a team to watch in 2021…",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-11g3-n31d-b299-21f119b2f46a"
+    },
+    "421fbc81-11g3-490d-b299-21f119b2f46a": {
+
+        "name": "Alpine F1",
+        "drivers": "Fernando Alonso and Esteban Ocon",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Alpine/_jcr_content/logo.img.jpg/1611246834255.jpg",
+        "championships": "2 (2005, 2006)",
+        "description": "Alpine may be a new name to Formula 1 for 2021, as Renault’s F1 team is rebranded, but their famous sportscar arm has plenty of motorsport heritage. The rebirth marks the next step in Renault’s F1 revival, begun in 2016 with the takeover of the then-Lotus team. They’ve been back on the podium since then, but now – with a new management and driver line-up in place – wins must be the next target…",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fbc81-11g3-490d-b299-21f119b2f46a"
+    },
+    "4kjca9a1-11g3-490d-b299-21f119b2f46a": {
+
+        "name": "Scuderia Ferrari",
+        "drivers": "Charles Leclerc and Carlos Sainz",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Ferrari/_jcr_content/logo.img.jpg/1521797474166.jpg",
+        "championships": "16 (1961, 1964, 1975, 1976, 1977, 1979, 1982, 1983, 1999, 2000, 2001, 2002, 2003, 2004, 2007, 2008)",
+        "description": "For many, Ferrari and Formula 1 racing have become inseparable. The only team to have competed in every season since the world championship began, the Prancing Horse has grown from the humble dream of founder Enzo Ferrari to become one of the most iconic and recognised brands in the world. Success came quickly through the likes of Alberto Ascari and John Surtees, and continued – in amongst leaner times – with Niki Lauda in the 1970s and then Michael Schumacher in the 2000s, when Ferrari claimed a then unprecedented five consecutive title doubles, securing their status as the most successful and decorated team in F1 history...",
+        "rating": 0,
+        "voters": [],
+        "_id": "4kjca9a1-11g3-490d-b299-21f119b2f46a"
+    },
+    "4df7n9a1-11g3-490d-b299-21f119b2f46a": {
+
+        "name": "Scudera Alpha Tauri",
+        "drivers": "Pierre Gasly and Yuki Tsunoda",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/AlphaTauri/_jcr_content/logo.img.jpg/1582650557134.jpg",
+        "championships": "0",
+        "description": "Established in 2006 as a squad in which young drivers from Red Bull’s prodigious talent pool could cut their F1 teeth, AlphaTauri – originally named Toro Rosso – were formed from the ashes of the plucky Minardi team. Sebastian Vettel gave validity to the approach almost immediately, delivering a fairy-tale win in 2008, before going on to enjoy world championship success with parent team Red Bull Racing. Today the ethos of nurturing talent still holds true, though the Italian squad are no longer simply a ‘B team’ but a constructor in their own right...",
+        "rating": 0,
+        "voters": [],
+        "_id": "4df7n9a1-11g3-490d-b299-21f119b2f46a"
+    },
+    "421fa9a1-11g3-490d-b299-21fbv5s2f46a": {
+
+        "name": "Alfa Romeo Racing",
+        "drivers": "Kimi Raikkonen and Antonio Giovinazzi",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Alfa-Romeo-Racing/_jcr_content/logo.img.jpg/1582650603836.jpg",
+        "championships": "2 (1950, 1951)",
+        "description": "The name Alfa Romeo boasts Formula 1 connections dating back to the championship's inception in 1950. Fast forward to the 21st century and Italian flare combines with Swiss sensibilities in a new era for the team formerly known as Sauber.Having enjoyed considerable success in world sportscars, where he helped nurture the emerging talents of future F1 stars Michael Schumacher and Heinz-Harald Frentzen, Peter Sauber guided his eponymous squad into F1 in 1993.The team has since established itself as a mainstay of the grid, becoming race winners under BMW’s brief ownership, and developing a well-earned reputation not only for producing competitive cars, but also for developing young drivers.",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-11g3-490d-b299-21fbv5s2f46a"
+    },
+    "421fa9a1-11g3-490d-b299-21f119bnc46a": {
+
+        "name": "Haas F1",
+        "drivers": "Mick Shumacher and Nikita Mazepin",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Haas-F1-Team/_jcr_content/logo.img.jpg/1615481143675.jpg",
+        "championships": "0",
+        "description": "The youngest team on the grid, Haas made their highly impressive debut in 2016, and in the process became the first all-American-led F1 squad in three decades. Founded by industrialist Gene Haas, they are based in the United States on the same Kannapolis, North Carolina facility as his championship-winning NASCAR Sprint Cup Series team, Stewart-Haas Racing. The Ferrari-powered team, led by the charismatic Guenther Steiner, also have a UK factory in Banbury…",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-11g3-490d-b299-21f119bnc46a"
+    },
+    "421fa9a1-11g3-490d-b299-21f1olo3f46a": {
+
+        "name": "Williams Racing",
+        "drivers": "George Russell and Nicholas Latifi",
+        "image": "https://www.formula1.com/content/fom-website/en/teams/Williams/_jcr_content/logo.img.jpg/1590743731407.jpg",
+        "championships": "9 (1980, 1981, 1986, 1987, 1992, 1993, 1994, 1996, 1997)",
+        "description": "Driven on by the brilliance and passion of Sir Frank Williams, Williams grew from humble beginnings to become a Formula 1 behemoth, unrivalled by all except Ferrari and McLaren in terms of enduring success. Over the past four decades the team has racked up Grand Prix wins and championship glory, and in the process nurtured some of the greatest talents in the sport, both in and out the cockpit. Now, following the Williams family's decision to step aside after the sale of the team to Dorilton Capital, a new era begins..",
+        "rating": 0,
+        "voters": [],
+        "_id": "421fa9a1-11g3-490d-b299-21f1olo3f46a"
+    }
+    
+    
+}
