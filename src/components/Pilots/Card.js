@@ -2,21 +2,25 @@ import styles from "./Card.module.css"
 import * as requester from "../../services/requester";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useContext } from "react";
+import { useEffect, } from "react";
 import { endpoints } from "../../services/services";
-import { AuthContext } from "../../contexts/AuthContext"
+
 function Card({ driver }) {
     const [rating, setRating] = useState(driver.rating);
-    const { user } = useContext(AuthContext);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { rating: rating + 1, voters: [...driver.voters, localStorage._id], })
-        return setRating(rating + 1);
+        if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
+            requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { rating: rating + 1, voters: [...driver.voters, localStorage._id], })
+
+            return setRating(rating + 1);
+        }
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, {  rating: rating - 1, voters: [...driver.voters, localStorage._id], })
-        return setRating(rating - 1);
+        if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
+            requester.put(`${endpoints.baseUrl}jsonstore/drivers/${driver._id}`, { rating: rating - 1, voters: [...driver.voters, localStorage._id], })
+            return setRating(rating - 1);
+        }
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
@@ -53,11 +57,11 @@ function Card({ driver }) {
                 <p className="card-title">Team: {driver.team} </p>
                 <p className="card-text" id={styles.description} >{driver.description}</p>
                 <p className="rating">Rating: {rating} </p>
-                <button className={styles.detailsBtn} ><Link to={`/pilots/${driver._id}`} id={styles.loginLink} >
+                <button className={styles.detailsBtn} ><Link to={`pilots/${driver._id}`} id={styles.loginLink} >
                     Details
                 </Link></button>
-                {user ?
-                    <Voted key="1" /> :
+                {localStorage._id ?
+                    <Voted key={driver._id} /> :
                     <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>
                 }
 

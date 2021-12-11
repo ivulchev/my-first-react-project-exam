@@ -28,8 +28,8 @@ import LiveTable from './components/LiveTable/LiveTable';
 
 function App() {
   const [user, setUser] = useState(localStorage.email)
-  const login = () => {
-    setUser(localStorage.email);
+  const login = (email) => {
+    setUser(email);
   }
   const logout = () => {
     setUser("");

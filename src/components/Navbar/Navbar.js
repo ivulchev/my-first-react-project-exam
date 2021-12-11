@@ -68,7 +68,7 @@ function Navbar() {
                             </li>
                         </ul>)}
                     <li className="nav-item">
-                        <p className="nav-link" id="greeting" >Welcome, {user ? user : "guest"}!</p>
+                        <p className="nav-link" id="greeting" >Welcome, {localStorage.email ? localStorage.email : "guest"}!</p>
                     </li>
                 </ul>
             </div>

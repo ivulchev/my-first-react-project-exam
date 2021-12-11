@@ -14,8 +14,11 @@ function CreateMeme() {
         let title = formData.get('title');
         let imageUrl = formData.get('imageUrl');
         if (title.length > 0 && imageUrl.length > 0) {
-            services.createMEME(localStorage._id, title, imageUrl);
-            history.push("/posts/all")
+            services.createMEME(localStorage._id, title, imageUrl)
+            .then(() => {
+                window.alert("You created post succesfully!")
+                history.push("/posts/all")
+            })
         } else {
             window.alert("Empty Fields!")
         }

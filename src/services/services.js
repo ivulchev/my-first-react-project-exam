@@ -1,6 +1,6 @@
 import * as requester from "./requester.js"
 
-const baseUrl = 'https://server-for-my-project.herokuapp.com/';
+const baseUrl = 'http://localhost:3030/';
 const registerUrl = `${baseUrl}users/register`;
 const loginUrl = `${baseUrl}users/login`;
 const logoutUrl = `${baseUrl}users/logout`;
@@ -10,7 +10,7 @@ const allLegendsUrl = `${baseUrl}jsonstore/legends`;
 
 
 function createMEME(ownerId, title, imageUrl) {
-    return requester.post(`${baseUrl}/jsonstore/memes`, {
+    return requester.post(`${baseUrl}jsonstore/memes`, {
         _ownerId: ownerId,
         title: title,
         image: imageUrl,
