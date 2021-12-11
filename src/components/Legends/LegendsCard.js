@@ -61,7 +61,7 @@ function LegendsCard({legend}) {
                     </Link>
                 </button>
                 {localStorage._id ?
-                <Voted/> :
+                <Voted key={legend._id}/> :
                 <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
         </div>

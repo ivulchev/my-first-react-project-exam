@@ -2,11 +2,8 @@ import { useHistory } from "react-router";
 import { authServices } from "../../services/authService";
 import styles from "./Register.module.css";
 import ErrorPage from "../Error/ErrorPage";
-import { AuthContext } from '../../contexts/AuthContext';
-import { useContext } from 'react';
 function Register() {
     let history = useHistory()
-    const {user} = useContext(AuthContext);
     function onSubmit(e){
         e.preventDefault()
         let formData = new FormData(e.currentTarget)
@@ -16,6 +13,7 @@ function Register() {
         if(email.length > 5 && password.length > 5 && rePassword.length > 5){
             if(password === rePassword){
                 authServices.register(email, password)
+                window.alert("Your registration was succesfull! You can log in now.")
                 history.push("/login")
             }else{
                 window.alert("Password and Repeat Password doesn't match!")
@@ -24,7 +22,7 @@ function Register() {
             window.alert("You must enter minimum 6 symbols!")
         }
     }
-    return (user ? <ErrorPage/> :
+    return (localStorage.email ? <ErrorPage/> :
         <form onSubmit={onSubmit} className={styles.registerForm}>
             <div className="form-group">
                 <h1>Register</h1>
