@@ -2,7 +2,10 @@ import MyMemesCard from "./MyMemesCard"
 import { useEffect, useState } from "react";
 import ErrorPage from "../Error/ErrorPage";
 import { endpoints } from "../../services/services";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
 function MyMEMES() {
+    const {user} = useContext(AuthContext);
     const [myMemes, setMyMemes] = useState([]);
     useEffect(() => {
         fetch(`${endpoints.baseUrl}jsonstore/memes`)
@@ -13,7 +16,7 @@ function MyMEMES() {
                 setMyMemes(array)
             });
     },[]);
-    return ( myMemes === undefined ? <ErrorPage/>:
+    return ( !user ? <ErrorPage/> :
         <div className="row">
             {myMemes.map((x) => <MyMemesCard key={x._id} meme={x}/>)}
         </div>

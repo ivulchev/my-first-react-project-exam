@@ -58,14 +58,7 @@ export function getToken() {
     return accessToken;
 }
 
-function isAuthor(id) {
-    let user = getData()
-    if (user._id === id) {
-        return true
-    } else {
-        return false
-    }
-}
+
 
 export const authServices = {
     saveData,
@@ -75,5 +68,4 @@ export const authServices = {
     register,
     logout,
     getToken,
-    isAuthor
 }

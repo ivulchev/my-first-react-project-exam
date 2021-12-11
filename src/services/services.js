@@ -10,7 +10,7 @@ const allLegendsUrl = `${baseUrl}jsonstore/legends`;
 
 
 function createMEME(ownerId, title, imageUrl) {
-    return requester.post(`${baseUrl}jsonstore/memes`, {
+    return requester.post(`${baseUrl}/jsonstore/memes`, {
         _ownerId: ownerId,
         title: title,
         image: imageUrl,
