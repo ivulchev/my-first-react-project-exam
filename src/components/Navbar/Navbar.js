@@ -46,7 +46,7 @@ function Navbar() {
                     <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/standings">Standings</NavLink>
                     </li>
-                    {localStorage.email ?
+                    {user ?
                         (<ul className="navbar-nav">
                             <li className="nav-item">
                                 <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts">My Posts</NavLink>
@@ -56,7 +56,7 @@ function Navbar() {
                             </li>
 
                             <li className="nav-item" >
-                                <Link className="nav-link" to="/login" onClick={onLogout}>Logout</Link>
+                                <Link className="nav-link" to="" onClick={onLogout}>Logout</Link>
                             </li>
                         </ul>) :
                         (<ul className="navbar-nav">
@@ -68,7 +68,7 @@ function Navbar() {
                             </li>
                         </ul>)}
                     <li className="nav-item">
-                        <p className="nav-link" id="greeting" >Welcome, {localStorage.email ? localStorage.email : "guest"}!</p>
+                        <p className="nav-link" id="greeting" >Welcome, {user ? user : "guest"}!</p>
                     </li>
                 </ul>
             </div>
