@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# F1- FanHome project for my react exam
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## My first repository and my forst project
+It's my first time to make a project. It's about one of my favourite sports Formula 1. The app has some dynamic pages with drivers, teams, legends and memes. They are reachable by every user, but guests cannot make interaction with them. The App have login, register and logout services. Also likes and dislikes of every team, driver, legend or meme, for just one time. Can't be voted twice per one object. Owners of memes can't vote for them but can do edit and delete operation. The App also has details page for every driver,team or legend. Pages Calendar and Standings makes request to external API with live time information about points and races. I used React.js for this App. The app is deployed in Firebase. The link - https://f1-fanhome.web.app/.
 
 ## Available Scripts
 
@@ -13,11 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -39,32 +35,9 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## `back-end server`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can start the back - end server with command prompt. In the directory open a command prompt and run node server.js.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+I used images from official Formula 1 site for drivers and teams. External API for my live time standings is https://rapidapi.com/sportcontentapi/api/f1-live-motorsport-data/
