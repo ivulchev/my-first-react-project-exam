@@ -1,41 +1,44 @@
 import styles from "./TeamCard.module.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState, } from "react";
 import { useEffect } from "react";
-import { endpoints } from "../../services/services";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
 
 
 function TeamCard({ team }) {
-    let history = useHistory()
+    const { user } = useContext(AuthContext);
     const [rating, setRating] = useState(team.rating);
     function voteUp(e) {
         e.preventDefault();
         if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
-        requester.put(`${endpoints.baseUrl}jsonstore/teams/${team._id}`, { rating: rating + 1, voters: [...team.voters, localStorage._id]})
+        requester.patch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams/${team._id}.json`, { rating: rating + 1, voters: [...team.voters, localStorage.email]})
         setRating(rating + 1);
+        setIsVoted(true)
         }
     }
     function voteDown(e) {
         e.preventDefault();
         if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
-        requester.put(`${endpoints.baseUrl}jsonstore/teams/${team._id}`, { rating: rating - 1, voters: [...team.voters, localStorage._id]})
+        requester.patch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams/${team._id}.json`, { rating: rating - 1, voters: [...team.voters, localStorage.email]})
         setRating(rating - 1);
+        setIsVoted(true)
         }
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/teams/${team._id}`)
+        fetch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams/${team._id}.json`)
             .then((res) => res.json())
             .then((data) => {
-                let array = Object.values(data)
-                if (array[6].includes(localStorage._id)) {
+                let array = data.voters
+                if (array.includes(user)) {
                     return setIsVoted(true)
                 } else {
                     return setIsVoted(false)
                 }
             })
-    }, [rating])
+    }, [isVoted])
     let upButton = <button className={styles.upBtn} onClick={voteUp}>
         Up
     </button>
@@ -62,7 +65,7 @@ function TeamCard({ team }) {
                     Details
                     </Link>
                 </button>
-                {localStorage._id?
+                {user ?
                 <Voted key={team._id}/> :
                 <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>

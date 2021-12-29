@@ -1,11 +1,10 @@
 import TeamCard from "./TeamCard";
 import { useEffect, useState } from "react";
-import { endpoints } from "../../services/services";
 
 function Teams() {
     const [teams, setTeams] = useState([]);
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/teams`)
+        fetch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams.json`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)
