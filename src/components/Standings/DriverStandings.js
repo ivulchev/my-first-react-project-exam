@@ -7,7 +7,7 @@ function DriverStandings() {
     const [first, setFirst] = useState([]);
     const [drivers, setDrivers] = useState([]);
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/drivers`)
+        fetch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/drivers.json`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

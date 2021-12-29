@@ -3,12 +3,16 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 20px;
     white-space: nowrap; 
     border: 3px solid #000000;
     border-image: fill;
 }
-  
+
+#image{
+    height: 300px;
+}
+
 #description{
     overflow: hidden;
     text-overflow: ellipsis;
