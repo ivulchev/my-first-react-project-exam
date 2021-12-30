@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { authServices } from "../../services/authService";
 import ErrorPage from "../Error/ErrorPage";
+import { auth } from "../../services/initializeFirebase";
 
 
 function Login() {
@@ -17,16 +18,26 @@ function Login() {
         let email = formData.get('email');
         let password = formData.get('password');
         if (email.length > 0 && password.length > 0) {
-             authServices.login(email, password)
-             .then(()=>{
-                let user = authServices.getData()
-                if(user.email){
-                    login(user.email)
-                    history.push("/")
-                }
-                    
-             })
-                    
+            auth.signInWithEmailAndPassword(email, password)
+                .then((data) => {
+                    let info = data.user._delegate
+                    authServices.saveData(info)
+                    let user = authServices.getData()
+                    if (user.email) {
+                        login(user.email)
+                        history.push("/")
+                    }
+
+                })
+                .catch((function (error) {
+                    let errorCode = error.code;
+                    let errorMessage = error.message;
+                    if (errorCode === 'auth/wrong-password') {
+                        alert('Wrong password.');
+                      } else {
+                        alert(errorMessage);
+                      }
+                }))
         } else {
             window.alert("Empty Fields!")
         }

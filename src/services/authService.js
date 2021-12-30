@@ -1,5 +1,6 @@
 import { endpoints } from './services.js';
 import * as request from './requester.js';
+import { auth } from './initializeFirebase.js';
 
 
 function saveData({ _id, email, accessToken, }) {
@@ -45,7 +46,7 @@ function register(email, password) {
 
 function logout() {
     if (isAuthenticated()) {
-        return request.get(endpoints.logoutUrl)
+        return auth.signOut()
             .then(res => {
                 localStorage.clear();
                 return res;

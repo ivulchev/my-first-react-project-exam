@@ -2,6 +2,7 @@ import { useHistory } from "react-router";
 import { authServices } from "../../services/authService";
 import styles from "./Register.module.css";
 import ErrorPage from "../Error/ErrorPage";
+import { auth } from "../../services/initializeFirebase";
 function Register() {
     let history = useHistory()
     function onSubmit(e){
@@ -12,7 +13,7 @@ function Register() {
         let rePassword = formData.get("rePassword");
         if(email.length > 5 && password.length > 5 && rePassword.length > 5){
             if(password === rePassword){
-                authServices.register(email, password)
+                auth.createUserWithEmailAndPassword(email, password)
                 window.alert("Your registration was succesfull! You can log in now.")
                 history.push("/login")
             }else{

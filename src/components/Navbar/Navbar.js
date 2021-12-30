@@ -9,6 +9,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 function Navbar() {
     const { user, logout } = useContext(AuthContext);
+    let username = user.split("@")
     let history = useHistory();
     function onLogout() {
         if (window.confirm("Do you really want to logout?")) {
@@ -68,7 +69,7 @@ function Navbar() {
                             </li>
                         </ul>)}
                     <li className="nav-item">
-                        <p className="nav-link" id="greeting" >Welcome, {user ? user : "guest"}!</p>
+                        <p className="nav-link" id="greeting" >Welcome, {user ? username[0] : "guest"}!</p>
                     </li>
                 </ul>
             </div>
