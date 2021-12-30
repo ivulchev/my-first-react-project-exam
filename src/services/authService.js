@@ -3,8 +3,8 @@ import * as request from './requester.js';
 import { auth } from './initializeFirebase.js';
 
 
-function saveData({ _id, email, accessToken, }) {
-    localStorage.setItem('_id', _id);
+function saveData({ uid, email, accessToken, }) {
+    localStorage.setItem('_id', uid);
     localStorage.setItem('email', email);
     localStorage.setItem('accessToken', accessToken);
 }

@@ -14,16 +14,18 @@ function LegendsCard({legend}) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Legend!")){
         requester.patch(`${endpoints.baseUrl}legends/${legend._id}.json`, { rating: rating + 1, voters: [...legend.voters, user]})
-        setIsVoted(true)
-        setRating(rating + 1);
+        .then(() => {
+            setRating(rating + 1);
+        })
         }
     }
     function voteDown(e) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Legend!")){
         requester.patch(`${endpoints.baseUrl}legends/${legend._id}.json`, { rating: rating - 1, voters: [...legend.voters, user]})
-        setIsVoted(true)
-        setRating(rating - 1);
+        .then(() => {
+            setRating(rating - 1);
+        })
         }
     }
     const [isVoted, setIsVoted] = useState()
@@ -38,7 +40,7 @@ function LegendsCard({legend}) {
                     return setIsVoted(false)
                 }
             })
-    }, [isVoted])
+    }, [rating])
     let upButton = <button className={styles.upBtn} onClick={voteUp}>
         Up
     </button>

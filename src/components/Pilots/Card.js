@@ -1,7 +1,7 @@
 import styles from "./Card.module.css"
 import * as requester from "../../services/requester";
 import { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
@@ -15,17 +15,20 @@ function Card({ driver }) {
     function voteUp(e) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
-            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email]});  
-            setRating(rating + 1);
-            setIsVoted(true)
+            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email] })
+                .then(() => {
+                    setRating(rating + 1);
+                })
         }
     }
     function voteDown(e) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
-            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] });
-            setRating(rating - 1);
-            setIsVoted(true)
+            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] })
+                .then(() => {
+                    setRating(rating - 1);
+                })
+
         }
     }
     const [isVoted, setIsVoted] = useState(Boolean)
@@ -40,7 +43,7 @@ function Card({ driver }) {
                     setIsVoted(false)
                 }
             })
-    }, [isVoted])
+    }, [rating])
     let upButton = <button className={styles.upBtn} onClick={voteUp}>
         Up
     </button>

@@ -15,16 +15,20 @@ function TeamCard({ team }) {
         e.preventDefault();
         if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
         requester.patch(`${endpoints.baseUrl}teams/${team._id}.json`, { rating: rating + 1, voters: [...team.voters, user]})
-        setRating(rating + 1);
-        setIsVoted(true)
+        .then(() => {
+            setRating(rating + 1);
+        })
+        
+        
         }
     }
     function voteDown(e) {
         e.preventDefault();
         if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
         requester.patch(`${endpoints.baseUrl}teams/${team._id}.json`, { rating: rating - 1, voters: [...team.voters, user]})
+        .then(() => {
         setRating(rating - 1);
-        setIsVoted(true)
+        })
         }
     }
     const [isVoted, setIsVoted] = useState()
@@ -39,7 +43,7 @@ function TeamCard({ team }) {
                     return setIsVoted(false)
                 }
             })
-    }, [isVoted])
+    }, [rating])
     let upButton = <button className={styles.upBtn} onClick={voteUp}>
         Up
     </button>

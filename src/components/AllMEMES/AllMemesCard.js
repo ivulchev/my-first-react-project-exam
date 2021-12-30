@@ -12,14 +12,16 @@ function AllMemesCard({ meme }) {
     function voteUp(e) {
         e.preventDefault();
         requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating + 1, voters: [...memeInfo.voters, user] })
-        setIsVoted(true);
-        setRating(rating + 1);
+        .then(() => {
+            setRating(rating + 1);
+        })
     }
     function voteDown(e) {
         e.preventDefault();
         requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating - 1, voters: [...memeInfo.voters, user] })
-        setIsVoted(true);
-        setRating(rating - 1);
+        .then(() => {
+            setRating(rating - 1);
+        })
     }
     const [isOwner, setIsOwner] = useState()
     const [isVoted, setIsVoted] = useState()
@@ -36,7 +38,7 @@ function AllMemesCard({ meme }) {
                     setIsOwner(true)
                 }
             })
-    }, [isVoted])
+    }, [rating])
 
 
     let upButton = <button className={styles.upBtn} onClick={voteUp}>
