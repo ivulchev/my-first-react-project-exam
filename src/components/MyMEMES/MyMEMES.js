@@ -8,17 +8,17 @@ function MyMEMES() {
     const {user} = useContext(AuthContext);
     const [myMemes, setMyMemes] = useState([]);
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/memes`)
+        fetch(`${endpoints.baseUrl}memes.json`)
             .then(res => res.json())
             .then(result => {
-                let array = Object.values(result)
-                array = array.filter((meme) => meme._ownerId === localStorage._id)
+                let array = Object.entries(result)
+                array = array.filter((meme) => meme[1]._ownerId === localStorage._id)
                 setMyMemes(array)
             });
     },[]);
     return ( !user ? <ErrorPage/> :
         <div className="row">
-            {myMemes.map((x) => <MyMemesCard key={x._id} meme={x}/>)}
+            {myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>)}
         </div>
     )
 }

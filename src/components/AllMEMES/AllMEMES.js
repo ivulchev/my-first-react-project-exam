@@ -4,10 +4,10 @@ import { endpoints } from "../../services/services";
 function AllMEMES() {
     const [memes, setMemes] = useState([]);
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/memes`)
+        fetch(`${endpoints.baseUrl}memes.json`)
             .then(res => res.json())
             .then(result => {
-                let array = Object.values(result)
+                let array = Object.entries(result)
                 setMemes(array)
             });
     },[]);

@@ -5,6 +5,7 @@ import { Link} from "react-router-dom";
 import { useEffect, } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
+import { endpoints } from "../../services/services";
 
 
 function Card({ driver }) {
@@ -14,7 +15,7 @@ function Card({ driver }) {
     function voteUp(e) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
-            requester.patch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email]});  
+            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email]});  
             setRating(rating + 1);
             setIsVoted(true)
         }
@@ -22,14 +23,14 @@ function Card({ driver }) {
     function voteDown(e) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
-            requester.patch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] });
+            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] });
             setRating(rating - 1);
             setIsVoted(true)
         }
     }
     const [isVoted, setIsVoted] = useState(Boolean)
     useEffect(() => {
-        fetch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/drivers/${driver._id}.json`)
+        fetch(`${endpoints.baseUrl}drivers/${driver._id}.json`)
             .then((res) => res.json())
             .then((data) => {
                 let array = data.voters

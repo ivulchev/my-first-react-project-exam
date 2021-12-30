@@ -1,11 +1,11 @@
 import Card from "./Card"
 import { useEffect, useState } from "react";
-// import { endpoints } from "../../services/services";
+import { endpoints } from "../../services/services";
 
 function Pilots() {
     const [pilots, setPilots] = useState([]);
     useEffect(() => {
-        fetch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/drivers.json`)
+        fetch(`${endpoints.baseUrl}drivers.json`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

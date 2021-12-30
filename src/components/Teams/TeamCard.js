@@ -5,6 +5,7 @@ import { useState, } from "react";
 import { useEffect } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
+import { endpoints } from "../../services/services";
 
 
 function TeamCard({ team }) {
@@ -13,7 +14,7 @@ function TeamCard({ team }) {
     function voteUp(e) {
         e.preventDefault();
         if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
-        requester.patch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams/${team._id}.json`, { rating: rating + 1, voters: [...team.voters, localStorage.email]})
+        requester.patch(`${endpoints.baseUrl}teams/${team._id}.json`, { rating: rating + 1, voters: [...team.voters, user]})
         setRating(rating + 1);
         setIsVoted(true)
         }
@@ -21,14 +22,14 @@ function TeamCard({ team }) {
     function voteDown(e) {
         e.preventDefault();
         if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
-        requester.patch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams/${team._id}.json`, { rating: rating - 1, voters: [...team.voters, localStorage.email]})
+        requester.patch(`${endpoints.baseUrl}teams/${team._id}.json`, { rating: rating - 1, voters: [...team.voters, user]})
         setRating(rating - 1);
         setIsVoted(true)
         }
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/teams/${team._id}.json`)
+        fetch(`${endpoints.baseUrl}teams/${team._id}.json`)
             .then((res) => res.json())
             .then((data) => {
                 let array = data.voters

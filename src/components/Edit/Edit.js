@@ -13,10 +13,12 @@ function EditMeme() {
     const [title, setTitle] = useState();
     const [image, setImage] = useState();
     let { id } = useParams()
+    console.log(id)
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/memes/${id}`)
+        fetch(`${endpoints.baseUrl}memes/${id}.json`)
             .then(res => res.json())
             .then(result => {
+                console.log(result)
                 setTitle(result.title)
                 setImage(result.image)
             });
@@ -30,7 +32,7 @@ function EditMeme() {
         let image = formData.get('image');
         if (title.length > 0 && image.length > 0) {
             if (window.confirm("Do you really want to edit this item?")) {
-                requester.put(`${endpoints.baseUrl}jsonstore/memes/${id}`, { title, image })
+                requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { title, image })
                     .then(() => {
                         history.push("/posts/my-posts")
                     })

@@ -9,7 +9,7 @@ function PilotDetails() {
     const [pilot, setPilot] = useState({})
     let {id} = useParams()
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/drivers/${id}`)
+        fetch(`${endpoints.baseUrl}drivers/${id}.json`)
             .then(res => res.json())
             .then(result => {
                 setPilot(result)

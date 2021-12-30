@@ -1,6 +1,7 @@
 import * as requester from "./requester.js"
+import { v4 as uuidv4 } from 'uuid';
 
-const baseUrl = 'http://localhost:3030/';
+const baseUrl = 'https://f1-fanhome-default-rtdb.europe-west1.firebasedatabase.app/';
 const registerUrl = `${baseUrl}users/register`;
 const loginUrl = `${baseUrl}users/login`;
 const logoutUrl = `${baseUrl}users/logout`;
@@ -10,12 +11,12 @@ const allLegendsUrl = `${baseUrl}jsonstore/legends`;
 
 
 function createMEME(ownerId, title, imageUrl) {
-    return requester.post(`${baseUrl}jsonstore/memes`, {
+    return requester.post(`${baseUrl}memes.json`, {
         _ownerId: ownerId,
         title: title,
         image: imageUrl,
         rating: 0,
-        voters: []
+        voters: ["somevoters"]
     })
 }
 function getPilot(id){

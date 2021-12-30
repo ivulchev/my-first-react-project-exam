@@ -3,22 +3,25 @@ import styles from "./MyMEMES.module.css";
 import * as requester from "../../services/requester";
 import { useHistory } from "react-router";
 import { endpoints } from "../../services/services";
+import { useState } from "react";
 function MyMemesCard({ meme }) {
+    const [id, setId] = useState(meme[0]);
+    const [memeInfo, setMemeInfo] = useState(meme[1])
     let history = useHistory()
     function deleteMeme() {
         if(window.confirm("Do you really want to delete this item?")){
-        requester.del(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`)
+        requester.del(`${endpoints.baseUrl}memes/${id}.json`)
         return history.push("/posts/create")
         }
 
     }
     return (
         <div className="card" id={styles.cardPartial}>
-            <img src={meme.image} id={styles.img} alt="Card img cap" />
+            <img src={memeInfo.image} id={styles.img} alt="Card img cap" />
             <div className="card-body">
-                <h5 className="card-title">{meme.title}</h5>
-                <p className="rating">Rating: {meme.rating} </p>
-                <Link to={`/posts/my-posts/edit/${meme._id}`} ><button className={styles.upBtn} >
+                <h5 className="card-title">{memeInfo.title}</h5>
+                <p className="rating">Rating: {memeInfo.rating} </p>
+                <Link to={`/posts/my-posts/edit/${id}`} ><button className={styles.upBtn} >
                     Edit
                 </button>
                 </Link>

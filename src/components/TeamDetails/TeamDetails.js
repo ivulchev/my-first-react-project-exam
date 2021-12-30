@@ -9,7 +9,7 @@ function TeamDetails() {
     const [team, setTeam] = useState({})
     let {id} = useParams()
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/teams/${id}`)
+        fetch(`${endpoints.baseUrl}teams/${id}.json`)
             .then(res => res.json())
             .then(result => {
                 setTeam(result)

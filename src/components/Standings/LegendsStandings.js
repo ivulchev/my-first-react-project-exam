@@ -7,7 +7,7 @@ function LegendsStandings() {
     const [first, setFirst] = useState([]);
     const [legends, setLegends] = useState([]);
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/legends`)
+        fetch(`${endpoints.baseUrl}legends.json`)
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)

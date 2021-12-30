@@ -9,7 +9,7 @@ function LegendDetails() {
     const [legend, setLegend] = useState({})
     let { id } = useParams()
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/legends/${id}`)
+        fetch(`${endpoints.baseUrl}legends/${id}.json`)
             .then(res => res.json())
             .then(result => {
                 setLegend(result)

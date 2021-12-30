@@ -4,36 +4,39 @@ import * as requester from "../../services/requester";
 import { useState, useEffect, useContext } from "react";
 import { endpoints } from "../../services/services";
 import { AuthContext } from "../../contexts/AuthContext"
-function AllMemesCard({meme}){
+function AllMemesCard({ meme }) {
+    const [id, setId] = useState(meme[0]);
+    const [memeInfo, setMemeInfo] = useState(meme[1])
     const { user } = useContext(AuthContext);
-    const [rating, setRating] = useState(meme.rating);
+    const [rating, setRating] = useState(meme[1].rating);
     function voteUp(e) {
         e.preventDefault();
-        requester.put(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`, { rating: rating + 1, voters: [ localStorage._id] })
-        return setRating(rating + 1);
+        requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating + 1, voters: [...memeInfo.voters, user] })
+        setIsVoted(true);
+        setRating(rating + 1);
     }
     function voteDown(e) {
         e.preventDefault();
-        requester.put(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`, { rating: rating - 1, voters: [ localStorage._id] })
-        return setRating(rating - 1);
+        requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating - 1, voters: [...memeInfo.voters, user] })
+        setIsVoted(true);
+        setRating(rating - 1);
     }
     const [isOwner, setIsOwner] = useState()
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
-        fetch(`${endpoints.baseUrl}jsonstore/memes/${meme._id}`)
+        fetch(`${endpoints.baseUrl}memes/${id}.json`)
             .then((res) => res.json())
             .then((data) => {
-                let array = Object.values(data)
-                if (array[4].includes(localStorage._id)) {
+                if ((data.voters).includes(user)) {
                     setIsVoted(true)
-                }else{
+                } else {
                     setIsVoted(false)
                 }
-                if((array[0] == localStorage._id)){
+                if ((data._ownerId === localStorage._id)) {
                     setIsOwner(true)
                 }
             })
-    }, [rating])
+    }, [isVoted])
 
 
     let upButton = <button className={styles.upBtn} onClick={voteUp}>
@@ -45,26 +48,26 @@ function AllMemesCard({meme}){
     let buttons = [upButton, downButton]
 
     let Voted = () => {
-        if(isOwner){
+        if (isOwner) {
             return <p id={styles.loginLink}> <strong>You can't vote on you own posts!</strong></p>
-        }else{
+        } else {
             if (isVoted) {
                 return <p id={styles.loginLink}> <strong>Thank you for voting!</strong></p>
             } else {
                 return buttons
             }
         }
-        
+
     }
     return (
         <div className="card" id={styles.cardPartial}>
-            <img src={meme.image} id={styles.img} alt="Card img cap" />
+            <img src={memeInfo.image} id={styles.img} alt="Card img cap" />
             <div className="card-body">
-                <h5 className="card-title">{meme.title}</h5>
+                <h5 className="card-title">{memeInfo.title}</h5>
                 <p className="rating">Rating: {rating} </p>
                 {user ?
-                <Voted/> :
-                <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
+                    <Voted /> :
+                    <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
         </div>
     )
