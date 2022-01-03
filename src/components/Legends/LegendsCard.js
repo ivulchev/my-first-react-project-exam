@@ -57,13 +57,13 @@ function LegendsCard({legend}) {
     }
     return (
         <div className="card" id={styles.cardPartial}>
+            <div className="card-body" id={styles.body}>
             <img src={legend.image} id={styles.img} alt="Card img cap" />
-            <div className="card-body">
                 <h5 className="card-title">{legend.name}</h5>
                 <p className="card-text" id={styles.teams}><strong>Teams:</strong> {legend.teams}</p>
                 <p className="card-text" id={styles.teams}><strong>Championships:</strong> {legend.championships}</p>
                 <p className="rating">Rating: {rating} </p>
-                <button className={styles.detailsBtn} > <Link to={`/legends/${legend._id}`} id={styles.loginLink} >
+                <button className={styles.detailsBtn} > <Link to={`/legends/${legend._id}`} id={styles.details} >
                     Details
                     </Link>
                 </button>

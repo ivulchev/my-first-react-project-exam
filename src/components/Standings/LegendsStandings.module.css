@@ -1,17 +1,29 @@
 #standings{
     width: 250px;
-    height: 340px;
-    margin-left: 40px;
-    font-style: oblique;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 30px;
+    white-space: nowrap; 
+    padding-bottom: 10px;
+    padding: 0px;
+    border-radius: 45px 15px 55px 15px;
+    background: linear-gradient(-45deg,  #ff5f6d, #ffc371);
 }
 #img{
-    height: 240px;
+    height: 250px;
     width: 100%;
 }
 #names{
     color: black;
     margin-left: 10px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block
+    display: inline-block;
+}
+#list{
+    background: linear-gradient(-45deg,  #ff5f6d, #ffc371);
+}
+#listCutted{
+    background: linear-gradient(-45deg,  #ff5f6d, #ffc371);
+    border-radius: 0px 0px 55px 0px;
 }

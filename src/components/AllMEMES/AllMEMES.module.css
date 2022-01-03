@@ -1,36 +1,54 @@
 #cardPartial {
-    width: 300px;
-    margin-left: auto;
+    width: 280px;
+    margin-left: 50px;
     margin-right: auto;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 30px;
     white-space: nowrap; 
     border: 3px solid #000000;
-    border-image: fill;
+    padding-bottom: 10px;
+    border-radius: 25px 25px 15px 15px;
+    background: linear-gradient(-45deg,  #659999, #f4791f);
+    font-family: "Lato", sans-serif;
 }
 
 .upBtn{
-    border-radius: 5px;
-    width: 85px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 5px;
-    margin-right: auto;
-    background-color:darkgreen
+    width: 60px;
+    display:inline-block;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:black;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#84f14e
 }
 .downBtn{
-    border-radius: 5px;
-    width: 85px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 5px;
-    margin-right: auto;;
-    background-color:red
+    width: 60px;
+    display:inline-block;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:black;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#f14e4e
 }
 
 #img{
-    height: 300px;
+    height: 250px;
     width: 100%;
+    border-radius: 21px 21px 0px 0px;
 }
 #loginLink{
     color: black;

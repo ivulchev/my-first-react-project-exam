@@ -6,8 +6,10 @@ import { useContext } from 'react';
 
 import { authServices } from "../../services/authService";
 import { AuthContext } from '../../contexts/AuthContext';
+import { useState } from "react";
 
 function Navbar() {
+    const [location, setLocation] = useState("home")
     const { user, logout } = useContext(AuthContext);
     let username = [];
     if(user){
@@ -24,39 +26,37 @@ function Navbar() {
         }
 
     }
+
     return (
-        <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
-            <NavLink className="navbar-brand" activeClassName="active" to="/">F1 FanHome</NavLink>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+        <nav id={`navbar-${location}`} className="navbar navbar-expand-lg navbar-light bg-light">
+            <NavLink className="navbar-brand" activeClassName="active" to="/" onClick={() => setLocation("home")}>F1 FanHome</NavLink>
+            <div className="collapse navbar" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/pilots">Drivers</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/pilots" onClick={() => setLocation("drivers")}>Drivers</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/teams">Teams</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/teams" onClick={() => setLocation("teams")}>Teams</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/legends">Legends</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/legends" onClick={() => setLocation("legends")}>Legends</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/posts/all">All Posts</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/posts/all" onClick={() => setLocation("allMemes")}>All Posts</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/calendar">Calendar</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/calendar" onClick={() => setLocation("calendar")}>Calendar</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/standings">Standings</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/standings" onClick={() => setLocation("liveStandings")}>Standings</NavLink>
                     </li>
                     {user ?
                         (<ul className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts">My Posts</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts" onClick={() => setLocation("myMemes")}>My Posts</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeClassName="active" to="/posts/create">Create Post</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/posts/create" onClick={() => setLocation("createMeme")}>Create Post</NavLink>
                             </li>
 
                             <li className="nav-item" >
@@ -65,10 +65,10 @@ function Navbar() {
                         </ul>) :
                         (<ul className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeClassName="active" to="/login" >Login</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/login" onClick={() => setLocation("login")} >Login</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/register" onClick={() => setLocation("register")}>Register</NavLink>
                             </li>
                         </ul>)}
                     <li className="nav-item">

@@ -32,7 +32,7 @@ function Calendar() {
     let thisSeason = (
         <div>
             <h3 id={styles.tableHeader}> <strong> Season 2021 Calendar</strong></h3>
-            <table className="table table-striped table-dark" id={styles.teamStandings}>
+            <table className="table table-striped table-dark" id={styles.standings} >
                 <thead>
                     <tr>
                         <th scope="col">Name</th>

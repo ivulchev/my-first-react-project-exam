@@ -2,13 +2,13 @@
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-style: oblique;
+    font-family: "Lato", sans-serif;
 }
 
 #tableHeader{
-    color:aliceblue ;
+    color:white ;
     margin-left: 70px;
-    font-style: oblique;
+    font-family: "Lato", sans-serif;
 }
 #radio{
     color:aliceblue ;
