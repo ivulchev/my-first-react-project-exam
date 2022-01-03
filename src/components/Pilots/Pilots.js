@@ -1,6 +1,7 @@
 import Card from "./Card"
 import { useEffect, useState } from "react";
 import { endpoints } from "../../services/services";
+import styles from "./Pilots.module.css";
 
 function Pilots() {
     const [pilots, setPilots] = useState([]);
@@ -13,8 +14,8 @@ function Pilots() {
             });
     },[]);
     return (
-        <header>
-            <div className="row">
+        <header id={styles.pilots}>
+            <div className="row" >
                 {pilots.map(x => <Card key={x._id} driver={x} />)}
             </div>
         </header>

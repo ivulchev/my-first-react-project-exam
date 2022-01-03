@@ -60,13 +60,13 @@ function Card({ driver }) {
     }
     return (
         <div className="card" id={styles.cardPartial}>
+            <div className="card-body" id={styles.body}>
             <img src={driver.logoUrl} alt="Card img cap" id={styles.image} />
-            <div className="card-body">
                 <h5 className="card-title">{driver.name}</h5>
-                <p className="card-title">Team: {driver.team} </p>
+                <p className="card-title" id={styles.description}>Team: {driver.team} </p>
                 <p className="card-text" id={styles.description} >{driver.description}</p>
                 <p className="rating">Rating: {rating} </p>
-                <button className={styles.detailsBtn} ><Link to={`pilots/${driver._id}`} id={styles.loginLink} >
+                <button className={styles.detailsBtn} ><Link to={`pilots/${driver._id}`} id={styles.details} >
                     Details
                 </Link></button>
                 {user ?

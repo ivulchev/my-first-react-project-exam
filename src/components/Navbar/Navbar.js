@@ -9,7 +9,10 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 function Navbar() {
     const { user, logout } = useContext(AuthContext);
-    let username = user.split("@")
+    let username = [];
+    if(user){
+        username = user.split("@");
+    }
     let history = useHistory();
     function onLogout() {
         if (window.confirm("Do you really want to logout?")) {

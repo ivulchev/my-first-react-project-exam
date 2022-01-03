@@ -16,6 +16,7 @@ function createMEME(ownerId, title, imageUrl) {
         title: title,
         image: imageUrl,
         rating: 0,
+        createdOn: Date(),
         voters: ["somevoters"]
     })
 }
