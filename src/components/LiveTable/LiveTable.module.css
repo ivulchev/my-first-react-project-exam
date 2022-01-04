@@ -2,16 +2,17 @@
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-style: oblique;
+    font-family:'Roboto',sans-serif;
 }
 
 #tableHeader{
     color:aliceblue ;
     margin-left: 70px;
-    font-style: oblique;
+    font-family:'Roboto',sans-serif;
 }
 #radio{
     color:aliceblue ;
     margin-right: 80px;
-    font-style: oblique;
+    margin-bottom: 10px;
+    font-family:'Roboto',sans-serif;
 }

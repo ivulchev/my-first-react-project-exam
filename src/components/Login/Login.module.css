@@ -6,6 +6,7 @@
     margin-right: auto;
     color: #000000;
     font-size:larger;
+    font-family:'Roboto',sans-serif;
 }
  
 .loginBtn{
@@ -28,5 +29,6 @@
 #pageTitle{
     margin-bottom: 20px;
     color: aliceblue;
-    font-family: "Lato", sans-serif;
+    font-family:'Roboto',sans-serif;
+
 }

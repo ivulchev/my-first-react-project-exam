@@ -18,51 +18,51 @@
 
 #navbar-home{
    background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 
 #navbar-drivers{
    background: linear-gradient(+45deg, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 
 #navbar-teams{
    background: linear-gradient(to top, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 
 #navbar-legends{
    background: linear-gradient(to bottom, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 
 #navbar-allMemes{
    background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 
 #navbar-calendar{
    background: linear-gradient(to left, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 
 #navbar-liveStandings{
    background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 #navbar-myMemes{
    background: linear-gradient(+45deg, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 #navbar-createMeme{
    background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 #navbar-login{
    background: linear-gradient(to left, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }
 #navbar-register{
    background: linear-gradient(to top, #aa4b6b, #6b6b83, #3b8d99);
-  font-family: "Lato", sans-serif;
+  font-family:'Roboto',sans-serif;
 }

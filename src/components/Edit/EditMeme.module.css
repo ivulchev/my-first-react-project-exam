@@ -6,6 +6,7 @@
     margin-right: auto;
     color: #000000;
     font-size:larger;
+    font-family:'Roboto',sans-serif;
 }
  
 .editBtn{
@@ -16,7 +17,7 @@
 #pageTitle{
     margin-bottom: 20px;
     color: aliceblue;
-    font-style:oblique;
+    font-family:'Roboto',sans-serif;
 }
 
 .backLink{

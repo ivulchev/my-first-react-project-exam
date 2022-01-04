@@ -9,6 +9,7 @@
     padding-bottom: 10px;
     border-radius: 25px 25px 15px 15px;
     background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
+    font-family:'Roboto',sans-serif;
 }
 
 #image{
@@ -20,6 +21,7 @@
 #description{
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family:'Roboto',sans-serif;
 }
 
 .upBtn{
@@ -82,14 +84,17 @@
     margin-left: 5px;
     text-decoration: none;
     display: inline-block;
+    font-family:'Roboto',sans-serif;
 }
 
 #body{
     border-radius: 21px 21px 0px 0px;
     padding: 0px;
     background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
+    font-family:'Roboto',sans-serif;
 }
 #details{
     color: black;
     text-decoration: none;
+    font-family:'Roboto',sans-serif;
 }

@@ -9,12 +9,13 @@
     padding-bottom: 10px;
     border-radius: 25px 25px 15px 15px;
     background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
-    font-family: "Lato", sans-serif;
+    font-family:'Roboto',sans-serif;
 }
   
 #description{
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family:'Roboto',sans-serif;
 }
 
 .upBtn{
@@ -77,6 +78,7 @@ button:hover{
 }
 #teams{
     overflow-x: scroll;
+    font-family:'Roboto',sans-serif;
 }
 #loginLink{
     color: black;
@@ -84,12 +86,15 @@ button:hover{
     margin-left: 5px;
     text-decoration: none;
     display: inline-block;
+    font-family:'Roboto',sans-serif;
 }
 
 #body{
     padding: 0px;
+    font-family:'Roboto',sans-serif;
 }
 #details{
     color: black;
     text-decoration: none;
+    font-family:'Roboto',sans-serif;
 }
