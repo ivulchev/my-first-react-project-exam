@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Calendar.module.css"
+import Loading from "../Loading/Loading";
+
 function Calendar() {
     const [year, setYear] = useState("2021")
     const [thisYear, setThisYear] = useState([]);
@@ -55,10 +57,10 @@ function Calendar() {
             </table>
         </div>
     )
-    return (
-        <header className="row" id={styles.standings}>
-            {thisSeason}
-        </header>
+    return (thisYear.length > 0 ?
+            <header className="row" id={styles.standings}>
+                {thisSeason}
+            </header> : <Loading />
     )
 
 }

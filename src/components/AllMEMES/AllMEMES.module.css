@@ -58,8 +58,9 @@
     display: inline-block;
 }
 #radio{
-    color:aliceblue ;
-    margin-right: 80px;
+    color:black;
+    background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
+    border-radius: 25px;
+    box-shadow: black;
     margin-bottom: 30px;
-    font-style: oblique;
 }

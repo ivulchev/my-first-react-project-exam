@@ -4,18 +4,32 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import ErrorPage from "../Error/ErrorPage";
 import { endpoints } from "../../services/services";
+import Loading from "../Loading/Loading";
 function LegendDetails() {
     let history = useHistory()
-    const [legend, setLegend] = useState({})
+    const [legend, setLegend] = useState({});
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isError, setIsError] = useState(false);
     let { id } = useParams()
     useEffect(() => {
         fetch(`${endpoints.baseUrl}legends/${id}.json`)
             .then(res => res.json())
             .then(result => {
-                setLegend(result)
-            });
+                if(result !== null){
+                    const timer = setTimeout(() => {
+                        setLegend(result)
+                        setIsLoaded(true)
+                    }, 1000);
+                }else{
+                    setIsError(true)
+                }
+            })
+            .catch((function (error) {
+                setIsLoaded(false)
+            }))
     }, []);
-    return (legend.name === undefined ? <ErrorPage /> :
+    return (isError ? <ErrorPage/> : <div>
+        { isLoaded ?
         <div className="card" id={styles.details} >
             <img src={legend.image} className="card-img-top" alt="..." />
             <div className="card-body">
@@ -25,8 +39,10 @@ function LegendDetails() {
             </div>
 
             <div className="card-body">
-            <button onClick={() => history.goBack()} className ="card-link" id={styles.goBack}>Go Back</button>
+                <button onClick={() => history.goBack()} className="card-link" id={styles.goBack}>Go Back</button>
             </div>
+        </div>
+        : <Loading/> }
         </div>
     )
 }

@@ -4,6 +4,7 @@ import ErrorPage from "../Error/ErrorPage";
 import { endpoints } from "../../services/services";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
+import Loading from "../Loading/Loading"
 function MyMEMES() {
     const {user} = useContext(AuthContext);
     const [myMemes, setMyMemes] = useState([]);
@@ -18,7 +19,7 @@ function MyMEMES() {
     },[]);
     return ( !user ? <ErrorPage/> :
         <div className="row">
-            {myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>)}
+            {(myMemes.length > 0) ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <Loading/>}
         </div>
     )
 }

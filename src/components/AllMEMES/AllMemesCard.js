@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState, useEffect, useContext } from "react";
 import { endpoints } from "../../services/services";
-import { AuthContext } from "../../contexts/AuthContext"
+import { AuthContext } from "../../contexts/AuthContext";
+
+
 function AllMemesCard({ meme }) {
     const [id, setId] = useState(meme[0]);
     const [memeInfo, setMemeInfo] = useState(meme[1])
@@ -65,13 +67,13 @@ function AllMemesCard({ meme }) {
         <div className="card" id={styles.cardPartial}>
             <img src={memeInfo.image} id={styles.img} alt="Card img cap" />
             <div className="card-body">
-                <h5 className="card-title">{memeInfo.title}</h5>
-                <p className="rating">Rating: {rating} </p>
+                <h5 className="card-title">{memeInfo.title} </h5>
+                <p className="rating">Rating: {rating}   </p>
                 {user ?
                     <Voted /> :
                     <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
-        </div>
+        </div> 
     )
 }
 

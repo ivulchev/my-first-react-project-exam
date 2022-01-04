@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import ErrorPage from "../Error/ErrorPage";
 
 function CreateMeme() {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -15,15 +15,15 @@ function CreateMeme() {
         let imageUrl = formData.get('imageUrl');
         if (title.length > 0 && imageUrl.length > 0) {
             services.createMEME(localStorage._id, title, imageUrl)
-            .then(() => {
-                window.alert("You created post succesfully!")
-                history.push("/posts/all")
-            })
+                .then(() => {
+                    window.alert("You created post succesfully!")
+                    history.push("/posts/all")
+                })
         } else {
             window.alert("Empty Fields!")
         }
     }
-    return ( !user ? <ErrorPage/> :
+    return (!user ? <ErrorPage /> :
         <form onSubmit={onSubmit} id={styles.createMeme}>
             <h1 id={styles.pageTitle}>Create MEME</h1>
             <div className="form-group">

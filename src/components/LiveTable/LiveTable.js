@@ -1,5 +1,6 @@
 import styles from "./LiveTable.module.css";
 import { useState, useEffect } from "react";
+import Loading from "../Loading/Loading";
 function LiveTable() {
     const [table, setTable] = useState("drivers")
     const [drivers, setDrivers] = useState([]);
@@ -73,7 +74,7 @@ function LiveTable() {
             </table>
         </div>
     )
-    return (
+    return ( drivers.length > 0 ?
         <div>
             <div className="btn-group btn-group-toggle" data-toggle="buttons" id={styles.radio}>
                 <label className={"btn btn-secondary " + (table === "drivers" ? "active" : null)}>
@@ -86,7 +87,7 @@ function LiveTable() {
             <header className="row" id={styles.standings}>
                 {table === "drivers" ? driverLeaderboard : teamLeaderboard}
             </header>
-        </div>
+        </div> : <Loading/>
     )
 }
 

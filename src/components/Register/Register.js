@@ -1,5 +1,4 @@
 import { useHistory } from "react-router";
-import { authServices } from "../../services/authService";
 import styles from "./Register.module.css";
 import ErrorPage from "../Error/ErrorPage";
 import { auth } from "../../services/initializeFirebase";

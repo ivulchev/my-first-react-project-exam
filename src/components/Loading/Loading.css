@@ -1,0 +1,27 @@
+@keyframes load {
+	0% {
+		opacity: 0.08;
+		
+		filter: blur(2px);
+		letter-spacing: 11px;
+	}
+	100% {
+        letter-spacing: 73px;
+	}
+}
+
+.animate {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: auto;
+	font-family: Helvetica, sans-serif, Arial;
+	animation: load 1.2s infinite 0s ease-in-out;
+	animation-direction: alternate;
+	text-shadow: 0 0 1px white;
+    height: 66vh;
+	color: white;
+    font-size: 90px;
+}
+
