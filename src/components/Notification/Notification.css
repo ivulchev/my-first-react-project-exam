@@ -1,0 +1,26 @@
+.btn-close {
+    display: none;
+    
+}
+.d-inline-block{
+    box-shadow: -10px 5px 20px rgba(0, 0, 0, 1.0);
+    box-sizing: border-box;
+    position: fixed;
+    top: 150px;
+    right: 50px;
+    border-radius: 15px;
+    width: 300px;
+    color: black;
+    
+}
+.toast-body{
+    font-family: 'Quicksand';
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+.toast-head{
+    font-family: 'Roboto',sans-serif;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 25px;
+}

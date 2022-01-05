@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { useContext } from 'react';
 
 import { AuthContext } from '../../contexts/AuthContext';
+import {useNotificationContext, types} from "../../contexts/NotificationContext"
 import { authServices } from "../../services/authService";
 import ErrorPage from "../Error/ErrorPage";
 import { auth } from "../../services/initializeFirebase";
@@ -11,6 +12,7 @@ import { auth } from "../../services/initializeFirebase";
 
 function Login() {
     const { user, login } = useContext(AuthContext);
+    const { addNotification } = useNotificationContext();
     let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -25,7 +27,9 @@ function Login() {
                     let user = authServices.getData()
                     if (user.email) {
                         login(user.email)
+                        addNotification("You Logged in succesfully!", types.succes)
                         history.push("/")
+                        
                     }
 
                 })
@@ -33,13 +37,14 @@ function Login() {
                     let errorCode = error.code;
                     let errorMessage = error.message;
                     if (errorCode === 'auth/wrong-password') {
-                        alert('Wrong password.');
+                        addNotification('Wrong password.', types.error)
                       } else {
-                        alert(errorMessage);
+                         let warning = errorMessage.slice(9, -22)
+                        addNotification(warning, types.warn)
                       }
                 }))
         } else {
-            window.alert("Empty Fields!")
+            addNotification("Empty Fields!", types.warn)
         }
     }
     return (user ? <ErrorPage /> :

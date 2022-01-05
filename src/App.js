@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import { useState } from "react";
 import { AuthContext } from './contexts/AuthContext';
+import { NotificationProvider } from './contexts/NotificationContext';
 
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
@@ -22,6 +23,7 @@ import EditMeme from './components/Edit/Edit';
 import Calendar from "./components/Calendar/Calendar";
 import { useEffect } from 'react';
 import LiveTable from './components/LiveTable/LiveTable';
+import Notification from './components/Notification/Notification';
 
 
 
@@ -39,8 +41,11 @@ function App() {
   },[])
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
+      <NotificationProvider>
       <div className="App">
+        
         <Navbar />,
+        <Notification/>
         <Switch>
           <Route exact path="/" ><Home /></Route>,
           <Route exact path="/pilots" ><Pilots /></Route>,
@@ -61,6 +66,7 @@ function App() {
         </Switch>
         <Footer />
       </div>
+      </NotificationProvider>
     </AuthContext.Provider>
   );
 }
