@@ -43,9 +43,8 @@ function App() {
     <AuthContext.Provider value={{ user, login, logout }}>
       <NotificationProvider>
       <div className="App">
-        
-        <Navbar />,
-        <Notification/>
+      <Notification/>
+      <Navbar />
         <Switch>
           <Route exact path="/" ><Home /></Route>,
           <Route exact path="/pilots" ><Pilots /></Route>,

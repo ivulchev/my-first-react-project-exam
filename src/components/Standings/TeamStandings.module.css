@@ -2,7 +2,7 @@
     width: 250px;
     margin-left: 50px;
     margin-right: auto;
-    margin-top: auto;
+    margin-top: 5px;
     margin-bottom: 30px;
     white-space: nowrap; 
     padding-bottom: 10px;
@@ -11,7 +11,7 @@
     border-radius: 45px 15px 55px 15px;
     box-shadow: -10px 5px 20px rgba(0, 0, 0, 1.0);
     background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
-    font-family: "Lato", sans-serif;
+    font-family: 'Roboto',sans-serif;
 }
 #img{
     height: 250px;
@@ -25,11 +25,9 @@
 }
 #list{
     background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
-    font-family: "Lato", sans-serif;
 }
 #listCutted{
     background: linear-gradient(-45deg, #aa4b6b, #6b6b83, #3b8d99);
-    font-family: "Lato", sans-serif;
     border-radius: 0px 0px 55px 15px;
 }
 #names:hover{

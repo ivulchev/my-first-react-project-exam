@@ -8,7 +8,7 @@ const Notification = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             hideNotification()
-        }, 5000);
+        }, 7000);
     },[notification])
 
     if (!notification.show) {
