@@ -4,9 +4,11 @@ import { useHistory } from "react-router";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import ErrorPage from "../Error/ErrorPage";
+import { useNotificationContext, types } from "../../contexts/NotificationContext";
 
 function CreateMeme() {
     const { user } = useContext(AuthContext);
+    const {addNotification} = useNotificationContext();
     let history = useHistory()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -16,11 +18,14 @@ function CreateMeme() {
         if (title.length > 0 && imageUrl.length > 0) {
             services.createMEME(localStorage._id, title, imageUrl)
                 .then(() => {
-                    window.alert("You created post succesfully!")
-                    history.push("/posts/all")
+                    addNotification("You created your post succesfully!", types.succes)
+                        history.push("/posts/all")      
                 })
+                .catch((function (error) { 
+                    addNotification(error.message, types.error)
+                }))
         } else {
-            window.alert("Empty Fields!")
+            addNotification("Empty Fields!", types.warn)
         }
     }
     return (!user ? <ErrorPage /> :

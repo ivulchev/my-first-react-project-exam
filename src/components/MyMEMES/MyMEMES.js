@@ -4,10 +4,12 @@ import ErrorPage from "../Error/ErrorPage";
 import { endpoints } from "../../services/services";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
-import Loading from "../Loading/Loading"
+import Loading from "../Loading/Loading";
+import styles from "./MyMEMES.module.css";
 function MyMEMES() {
     const {user} = useContext(AuthContext);
     const [myMemes, setMyMemes] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         fetch(`${endpoints.baseUrl}memes.json`)
             .then(res => res.json())
@@ -15,11 +17,15 @@ function MyMEMES() {
                 let array = Object.entries(result)
                 array = array.filter((meme) => meme[1]._ownerId === localStorage._id)
                 setMyMemes(array)
-            });
+                setIsLoaded(true)
+            })
+            .catch(()=>{
+                return <ErrorPage/>
+            })
     },[]);
     return ( !user ? <ErrorPage/> :
         <div className="row">
-            {(myMemes.length > 0) ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <Loading/>}
+            {isLoaded ?(myMemes.length > 0 ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <h1 id={styles.empty}>You don't have any posts!</h1> ) : <Loading/>}
         </div>
     )
 }

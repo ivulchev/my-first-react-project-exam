@@ -1,17 +1,17 @@
-.btn-close {
-    display: none;
-    
-}
-.d-inline-block{
+.fade{
+    position:absolute;
+    text-align: center;
     box-shadow: -10px 5px 20px rgba(0, 0, 0, 1.0);
     box-sizing: border-box;
-    position: absolute;
     top: 150px;
     right: 50px;
     border-radius: 15px;
     width: 300px;
     color: black;
-    
+}
+
+.btn-close {
+    display: none;
 }
 .toast-body{
     font-family: 'Quicksand';
@@ -19,7 +19,7 @@
     margin-bottom: 10px;
     font-size: 25px;
 }
-.toast-head{
+.toast-header{
     font-family: 'Roboto',sans-serif;
     border-radius: 15px 15px 0px 0px;
     font-size: 25px;

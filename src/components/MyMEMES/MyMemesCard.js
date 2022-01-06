@@ -4,14 +4,17 @@ import * as requester from "../../services/requester";
 import { useHistory } from "react-router";
 import { endpoints } from "../../services/services";
 import { useState } from "react";
+import {useNotificationContext, types} from "../../contexts/NotificationContext"
 function MyMemesCard({ meme }) {
     const [id, setId] = useState(meme[0]);
-    const [memeInfo, setMemeInfo] = useState(meme[1])
+    const [memeInfo, setMemeInfo] = useState(meme[1]);
+    const {addNotification} = useNotificationContext();
     let history = useHistory()
     function deleteMeme() {
         if(window.confirm("Do you really want to delete this item?")){
         requester.del(`${endpoints.baseUrl}memes/${id}.json`)
-        return history.push("/posts/create")
+        addNotification("You succesfully delete you posts!", types.succes)
+        history.push("/posts/create")
         }
 
     }

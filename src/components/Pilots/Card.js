@@ -11,7 +11,6 @@ import { endpoints } from "../../services/services";
 function Card({ driver }) {
     const [rating, setRating] = useState(driver.rating);
     const { user } = useContext(AuthContext);
-
     function voteUp(e) {
         e.preventDefault();
         if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {

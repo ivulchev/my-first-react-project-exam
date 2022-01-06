@@ -47,3 +47,14 @@
     height: 300px;
     width: 100%;
 }
+#empty{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: auto;
+    margin-top: 150px;
+	font-family:'Roboto',sans-serif;
+    color: white;
+    letter-spacing: 13px;
+}
