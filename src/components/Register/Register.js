@@ -2,8 +2,10 @@ import { useHistory } from "react-router";
 import styles from "./Register.module.css";
 import ErrorPage from "../Error/ErrorPage";
 import { auth } from "../../services/initializeFirebase";
+import {useNotificationContext, types} from "../../contexts/NotificationContext"
 function Register() {
     let history = useHistory()
+    const { addNotification } = useNotificationContext();
     function onSubmit(e){
         e.preventDefault()
         let formData = new FormData(e.currentTarget)
@@ -13,13 +15,13 @@ function Register() {
         if(email.length > 5 && password.length > 5 && rePassword.length > 5){
             if(password === rePassword){
                 auth.createUserWithEmailAndPassword(email, password)
-                window.alert("Your registration was succesfull! You can log in now.")
+                addNotification("Your registration was succesfull! You can log in now.", types.succes)
                 history.push("/login")
             }else{
-                window.alert("Password and Repeat Password doesn't match!")
+                addNotification("Password and Repeat Password doesn't match!", types.warn)
             }
         }else{
-            window.alert("You must enter minimum 6 symbols!")
+            addNotification("You must enter minimum 6 symbols!", types.warn)
         }
     }
     return (localStorage.email ? <ErrorPage/> :
