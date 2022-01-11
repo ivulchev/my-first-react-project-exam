@@ -1,5 +1,7 @@
 .navbar{
   position: sticky;
+  margin-right: 0px;
+  width: auto;
 }
 
 
