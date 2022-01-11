@@ -9,16 +9,14 @@ function Legends() {
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)
-                const timer = setTimeout(() => {
-                    setLegends(array)
-                }, 1500);
-                
+                setLegends(array)
+
             });
-    },[]);
+    }, []);
     return (
         <header>
             <div className="row">
-               {(legends.length > 0)?legends.map(x =><LegendsCard key={x._id} legend={x}/> ) : <Loading/>} 
+                {(legends.length > 0) ? legends.map(x => <LegendsCard key={x._id} legend={x} />) : <Loading />}
             </div>
         </header>
     )

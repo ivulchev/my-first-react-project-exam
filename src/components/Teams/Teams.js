@@ -10,15 +10,13 @@ function Teams() {
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)
-                const timer = setTimeout(() => {
-                    setTeams(array)
-                }, 2000);
+                setTeams(array)
             });
-    },[]);
+    }, []);
     return (
         <header>
             <div className="row" >
-               {(teams.length > 0) ?teams.map(x => <TeamCard key={x._id} team={x}/> ) : <Loading/>}
+                {(teams.length > 0) ? teams.map(x => <TeamCard key={x._id} team={x} />) : <Loading />}
             </div>
         </header>
     )

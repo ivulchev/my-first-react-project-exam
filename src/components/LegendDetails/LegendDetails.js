@@ -15,12 +15,10 @@ function LegendDetails() {
         fetch(`${endpoints.baseUrl}legends/${id}.json`)
             .then(res => res.json())
             .then(result => {
-                if(result !== null){
-                    const timer = setTimeout(() => {
-                        setLegend(result)
-                        setIsLoaded(true)
-                    }, 1000);
-                }else{
+                if (result !== null) {
+                    setLegend(result)
+                    setIsLoaded(true)
+                } else {
                     setIsError(true)
                 }
             })
@@ -28,22 +26,22 @@ function LegendDetails() {
                 setIsLoaded(false)
             }))
     }, []);
-    return (isError ? <ErrorPage/> : <div>
-        { isLoaded ?
-        <div className="card" id={styles.details} >
-            <img src={legend.image} className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{legend.name}</h5>
-                <p className="card-text">{legend.teams}</p>
-                <p className="card-text">{legend.description}</p>
-            </div>
+    return (isError ? <ErrorPage /> : <div>
+        {isLoaded ?
+            <div className="card" id={styles.details} >
+                <img src={legend.image} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{legend.name}</h5>
+                    <p className="card-text">{legend.teams}</p>
+                    <p className="card-text">{legend.description}</p>
+                </div>
 
-            <div className="card-body">
-                <button onClick={() => history.goBack()} className="card-link" id={styles.goBack}>Go Back</button>
+                <div className="card-body">
+                    <button onClick={() => history.goBack()} className="card-link" id={styles.goBack}>Go Back</button>
+                </div>
             </div>
-        </div>
-        : <Loading/> }
-        </div>
+            : <Loading />}
+    </div>
     )
 }
 export default LegendDetails

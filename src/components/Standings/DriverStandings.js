@@ -13,11 +13,8 @@ function DriverStandings() {
                 array.sort((a, b) => {
                     return b.rating - a.rating || a.name.localeCompare(b.name)
                 })
-                const timer = setTimeout(() => {
                     setFirst(array[0])
                     setDrivers(array)
-                }, 1000);
-
             });
     }, []);
     return (

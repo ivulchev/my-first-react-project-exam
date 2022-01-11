@@ -11,9 +11,7 @@ function Pilots() {
             .then(res => res.json())
             .then(result => {
                 let array = Object.values(result)
-                const timer = setTimeout(() => {
                     setPilots(array)
-                }, 2000);
             });
     },[]);
     return (

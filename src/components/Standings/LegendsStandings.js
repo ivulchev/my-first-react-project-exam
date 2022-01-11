@@ -14,18 +14,15 @@ function LegendsStandings() {
                 array.sort((a, b) => {
                     return b.rating - a.rating || a.name.localeCompare(b.name)
                 })
-                const timer = setTimeout(() => {
-                    setFirst(array[0])
-                    setLegends(array)
-                }, 1000);
-
+                setFirst(array[0])
+                setLegends(array)
             });
     }, []);
     return (
         <header>
             <div className="card" id={styles.standings}>
                 <h3>Top Legends</h3>
-                {<img src={first.image} id={styles.img}  />}
+                {<img src={first.image} id={styles.img} />}
                 <ul className="list-group list-group-flush">
                     <ul className="list-group list-group-flush">
                         {(!legends.length == 0) ? <li className="list-group-item" id={styles.list} key={legends[0]._id} > <strong>1st: </strong>  <Link id={styles.names} to={`/legends/${legends[0]._id}`} className="card-link">{legends[0].name}</Link>: <strong>{legends[0].rating}</strong></li> : <li id={styles.list} className="list-group-item" ><li id={styles.names} className="card-link">Loading...</li></li>}

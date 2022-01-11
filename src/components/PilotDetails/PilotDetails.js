@@ -16,10 +16,8 @@ function PilotDetails() {
             .then(res => res.json())
             .then(result => {
                 if(result !== null){
-                    const timer = setTimeout(() => {
                         setPilot(result)
                         setIsLoaded(true)
-                    }, 1000);
                 }else{
                     setIsError(true)
                 }
