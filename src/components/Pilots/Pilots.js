@@ -15,11 +15,9 @@ function Pilots() {
             });
     },[]);
     return (
-        <header id={styles.pilots}>
-            <div className="row" >
+            <div className="row" id={styles.pilots} >
                 {(pilots.length > 0) ? pilots.map(x => <Card key={x._id} driver={x} />) : <Loading/>}
             </div>
-        </header>
     )
 }
 

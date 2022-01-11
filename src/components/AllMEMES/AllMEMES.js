@@ -34,7 +34,7 @@ function AllMEMES() {
                     <input type="radio" name="options" id="option2" autocomplete="off" checked={() => { setSortbBy("date") }} onClick={() => setSortbBy("date")} /> Sort by Date
                 </label>
             </div>
-            <div className="row" >
+            <div className="row" id={styles.memes}>
                 {memes.map((x) => <AllMemesCard key={x[0]} meme={x} />)}
             </div>
         </div> : <Loading />
