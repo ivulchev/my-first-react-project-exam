@@ -1,7 +1,7 @@
 # F1- FanHome project for my react exam
 
 ## My first repository and my forst project
-It's my first time to make a project. It's about one of my favourite sports Formula 1. The app has some dynamic pages with drivers, teams, legends and memes. They are reachable by every user, but guests cannot make interaction with them. The App have login, register and logout services. Also likes and dislikes of every team, driver, legend or meme, for just one time. Can't be voted twice per one object. Owners of memes can't vote for them but can do edit and delete operation. The App also has details page for every driver,team or legend. Pages Calendar and Standings makes request to external API with live time information about points and races. I used React.js for this App. The app is deployed in Firebase. The link - https://f1-fanhome.web.app/.
+It's my first time to make a project. It's about one of my favourite sports Formula 1. The app has some dynamic pages with drivers, teams, legends and memes. They are reachable by every user, but guests cannot make interaction with them. The App have login, register and logout services. Also likes and dislikes of every team, driver, legend or meme, for just one time. Can't be voted twice per one object. Owners of memes can't vote for them but can do edit and delete operation. The App also has details page for every driver,team or legend. For some interactions with objects and some authentication services the app have alerts and modal dialog boxes. Pages Calendar and Standings makes request to external API with live time information about points and races. I used React.js for this App. The app is deployed in Firebase. The link - https://f1-fanhome.web.app/.
 
 ## Available Scripts
 
@@ -35,9 +35,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## `back-end server`
-
-You can start the back - end server with command prompt. In the directory open a command prompt and run node server.js.
 
 ## Credits
 I used images from official Formula 1 site for drivers and teams. External API for my live time standings is https://rapidapi.com/sportcontentapi/api/f1-live-motorsport-data/
