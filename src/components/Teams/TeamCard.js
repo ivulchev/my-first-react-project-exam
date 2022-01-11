@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import { endpoints } from "../../services/services";
-import { Modal, Button } from "react-bootstrap"
+import { Modal, Button } from "react-bootstrap";
 
 
 function TeamCard({ team }) {
