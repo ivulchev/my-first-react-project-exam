@@ -6,29 +6,41 @@ import { useEffect, } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import { endpoints } from "../../services/services";
+import { Modal, Button } from "react-bootstrap"
 
 
 function Card({ driver }) {
+    const [show, setShow] = useState(false);
+    const [upDown, setUpDown] = useState("");
+    function clickUp(){
+        handleShow()
+        setUpDown("Up")
+    }
+    function clickDown(){
+        handleShow()
+        setUpDown("Down")
+    }
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    
     const [rating, setRating] = useState(driver.rating);
     const { user } = useContext(AuthContext);
     function voteUp(e) {
         e.preventDefault();
-        if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
             requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email] })
                 .then(() => {
                     setRating(rating + 1);
+                    handleClose()
                 })
-        }
     }
     function voteDown(e) {
         e.preventDefault();
-        if (window.confirm("Do you really want to vote? You can vote only once per Driver!")) {
             requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] })
                 .then(() => {
                     setRating(rating - 1);
+                    handleClose()
                 })
-
-        }
     }
     const [isVoted, setIsVoted] = useState(Boolean)
     useEffect(() => {
@@ -43,10 +55,10 @@ function Card({ driver }) {
                 }
             })
     }, [rating])
-    let upButton = <button className={styles.upBtn} onClick={voteUp}>
+    let upButton = <button className={styles.upBtn} onClick={clickUp}>
         Up
     </button>
-    let downButton = <button className={styles.downBtn} onClick={voteDown}>
+    let downButton = <button className={styles.downBtn} onClick={clickDown}>
         Down
     </button>
     let buttons = [upButton, downButton]
@@ -74,6 +86,20 @@ function Card({ driver }) {
                 }
 
             </div>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>F1 FanHome:</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>You can vote only once per driver! Do you really want to proceed?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={upDown === "Up" ? voteUp : voteDown}>
+                        Yes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }

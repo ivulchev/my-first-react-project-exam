@@ -1,3 +1,8 @@
+.navbar{
+  position: sticky;
+}
+
+
 #logout-tag:hover{
   cursor: pointer;
 }
@@ -69,6 +74,7 @@
   font-family:'Roboto',sans-serif;
 }
 .fade.modal.show{
+  position:sticky;
   width: 400px;
 }
 .modal-backdrop{
@@ -79,7 +85,9 @@
   visibility: hidden;
   margin: auto;
 }
+
 .modal-content{
+  margin-bottom: 200px;
   font-family:'Roboto',sans-serif;
   border-radius: 25px;
   width: 400px;
@@ -95,6 +103,7 @@
 
 }
 .modal-body{
+  padding: 0px;
   color: white;
   font-size: 25px;
 }
