@@ -14,17 +14,16 @@ const Notification = () => {
     if (!notification.show) {
         return null;
     }
-    return (
+    return ( 
         <Toast className="d-inline-block m-1" bg={notification.type}>
             <Toast.Header>
-                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                <img src="" className="rounded me-2" alt="" />
                 <strong >F1 Fanhome:</strong>
             </Toast.Header>
             <Toast.Body>
                 {notification.message}
             </Toast.Body>
         </Toast>
-        
     )
 }
 

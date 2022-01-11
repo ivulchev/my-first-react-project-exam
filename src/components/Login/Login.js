@@ -27,7 +27,6 @@ function Login() {
                     let user = authServices.getData()
                     if (user.email) {
                         login(user.email)
-                        addNotification("You Logged in succesfully!", types.succes)
                         history.push("/")
                         
                     }

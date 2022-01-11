@@ -1,5 +1,6 @@
 import "./Navbar.css"
 import { NavLink, Link } from "react-router-dom";
+import { Modal, Button } from "react-bootstrap"
 
 import { useHistory } from 'react-router';
 import { useContext } from 'react';
@@ -12,20 +13,23 @@ function Navbar() {
     const [location, setLocation] = useState("home")
     const { user, logout } = useContext(AuthContext);
     let username = [];
-    if(user){
+    if (user) {
         username = user.split("@");
     }
     let history = useHistory();
     function onLogout() {
-        if (window.confirm("Do you really want to logout?")) {
-            authServices.logout()
-                .then(() => {
-                    logout()
-                    history.push("/login")
-                })
-        }
+        authServices.logout()
+            .then(() => {
+                logout()
+                handleClose()
+                history.push("/login")
+            })
 
     }
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <nav id={`navbar-${location}`} className="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,7 +64,7 @@ function Navbar() {
                             </li>
 
                             <li className="nav-item" >
-                                <Link className="nav-link" to="" onClick={onLogout}>Logout</Link>
+                                 <a className="nav-link" onClick={handleShow} id="logout-tag">Logout</a>
                             </li>
                         </ul>) :
                         (<ul className="navbar-nav">
@@ -76,6 +80,20 @@ function Navbar() {
                     </li>
                 </ul>
             </div>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>F1 FanHome:</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Do you really want to logout?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={onLogout}>
+                        Ok
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </nav>
     )
 }

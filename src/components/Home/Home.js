@@ -5,7 +5,7 @@ import LegendsStandings from "../Standings/LegendsStandings";
 function Home() {
     return (
         <header className="row">
-            <DriverStandings/>,
+            <DriverStandings/>
             <TeamsStandings/>
             <LegendsStandings/>
             <p className={styles.homeParagraph}>"First, you have to finish." - Michael Schumacher</p>

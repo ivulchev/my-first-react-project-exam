@@ -1,4 +1,6 @@
-
+#logout-tag:hover{
+  cursor: pointer;
+}
 
 .active{
   font-weight: 900;
@@ -65,4 +67,42 @@
 #navbar-register{
    background: linear-gradient(to top, #aa4b6b, #6b6b83, #3b8d99);
   font-family:'Roboto',sans-serif;
+}
+.fade.modal.show{
+  width: 400px;
+}
+.modal-backdrop{
+  margin: auto;
+  visibility: hidden;
+}
+.modal{
+  visibility: hidden;
+  margin: auto;
+}
+.modal-content{
+  font-family:'Roboto',sans-serif;
+  border-radius: 25px;
+  width: 400px;
+  visibility: visible;
+  background-color: #d45a43;
+  border-color: #d45a43;
+  border-width: 2px;
+}
+.modal-header{
+  border-radius: 25px 25px 0px 0px;
+  text-align: center;
+  border-color: #d45a43;
+
+}
+.modal-body{
+  color: white;
+  font-size: 25px;
+}
+.modal-footer{
+  border-radius: 0px 0px 25px 25px;
+  background-color: white;
+}
+.btn-primary{
+  background-color: #d45a43;
+  border-color: #d45a43;
 }

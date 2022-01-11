@@ -42,7 +42,6 @@ function EditMeme() {
             if (window.confirm("Do you really want to edit this item?")) {
                 requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { title, image })
                     .then(() => {
-                        addNotification("You succesfully edited your post!", types.succes)
                         history.push("/posts/my-posts")
                     })
                     .catch((function (error) { 

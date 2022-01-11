@@ -18,7 +18,6 @@ function CreateMeme() {
         if (title.length > 0 && imageUrl.length > 0) {
             services.createMEME(localStorage._id, title, imageUrl)
                 .then(() => {
-                    addNotification("You created your post succesfully!", types.succes)
                         history.push("/posts/all")      
                 })
                 .catch((function (error) { 

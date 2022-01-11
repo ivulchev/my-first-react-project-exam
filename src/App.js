@@ -42,25 +42,25 @@ function App() {
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       <NotificationProvider>
-      <Notification/>
       <div className="App">
       <Navbar />
+      <Notification/>
         <Switch>
-          <Route exact path="/" ><Home /></Route>,
-          <Route exact path="/pilots" ><Pilots /></Route>,
-          <Route exact path="/pilots/:id" ><PilotDetails /></Route>,
-          <Route exact path="/teams" ><Teams /></Route>,
-          <Route exact path="/teams/:id" ><TeamDetails /></Route>,
-          <Route exact path="/legends" ><Legends /></Route>,
-          <Route exact path="/legends/:id" ><LegendDetails /></Route>,
-          <Route exact path="/posts/my-posts" ><MyMEMES /></Route>,
-          <Route exact path="/posts/my-posts/edit/:id" ><EditMeme /></Route>,
-          <Route exact path="/posts/create" ><CreateMeme /></Route>,
-          <Route exact path="/posts/all" ><AllMEMES /></Route>,
-          <Route exact path="/login" ><Login /></Route>,
-          <Route exact path="/register"><Register /></Route>,
-          <Route exact path="/calendar"><Calendar /></Route>,
-          <Route exact path="/standings"><LiveTable /></Route>,
+          <Route exact path="/" ><Home /></Route>
+          <Route exact path="/pilots" ><Pilots /></Route>
+          <Route exact path="/pilots/:id" ><PilotDetails /></Route>
+          <Route exact path="/teams" ><Teams /></Route>
+          <Route exact path="/teams/:id" ><TeamDetails /></Route>
+          <Route exact path="/legends" ><Legends /></Route>
+          <Route exact path="/legends/:id" ><LegendDetails /></Route>
+          <Route exact path="/posts/my-posts" ><MyMEMES /></Route>
+          <Route exact path="/posts/my-posts/edit/:id" ><EditMeme /></Route>
+          <Route exact path="/posts/create" ><CreateMeme /></Route>
+          <Route exact path="/posts/all" ><AllMEMES /></Route>
+          <Route exact path="/login" ><Login /></Route>
+          <Route exact path="/register"><Register /></Route>
+          <Route exact path="/calendar"><Calendar /></Route>
+          <Route exact path="/standings"><LiveTable /></Route>
           <Route exact path="*"><ErrorPage /></Route>
         </Switch>
         <Footer />
