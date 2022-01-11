@@ -6,30 +6,42 @@ import { useEffect } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import { endpoints } from "../../services/services";
+import { Modal, Button } from "react-bootstrap"
 
 
 function TeamCard({ team }) {
     const { user } = useContext(AuthContext);
     const [rating, setRating] = useState(team.rating);
+    const [show, setShow] = useState(false);
+    const [upDown, setUpDown] = useState("");
+    function clickUp(){
+        handleShow()
+        setUpDown("Up")
+    }
+    function clickDown(){
+        handleShow()
+        setUpDown("Down")
+    }
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     function voteUp(e) {
         e.preventDefault();
-        if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
         requester.patch(`${endpoints.baseUrl}teams/${team._id}.json`, { rating: rating + 1, voters: [...team.voters, user]})
         .then(() => {
             setRating(rating + 1);
+            handleClose()
         })
         
-        
-        }
     }
     function voteDown(e) {
         e.preventDefault();
-        if(window.confirm("Do you really want to vote? You can vote only once per Team!")){
         requester.patch(`${endpoints.baseUrl}teams/${team._id}.json`, { rating: rating - 1, voters: [...team.voters, user]})
         .then(() => {
         setRating(rating - 1);
+        handleClose()
         })
-        }
     }
     const [isVoted, setIsVoted] = useState()
     useEffect(() => {
@@ -44,10 +56,10 @@ function TeamCard({ team }) {
                 }
             })
     }, [rating])
-    let upButton = <button className={styles.upBtn} onClick={voteUp}>
+    let upButton = <button className={styles.upBtn} onClick={clickUp}>
         Up
     </button>
-    let downButton = <button className={styles.downBtn} onClick={voteDown}>
+    let downButton = <button className={styles.downBtn} onClick={clickDown}>
         Down
     </button>
     let buttons = [upButton, downButton]
@@ -74,6 +86,20 @@ function TeamCard({ team }) {
                 <Voted key={team._id}/> :
                 <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
             </div>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>F1 FanHome:</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>You can vote only once per team! Do you really want to proceed?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={upDown === "Up" ? voteUp : voteDown}>
+                        Yes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }
