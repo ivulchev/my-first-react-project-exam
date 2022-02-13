@@ -1,0 +1,57 @@
+.first--team.aston .team--logo,
+.second--team.aston .team--logo,
+.third--team.aston .team--logo,
+.first--team.alphatauri .team--logo,
+.second--team.alphatauri .team--logo,
+.third--team.alphatauri .team--logo,
+.first--team.alpine .team--logo,
+.second--team.alpine .team--logo,
+.third--team.alpine .team--logo,
+.first--team.mclaren .team--logo,
+.second--team.mclaren .team--logo,
+.third--team.mclaren .team--logo{
+    position:absolute;
+    width:25%;
+    top: 30%;
+    right: 5%;
+}
+.first--team.ferrari .team--logo,
+.second--team.ferrari .team--logo,
+.third--team.ferrari .team--logo{
+    width: 20%;
+    top:5%
+}
+
+.others.aston .team--logo,
+.others.Aston.Martin .team--logo,
+.others.alphatauri .team--logo,
+.others.AlphaTauri .team--logo,
+.others.alpine .team--logo,
+.others.Alpine .team--logo,
+.others.mclaren .team--logo,
+.others.McLaren .team--logo{
+    top: 35%;
+}
+
+.first--driver.aston .team--logo,
+.second--driver.aston .team--logo,
+.third--driver.aston .team--logo,
+.first--driver.alphatauri .team--logo,
+.second--driver.alphatauri .team--logo,
+.third--driver.alphatauri .team--logo,
+.first--driver.alpine .team--logo,
+.second--driver.alpine .team--logo,
+.third--driver.alpine .team--logo,
+.first--driver.mclaren .team--logo,
+.second--driver.mclaren .team--logo,
+.third--driver.mclaren .team--logo{
+    top: 20%;
+}
+
+.card--driver.aston:hover .logo-background{
+    width: 100%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}

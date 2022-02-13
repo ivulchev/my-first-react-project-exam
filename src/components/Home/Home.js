@@ -1,13 +1,11 @@
-import styles from "./Home.module.css";
+import "./Home.css"
 import DriverStandings from "../Standings/DriverStandings";
 import TeamsStandings from "../Standings/TeamStandings";
-import LegendsStandings from "../Standings/LegendsStandings";
 function Home() {
     return (
-        <header className="row" id={styles.home}>
+        <header className="standings">
             <DriverStandings/>
             <TeamsStandings/>
-            <LegendsStandings/>
         </header>
     )
 }

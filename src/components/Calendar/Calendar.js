@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import styles from "./Calendar.module.css"
+import "./Calendar.css"
 import Loading from "../Loading/Loading";
 
 function Calendar() {
-    const [year, setYear] = useState("2021")
     const [thisYear, setThisYear] = useState([]);
     useEffect(() => {
-        fetch(`https://f1-live-motorsport-data.p.rapidapi.com/races/2021`, {
+        fetch(`https://f1-live-motorsport-data.p.rapidapi.com/races/2022`, {
             headers: {
                 'x-rapidapi-host': 'f1-live-motorsport-data.p.rapidapi.com',
                 'x-rapidapi-key': '556f5e858amsh84ff367d8aa60e4p1e7e01jsne580e77a8b45'
@@ -20,48 +19,42 @@ function Calendar() {
 
     function raceStatus(status) {
         if (status === "Confirmed") {
-            return styles.confirmed
+            return "confirmed"
         } else if (status === "Postponed") {
-            return styles.postponed
+            return "postponed"
         } else if (status === "Cancelled") {
-            return styles.cancelled
-        } else if (status == "Complete") {
-            return styles.completed
+            return "cancelled"
+        } else if (status === "Complete") {
+            return "completed"
         }
     }
 
 
     let thisSeason = (
-        <div>
-            <h3 id={styles.tableHeader}> <strong> Season 2021 Calendar</strong></h3>
-            <table className="table table-striped table-dark" id={styles.standings} >
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Track</th>
-                        <th scope="col">Country</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {thisYear.map((x) => <tr key={x.race_id}>
-                        <th scope="row">{x.name}</th>
-                        <td>{x.track}</td>
-                        <td>{x.country}</td>
-                        <td>{`${x.start_date} / ${x.end_date}`}</td>
-                        <td id={raceStatus(x.status)}>{x.status}</td>
-                    </tr>)}
-
-                </tbody>
-            </table>
+        <div className="grid_container">
+            <h2>F1 Race Calendar - 2022</h2>
+            <header className="calendar--header">
+                <section className="date-header">Date</section>
+                <section className="track-header">Track</section>
+                <section className="country-header">Country</section>
+                <section className="name-header">GP Name</section>
+                <section className="status-header">Status</section>
+            </header>
+            
+            <ul>
+                {thisYear.map((x) => <li>
+                    <article className="races">
+                        <p className="date">{x.start_date} </p>
+                        <p className="track">{x.track}</p>
+                        <p className="country">{x.country}</p>
+                        <p className="gp--name">{x.name}</p>
+                        <p className={`status ${raceStatus(x.status)}`}>{x.status}</p>
+                    </article>
+                </li>)}
+            </ul>
         </div>
     )
-    return (thisYear.length > 0 ?
-            <header className="row" id={styles.standings}>
-                {thisSeason}
-            </header> : <Loading />
-    )
+    return thisYear.length > 0 ? thisSeason : <Loading />
 
 }
 export default Calendar

@@ -1,0 +1,13 @@
+@import url("./team-colors-leaderboard.css");
+
+.flag{
+    width: 7%;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    bottom: auto;
+}
+
+.team--logo.table{
+    right: 20%;
+}

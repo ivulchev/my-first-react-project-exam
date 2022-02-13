@@ -1,0 +1,87 @@
+
+.grid_container{
+    font-family: 'Audiowide', cursive;
+    display:inline-block;
+    background: linear-gradient(to right , #121F25, #111118);
+    overflow: hidden;
+    margin-top: 10%;
+    border-radius: 50px;
+    vertical-align: top;
+    color: white;
+}
+
+.calendar h2{
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    margin-bottom: 2%;
+    padding-bottom: 1%;
+    color: white;
+    font-size: 26px;
+    border-bottom-style:solid;
+    border-bottom-width: 4px;
+    border-bottom-color: white;
+}
+
+
+
+
+.grid_container{
+    display: grid;
+    grid-template-columns: repeat(5,  1fr);
+    grid-template-areas: 
+    "title title title title title"
+    "date track country name status"
+    "races races races races races";
+}
+.grid_container>h2{
+     grid-area: title;
+ }
+
+.calendar--header{
+     grid-area: header;
+}
+.date-header{
+     grid-area: date;
+}
+
+.track-header{
+    grid-area: track;
+}
+
+.country-header{
+    grid-area: country;
+}
+
+.name-header{
+    grid-area: name;
+}
+
+.status-header{
+    grid-area: status;
+}
+.races{
+    grid-area: races;
+}
+
+.track{
+    margin-left: 2.5%;
+}
+.country{
+    margin-left: 1.5%;
+}
+
+
+
+
+.confirmed{
+    color:chartreuse
+}
+.postponed{
+    color: grey;
+}
+.cancelled{
+    color: red;
+}
+.status.completed{
+    color:gold
+}

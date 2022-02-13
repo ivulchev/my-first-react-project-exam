@@ -1,4 +1,4 @@
-import styles from "./TeamCard.module.css";
+import "./TeamCard.css"
 import { Link} from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState, } from "react";
@@ -56,35 +56,41 @@ function TeamCard({ team }) {
                 }
             })
     }, [rating])
-    let upButton = <button className={styles.upBtn} onClick={clickUp}>
+    let upButton = <button className="up" onClick={clickUp}>
         Up
     </button>
-    let downButton = <button className={styles.downBtn} onClick={clickDown}>
+    let downButton = <button className="down" onClick={clickDown}>
         Down
     </button>
     let buttons = [upButton, downButton]
     let Voted = () => {
         if (isVoted) {
-            return <p id={styles.loginLink}> <strong>Thank you for voting!</strong></p>
+            return <p className="voted"> <strong>Thank you for voting!</strong></p>
         } else {
             return buttons
         }
     }
     return (
-        <div className="card" id={styles.cardPartial}>
-            <div className="card-body" id={styles.body}>
-            <img src={team.image} id={styles.img} alt="Card img cap" />
-                <h5 className="card-title" id={styles.title}>{team.name}</h5>
-                <p className="card-text" id={styles.text} ><strong>Drivers:</strong> {team.drivers}</p>
-                <p className="card-text" id={styles.text} ><strong>Constructor Championships:</strong> {team.championships}</p>
-                <p className="rating">Rating: {rating} </p>
-                <button className={styles.detailsBtn} > <Link to={`/teams/${team._id}`} id={styles.detailsText} >
-                    Details
-                    </Link>
-                </button>
-                {user ?
-                <Voted key={team._id}/> :
-                <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
+        <div className={`card--driver ${team.logocolor}`}>
+            <div className="driver">
+                <img class="logo-background"
+                    src={`logos/${team.logocolor}.png`} />
+                <img className="poster team"
+                    src={`cars/${team.logocolor}.png`}
+                    alt="" />
+                <div className="info">
+                    <h3 className="name">{team.name}</h3>
+                    <p className="debut">Drivers: {team.drivers} </p>
+                    <p className="team">Championships: {team.championships[0]} </p>
+                    <p className="rating">
+                    Rating: {rating}
+                    </p>
+                    <Link to={`pilots/${team._id}`}><button className="details">Details</button></Link>
+                    {user ?
+                        <Voted key={team._id} /> :
+                        <Link to="/login" className="login-link" >  Please, login to vote!</Link>
+                    }
+                </div>
             </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

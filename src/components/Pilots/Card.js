@@ -1,4 +1,4 @@
-import styles from "./Card.module.css"
+// import styles from "./Card.module.css"
 import * as requester from "../../services/requester";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,39 +8,42 @@ import { useContext } from 'react';
 import { endpoints } from "../../services/services";
 import { Modal, Button } from "react-bootstrap"
 
+import "./Card.css";
+
 
 function Card({ driver }) {
+
     const [show, setShow] = useState(false);
     const [upDown, setUpDown] = useState("");
-    function clickUp(){
+    function clickUp() {
         handleShow()
         setUpDown("Up")
     }
-    function clickDown(){
+    function clickDown() {
         handleShow()
         setUpDown("Down")
     }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
+
     const [rating, setRating] = useState(driver.rating);
     const { user } = useContext(AuthContext);
     function voteUp(e) {
         e.preventDefault();
-            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email] })
-                .then(() => {
-                    setRating(rating + 1);
-                    handleClose()
-                })
+        requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating + 1, voters: [...driver.voters, localStorage.email] })
+            .then(() => {
+                setRating(rating + 1);
+                handleClose()
+            })
     }
     function voteDown(e) {
         e.preventDefault();
-            requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] })
-                .then(() => {
-                    setRating(rating - 1);
-                    handleClose()
-                })
+        requester.patch(`${endpoints.baseUrl}drivers/${driver._id}.json`, { rating: rating - 1, voters: [...driver.voters, localStorage.email] })
+            .then(() => {
+                setRating(rating - 1);
+                handleClose()
+            })
     }
     const [isVoted, setIsVoted] = useState(Boolean)
     useEffect(() => {
@@ -55,52 +58,57 @@ function Card({ driver }) {
                 }
             })
     }, [rating])
-    let upButton = <button className={styles.upBtn} onClick={clickUp}>
-        Up
-    </button>
-    let downButton = <button className={styles.downBtn} onClick={clickDown}>
-        Down
-    </button>
+    let upButton = <button className="up" onClick={clickUp}><i className="fa-solid fa-thumbs-up"></i> Up</button>
+    let downButton = <button className="down" onClick={clickDown}><i className="fa-solid fa-thumbs-down"></i> Down</button>
     let buttons = [upButton, downButton]
     let Voted = () => {
         if (isVoted) {
-            return <p id={styles.loginLink}> <strong>Thank you for voting!</strong></p>
+            return <p className="voted"> Thank you for voting!</p>
         } else {
             return buttons
         }
     }
     return (
-        <div className="card" id={styles.cardPartial}>
-            <div className="card-body" id={styles.body}>
-            <img src={driver.logoUrl} alt="Card img cap" id={styles.image} />
-                <h5 className="card-title">{driver.name}</h5>
-                <p className="card-title" id={styles.description}>Team: {driver.team} </p>
-                <p className="card-text" id={styles.description} >{driver.description}</p>
-                <p className="rating">Rating: {rating} </p>
-                <button className={styles.detailsBtn} ><Link to={`pilots/${driver._id}`} id={styles.details} >
-                    Details
-                </Link></button>
-                {user ?
-                    <Voted key={driver._id} /> :
-                    <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>
-                }
-
+        <div className={`card--driver ${driver.logocolor}`}>
+            <div className="driver">
+                <img class="logo-background"
+                    src={`logos/${driver.logocolor}.png`} />
+                <img className="poster"
+                    src={driver.transparent}
+                    alt="" />
+                <div className="info">
+                    <h3 className="name">{driver.name}</h3>
+                    <p className="debut">Debut: {driver.debut} </p>
+                    <p className="team">Team:  {driver.team} </p>
+                    <p className="number">
+                    Number: {driver.number}
+                    </p>
+                    <p className="rating">
+                    Rating: {rating}
+                    </p>
+                    <Link to={`pilots/${driver._id}`}><button className="details">Details</button></Link>
+                    {user ?
+                        <Voted key={driver._id} /> :
+                        <Link to="/login" className="login-link" >  Please, login to vote!</Link>
+                    }
+                </div>
             </div>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>F1 FanHome:</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>You can vote only once per driver! Do you really want to proceed?</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={upDown === "Up" ? voteUp : voteDown}>
-                        Yes
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </div>
+
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>F1 FanHome:</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>You can vote only once per driver! Do you really want to proceed?</Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+                Close
+            </Button>
+            <Button variant="primary" onClick={upDown === "Up" ? voteUp : voteDown}>
+                Yes
+            </Button>
+        </Modal.Footer>
+    </Modal>
+    </div>
     )
 }
 

@@ -1,0 +1,182 @@
+@import url("./colors.css");
+/* DRIVERS */
+.drivers--standings{
+    font-family: 'Audiowide', cursive;
+    display:inline-block;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    background: linear-gradient(to right , #121F25, #111118);
+    max-width: 400px;
+    min-width: 350px;
+    overflow: hidden;
+    padding: 1% 1.5%;
+    border-radius: 50px;
+    vertical-align: top;
+}
+
+.drivers--standings.minimize{
+    max-height: 566px;
+}
+
+.drivers--standings.maximize,
+.team--standings.maximize{
+    max-height: none;
+}
+.drivers--standings h2,
+.teams--standings h2{
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    margin-bottom: 2%;
+    padding-bottom: 1%;
+    color: white;
+    font-size: 26px;
+    border-bottom-style:solid;
+    border-bottom-width: 4px;
+    border-bottom-color: white;
+}
+.drivers--standings li{
+    display: inline-block;
+    list-style: none;
+    margin: 0.1% 0;
+}
+.first--driver,
+.second--driver,
+.third--driver{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 360px;
+    max-width: 360px;
+    height: 152px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0px;
+}
+.poster--driver{
+    margin-left: 53%;
+}
+.first--driver .team--logo,
+.second--driver .team--logo,
+.third--driver .team--logo{
+    position:absolute;
+    width:10%;
+    top: 10%;
+    left: 5%;
+}
+
+.driver--name{
+    position: absolute;
+    font-family: 'Audiowide', cursive;
+    font-size: 22px;
+    top:10%;
+    left: 17%;
+    width: 30%;
+    border-style: solid;
+    border-left-width: 4px;
+    border-left-color:#30227c;
+    padding-left: 2%;
+    color: whitesmoke;
+    
+}
+
+.place--points{
+    font-family: 'Audiowide', cursive;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: whitesmoke;
+}
+
+.place--points .points{
+    font-size: 24px;
+}
+
+.drivers--standings .car{
+    position:absolute;
+    bottom: -50%;
+    left: 15%;
+    width: 57%;
+    transition: bottom 300ms ease-in-out;
+}
+
+.drivers--standings li:hover .car{
+    bottom: 16.5%;
+}
+.first--driver:hover,
+.first--team:hover {
+    background:linear-gradient(to right, #BF953F,  #B38728, #FBF5B7, #AA771C);
+}
+
+.second--driver:hover,
+.second--team:hover {
+    background:linear-gradient(to right,   #7D7D7A, #4e4e4d, #A1A2A3, #585757 );
+}
+
+
+.third--driver:hover,
+.third--team:hover {
+    background:linear-gradient(to right,   #9C7A3C, #804A00, #B08D57, #895E1A );
+}
+
+.others{
+    display: inline-block;
+    min-width: 360px;
+    position: relative;
+    border-radius: 10px;
+    margin-top:1.25%;
+}
+.others .place,
+.others .team--logo,
+.others .name,
+.others .points{
+    display:inline-block;
+    margin-left: 2%;
+    line-height: 2rem;
+    color: white;
+    font-size: 22px;
+    font-size: 100%;
+}
+
+.others .team--logo{
+    width: 7%;
+    position: absolute;
+    right: 10%;
+    top: 8%;
+    bottom: auto;
+}
+
+.others:hover .place,
+.others:hover .name,
+.others:hover .points{
+    color:black;
+    font-weight: 900;
+    cursor:pointer;
+}
+.others:hover{
+    background: coral;
+}
+button.expand-btn{
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    margin: 0 5%;
+    border-radius: 18px;
+    background-color:#4e9af1;
+    border:0.2em solid rgba(255,255,255,0.0);
+    overflow: hidden;
+}
+
+.expand-btn i {
+    margin-left: 45%;
+}
+.expand-btn text{
+    position: absolute;
+    transition: left 300ms ease-in-out;
+    font-family: 'Audiowide', cursive;
+    left: -50%;
+}
+
+.expand-btn:hover text{
+    left: 25%;
+}

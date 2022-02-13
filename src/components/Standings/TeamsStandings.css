@@ -1,0 +1,74 @@
+@import url("./team-standings-logo-fixed.css");
+.teams--standings{
+    vertical-align: top;
+    font-family: 'Audiowide', cursive;
+    display:inline-block;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    background: linear-gradient(to right , #121F25, #111118);
+    max-width: 400px;
+    min-width: 350px;
+    overflow: hidden;
+    padding: 1% 1.5%;
+    border-radius: 50px;
+}
+
+.teams--standings.minimize{
+    max-height: 566px;
+}
+
+
+.first--team,
+.second--team,
+.third--team{
+    border: 1px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 360px;
+    height: 152px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0px; 
+}
+
+.teams--standings .car{
+    position: absolute;
+    top: 37%;
+    width: 70%;
+    left: -150%;
+    transition: left 400ms ease-in-out;
+    z-index: 10;
+}
+
+.first--team:hover .car,
+.second--team:hover .car,
+.third--team:hover .car{
+    left: 15%;
+}
+
+.first--team .team--logo,
+.second--team .team--logo,
+.third--team .team--logo{
+    position:absolute;
+    width:25%;
+    top: 10%;
+    right: 5%;
+}
+
+
+.team--name{
+    position: absolute;
+    font-family: 'Audiowide', cursive;
+    font-size: 22px;
+    top: 10%;
+    left: 2.5%;
+    width: 30%;
+    border-style: solid;
+    border-left-width: 4px;
+    border-left-color:#30227c;
+    padding-left: 2%;
+    color: whitesmoke;
+}
+

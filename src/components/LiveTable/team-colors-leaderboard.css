@@ -1,0 +1,39 @@
+.Ferrari{
+    background: linear-gradient(to right bottom, #AF0828, #1A0E10);
+}
+
+.Red{
+    background: linear-gradient(to right bottom, #2115ac, #0C0B17);
+}
+
+.McLaren{
+    background: linear-gradient(to right bottom, #E9950C, #362201);
+}
+
+.Mercedes{
+    background: linear-gradient(to right bottom, #23d3cb, #076460);
+}
+
+.Aston{
+    background: linear-gradient(to right bottom, #0d7258, #011d16);
+}
+
+.Haas{
+    background: linear-gradient(to right bottom, #ffffff, #ffffff5b);
+}
+
+.AlphaTauri{
+    background: linear-gradient(to right bottom, #0d365c, #010c16);
+}
+
+.Alpine{
+    background: linear-gradient(to right bottom, #2996f0, #031e35);
+}
+
+.Williams{
+    background: linear-gradient(to right bottom, #095492, #000000);
+}
+
+.Alfa{
+    background: linear-gradient(to right bottom, #9c2438, #250309);
+}

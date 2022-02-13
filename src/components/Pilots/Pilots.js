@@ -1,11 +1,11 @@
-import Card from "./Card"
+
 import { useEffect, useState } from "react";
 import { endpoints } from "../../services/services";
-import styles from "./Pilots.module.css";
 import Loading from "../Loading/Loading";
+import Card from "./Card";
 
 function Pilots() {
-    const [pilots, setPilots] = useState([]);
+    const [drivers, setPilots] = useState([]);
     useEffect(() => {
         fetch(`${endpoints.baseUrl}drivers.json`)
             .then(res => res.json())
@@ -15,9 +15,10 @@ function Pilots() {
             });
     },[]);
     return (
-            <div className="row" id={styles.pilots} >
-                {(pilots.length > 0) ? pilots.map(x => <Card key={x._id} driver={x} />) : <Loading/>}
-            </div>
+        <section className="drivers">
+                {(drivers.length > 0) ? drivers.map(x => <Card key={x._id} driver={x} />) : <Loading/>}
+        </section>
+
     )
 }
 
