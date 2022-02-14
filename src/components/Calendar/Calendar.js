@@ -31,28 +31,28 @@ function Calendar() {
 
 
     let thisSeason = (
-        <div className="grid_container">
-            <h2>F1 Race Calendar - 2022</h2>
-            <header className="calendar--header">
-                <section className="date-header">Date</section>
-                <section className="track-header">Track</section>
-                <section className="country-header">Country</section>
-                <section className="name-header">GP Name</section>
-                <section className="status-header">Status</section>
-            </header>
+        <table class="calendar">
+            <h2>Season 2022 Race Calendar</h2>
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Track</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Grand Prix</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                { thisYear.map((x) => <tr>
+                    <th scope="row">{x.start_date}</th>
+                    <td>{x.track}</td>
+                    <td>{x.country}</td>
+                    <td>{x.name}</td>
+                    <td className={`status ${raceStatus(x.status)}`}>{x.status}</td>
+                </tr>)}
+            </tbody>
             
-            <ul>
-                {thisYear.map((x) => <li>
-                    <article className="races">
-                        <p className="date">{x.start_date} </p>
-                        <p className="track">{x.track}</p>
-                        <p className="country">{x.country}</p>
-                        <p className="gp--name">{x.name}</p>
-                        <p className={`status ${raceStatus(x.status)}`}>{x.status}</p>
-                    </article>
-                </li>)}
-            </ul>
-        </div>
+        </table>
     )
     return thisYear.length > 0 ? thisSeason : <Loading />
 
