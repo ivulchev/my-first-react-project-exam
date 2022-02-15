@@ -1,4 +1,4 @@
-import styles from "./Login.module.css";
+import "./Login.css";
 
 import { useHistory } from "react-router";
 import { useContext } from 'react';
@@ -8,6 +8,7 @@ import {useNotificationContext, types} from "../../contexts/NotificationContext"
 import { authServices } from "../../services/authService";
 import ErrorPage from "../Error/ErrorPage";
 import { auth } from "../../services/initializeFirebase";
+import { Link } from "react-router-dom";
 
 
 function Login() {
@@ -47,17 +48,19 @@ function Login() {
         }
     }
     return (user ? <ErrorPage /> :
-        <form onSubmit={onSubmit} className={styles.loginForm}>
-            <h1 id={styles.pageTitle}>Login</h1>
-            <div className="form-group">
-                <label htmlFor="exampleInputEmail1" id={styles.pageTitle}>Email address</label>
-                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+        <form onSubmit={onSubmit} className="login-register--form">
+            <h1>Log in</h1>
+            <p>Enter your credentials to access your account.</p>
+            <div className="form--login">
+                <label htmlFor="input--email" >Email address</label>
+                <input type="email" name="email" className="form-control" id="input--email" aria-describedby="emailHelp" placeholder="Enter your email" />
             </div>
-            <div className="form-group">
-                <label htmlFor="exampleInputPassword1" id={styles.pageTitle}>Password</label>
-                <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+            <div className="form--login">
+                <label htmlFor="password--input">Password</label>
+                <input type="password" name="password" className="form-control" id="password--input" placeholder="Enter your password" />
             </div>
-            <button type="submit" className={styles.loginBtn}>Submit</button>
+            <button type="submit" className="submit--btn">Login</button>
+            <p className="not--member"> Not a member? <Link to="/register" className="sign--up--link">Sign up</Link></p>
         </form>
     )
 }

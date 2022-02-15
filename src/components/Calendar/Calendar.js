@@ -44,11 +44,11 @@ function Calendar() {
             </thead>
             <tbody>
                 { thisYear.map((x) => <tr>
-                    <th scope="row">{x.start_date}</th>
+                    <th scope="row">{x.start_date} - {x.end_date}</th>
                     <td>{x.track}</td>
                     <td>{x.country}</td>
                     <td>{x.name}</td>
-                    <td className={`status ${raceStatus(x.status)}`}>{x.status}</td>
+                    <td className={`status ${raceStatus(x.status)}`}><p>{x.status}</p></td>
                 </tr>)}
             </tbody>
             

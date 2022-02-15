@@ -96,7 +96,7 @@ function Card({ driver }) {
 
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-            <Modal.Title>F1 FanHome:</Modal.Title>
+            <Modal.Title>Are you sure?</Modal.Title>
         </Modal.Header>
         <Modal.Body>You can vote only once per driver! Do you really want to proceed?</Modal.Body>
         <Modal.Footer>

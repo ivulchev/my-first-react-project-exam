@@ -1,58 +1,65 @@
-.calendar{
-    font-family: 'Audiowide', cursive;
-    display:inline-block;
-    margin-top: 5%;
-    margin-left: 15%;
-    background: linear-gradient(to right , #121F25, #111118);
-    min-width: 350px;
-    overflow: hidden;
-    padding: 1% 2.5%;
-    border-radius: 50px;
-    vertical-align: top;
-}
-.calendar h2{
+
+table h2{
     text-align: center;
     margin-bottom: 2%;
     padding-bottom: 1%;
-    color: white;
+    color: black;
     font-size: 26px;
+    font-weight: 900;
     border-bottom-style:solid;
     border-bottom-width: 4px;
     border-bottom-color: white;
 }
 
-.calendar td,
-.calendar th{
+table{
+    font-family: 'Roboto Slab', serif;
+    display: inline-block;
+    border-collapse: collapse;
+    margin: 6.5% 15%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+thead{
+    background-color: rgb(194, 189, 189);
+ }
+tbody td,
+tbody th,
+thead th{
+    font-weight: 700;
     padding: 1%;
+    min-width: 150px;
     line-height: 2.0rem;
     text-align: center;
 
 }
 
-.calendar tr{
-    border-radius: 20px;
-    margin-top:1.25%;
-    overflow: hidden;
-    background-color: rgb(240, 248, 255);
-}
 .calendar .status{
     width: 120px;
 }
 
-.calendar tr:hover{
-    background-color: coral;
+tbody tr{
+    background-color: whitesmoke;
+}
+tbody tr:hover{
+    background-color: rgba(44, 43, 43, 0.0);
+}
+.confirmed p{
+    background-color:rgb(19, 143, 19);
+}
+.postponed p{
+    background-color: gold;
+}
+.cancelled p{
+    background-color: red;
+}
+.completed p{
+    background-color: #4e9af1;
 }
 
-
-.confirmed{
-    color:rgb(55, 155, 55);
-}
-.postponed{
-    color: rgb(61, 57, 57);
-}
-.cancelled{
-    color: red;
-}
-.status.completed{
-    color:gold
+.status p{
+    letter-spacing: 2px;
+    border-style:solid;
+    border-radius: 10px;
+    font-weight: 900;
+    color:white;
 }

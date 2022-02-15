@@ -1,4 +1,4 @@
-import styles from "./AllMEMES.module.css"
+import "./AllMEMES.css"
 import { Link } from "react-router-dom";
 import * as requester from "../../services/requester";
 import { useState, useEffect, useContext } from "react";
@@ -14,11 +14,11 @@ function AllMemesCard({ meme }) {
     const [rating, setRating] = useState(meme[1].rating);
     const [show, setShow] = useState(false);
     const [upDown, setUpDown] = useState("");
-    function clickUp(){
+    function clickUp() {
         handleShow()
         setUpDown("Up")
     }
-    function clickDown(){
+    function clickDown() {
         handleShow()
         setUpDown("Down")
     }
@@ -27,19 +27,19 @@ function AllMemesCard({ meme }) {
     const handleShow = () => setShow(true);
     function voteUp(e) {
         e.preventDefault();
-        requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating + 1, voters: [...memeInfo.voters, user] })
-        .then(() => {
-            setRating(rating + 1);
-            handleClose();
-        })
+        requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating + 1, voters: [...memeInfo.voters, user], likes: [...memeInfo.likes, user] })
+            .then(() => {
+                setRating(rating + 1);
+                handleClose();
+            })
     }
     function voteDown(e) {
         e.preventDefault();
         requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating - 1, voters: [...memeInfo.voters, user] })
-        .then(() => {
-            setRating(rating - 1);
-            handleClose();
-        })
+            .then(() => {
+                setRating(rating - 1);
+                handleClose();
+            })
     }
     const [isOwner, setIsOwner] = useState()
     const [isVoted, setIsVoted] = useState()
@@ -59,20 +59,20 @@ function AllMemesCard({ meme }) {
     }, [rating])
 
 
-    let upButton = <button className={styles.upBtn} onClick={clickUp}>
+    let upButton = <button className="up" onClick={clickUp}>
         Up
     </button>
-    let downButton = <button className={styles.downBtn} onClick={clickDown}>
+    let downButton = <button className="down" onClick={clickDown}>
         Down
     </button>
     let buttons = [upButton, downButton]
 
     let Voted = () => {
         if (isOwner) {
-            return <p id={styles.loginLink}> <strong>You can't vote on you own posts!</strong></p>
+            return <p > <strong>You can't vote on you own posts!</strong></p>
         } else {
             if (isVoted) {
-                return <p id={styles.loginLink}> <strong>Thank you for voting!</strong></p>
+                return <p > <strong>Thank you for voting!</strong></p>
             } else {
                 return buttons
             }
@@ -80,14 +80,17 @@ function AllMemesCard({ meme }) {
 
     }
     return (
-        <div className="card" id={styles.cardPartial}>
-            <img src={memeInfo.image} id={styles.img} alt="Card img cap" />
-            <div className="card-body">
-                <h5 className="card-title">{memeInfo.title} </h5>
-                <p className="rating">Rating: {rating}   </p>
+        <div className="meme--card" >
+            <h5 className="meme--title">{memeInfo.title} </h5>
+            <img src={memeInfo.image} alt="Card img cap" />
+            <div className="meme--card--body">
+                <p className="creator"><text>Created by:</text> {memeInfo.creator}</p>
                 {user ?
                     <Voted /> :
-                    <Link to="/login" id={styles.loginLink}>  Please, login to vote!</Link>}
+                    <Link to="/login">  Please, login to vote!</Link>}
+                <p className="meme--rating"> <text>Rating:</text> {rating}</p>
+                <p className="meme--likes"><text>Liked by</text> {memeInfo.likes.join(" ")}</p>
+                <p className="meme--dislikes"><text>Disliked by</text> {memeInfo.dislikes.join(" ")}</p>
             </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -103,7 +106,7 @@ function AllMemesCard({ meme }) {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </div> 
+        </div>
     )
 }
 

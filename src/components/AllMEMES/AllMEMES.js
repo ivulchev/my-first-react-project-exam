@@ -1,5 +1,5 @@
+
 import AllMemesCard from "./AllMemesCard";
-import styles from "./AllMEMES.module.css"
 import { useEffect, useState } from "react";
 import { endpoints } from "../../services/services";
 import Loading from "../Loading/Loading";
@@ -27,14 +27,14 @@ function AllMEMES() {
     return (
         (memes.length > 0) ? <div>
             <div className="btn-group btn-group-toggle" data-toggle="buttons" >
-                <label className={"btn btn-secondary " + (sortBy === "popular" ? "active" : null)} id={styles.radio}>
+                <label className={"btn btn-secondary " + (sortBy === "popular" ? "active" : null)} >
                     <input type="radio" name="options" id="option1" autocomplete="off" checked={() => { setSortbBy("popular") }} onClick={() => setSortbBy("popular")} /> Sort by Rating
                 </label>
-                <label className={"btn btn-secondary " + (sortBy === "date" ? "active" : null)} id={styles.radio}>
+                <label className={"btn btn-secondary " + (sortBy === "date" ? "active" : null)} >
                     <input type="radio" name="options" id="option2" autocomplete="off" checked={() => { setSortbBy("date") }} onClick={() => setSortbBy("date")} /> Sort by Date
                 </label>
             </div>
-            <div className="row" id={styles.memes}>
+            <div className="row">
                 {memes.map((x) => <AllMemesCard key={x[0]} meme={x} />)}
             </div>
         </div> : <Loading />

@@ -83,10 +83,11 @@ function Navbar() {
 
             </ul>
             <Modal show={show} onHide={handleClose}>
+            
                 <Modal.Header closeButton>
-                    <Modal.Title>F1 FanHome:</Modal.Title>
+                    <Modal.Title>Are you sure?</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Do you really want to logout?</Modal.Body>
+                <Modal.Body>You are going to logout from your account! Please confirm.</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close

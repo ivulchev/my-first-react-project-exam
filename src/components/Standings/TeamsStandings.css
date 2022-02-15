@@ -15,7 +15,7 @@
 }
 
 .teams--standings.minimize{
-    max-height: 566px;
+    max-height: 536px;
 }
 
 
@@ -27,7 +27,7 @@
     display: inline-block;
     width: 100%;
     min-width: 360px;
-    height: 152px;
+    height: 142px;
     border-radius: 20px;
     overflow: hidden;
     padding: 0px; 
