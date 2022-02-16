@@ -1,0 +1,112 @@
+
+
+.meme--card{
+    width: 20%;
+    display: inline-block;
+    margin: 5% 2%;
+    overflow: hidden;
+    background-color: white;
+    padding: 0.8%;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 6px;
+    vertical-align: top;
+}
+
+.meme--title{
+    padding-bottom: 2.5%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.meme--card img{
+    width: 100%;
+}
+
+.meme--card--body text{
+    font-weight: 500;
+}
+
+.meme--rating,
+.meme--likes,
+.meme--dislikes,
+.creator{
+    margin: 2% 0;
+}
+
+.meme--likes p{
+    display: inline;
+}
+
+.heart-like{
+    border-style: none;
+    cursor: pointer;
+    background: none;
+}
+
+.fa-solid.fa-heart{
+    color: red;
+}
+
+
+.voted--by .modal-content{
+    background-color: white;
+    max-height: 300px;
+    overflow: scroll;
+    border-radius: 0;
+
+}
+
+.voted--by .modal-body{
+    color: black;
+    line-height: 2.5rem;
+    text-align: left;
+}
+
+.modal-body text{
+    margin-left: 15%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.voted--by .modal-header{
+    position: relative;
+    width: 100%;
+    padding: 0;
+    color: black;
+}
+
+.voted--by .modal-header .close-btn{
+    position: absolute;
+    display: inline-block;
+    color: black;
+    background: none;
+    border-style: none;
+    font-weight: 600;
+    width: 5%;
+    top: 2%;
+    right: 0%;
+    margin: 0;
+}
+
+.fa-user-large{
+    width: 100%;
+}
+
+.and--others{
+    font-weight: 600;
+}
+
+.and--others:hover{
+    cursor: pointer;
+}
+.comments{
+    margin: 2% 0;
+}
+
+.comment-btn{
+    width: 90%;
+    margin: 5% 5%;
+    border-radius: 6px;
+    border:0.2em solid rgba(255,255,255,0);
+    color: white;
+    background-color: rgb(42, 42, 236);
+}

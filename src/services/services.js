@@ -10,12 +10,15 @@ const allTeamsUrl = `${baseUrl}jsonstore/teams`;
 const allLegendsUrl = `${baseUrl}jsonstore/legends`;
 
 
-function createMEME(ownerId, title, imageUrl) {
+function createMEME(ownerId, title, imageUrl, creator) {
     return requester.post(`${baseUrl}memes.json`, {
         _ownerId: ownerId,
+        creator: creator,
         title: title,
         image: imageUrl,
         rating: 0,
+        likes: [" "],
+        comments: [" "],
         createdOn: Date(),
         voters: ["somevoters"]
     })

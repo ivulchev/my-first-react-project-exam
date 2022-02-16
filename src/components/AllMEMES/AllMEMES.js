@@ -1,5 +1,5 @@
 
-import AllMemesCard from "./AllMemesCard";
+import MemeCard from "./MemeCard";
 import { useEffect, useState } from "react";
 import { endpoints } from "../../services/services";
 import Loading from "../Loading/Loading";
@@ -24,21 +24,10 @@ function AllMEMES() {
                 setMemes(array)
             })
     }, [sortBy]);
-    return (
-        (memes.length > 0) ? <div>
-            <div className="btn-group btn-group-toggle" data-toggle="buttons" >
-                <label className={"btn btn-secondary " + (sortBy === "popular" ? "active" : null)} >
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked={() => { setSortbBy("popular") }} onClick={() => setSortbBy("popular")} /> Sort by Rating
-                </label>
-                <label className={"btn btn-secondary " + (sortBy === "date" ? "active" : null)} >
-                    <input type="radio" name="options" id="option2" autocomplete="off" checked={() => { setSortbBy("date") }} onClick={() => setSortbBy("date")} /> Sort by Date
-                </label>
-            </div>
-            <div className="row">
-                {memes.map((x) => <AllMemesCard key={x[0]} meme={x} />)}
-            </div>
-        </div> : <Loading />
-    )
+    return memes.length > 0 ? 
+            <section className="meme-section">
+                {memes.map((x) => <MemeCard key={x[0]} meme={x} />)}
+            </section>: <Loading />
 }
 
 export default AllMEMES

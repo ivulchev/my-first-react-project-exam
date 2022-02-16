@@ -58,14 +58,15 @@
 /* Modal */
 
 
-/* .fade.modal.show{
+.fade.modal.show{
   position:sticky;
-  background-color: rgba(18, 18, 19, 0.99);
-} */
-
+}
+.modal-dialog{
+  margin: 35% auto;
+}
 .modal-content{
   display: inline-block;
-  position:sticky;
+  position: sticky;
   font-family:'Roboto',sans-serif;
   width: 300px;
   overflow: hidden;
@@ -77,7 +78,7 @@
   
 }
 .modal-backdrop{
-  margin: auto;
+
   visibility: hidden;
 }
 
@@ -106,7 +107,6 @@
 
 .modal-body:hover{
   color:white;
-  font-size:102%;
 }
 .modal-footer{
   width: 100%;

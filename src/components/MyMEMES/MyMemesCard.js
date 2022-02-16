@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./MyMEMES.module.css";
+import "./MyMemes.css"
 import * as requester from "../../services/requester";
 import { useHistory } from "react-router";
 import { endpoints } from "../../services/services";
@@ -30,16 +30,16 @@ function MyMemesCard({ meme }) {
             }));
     }
     return (
-        <div className="card" id={styles.cardPartial}>
-            <img src={memeInfo.image} id={styles.img} alt="Card img cap" />
-            <div className="card-body">
-                <h5 className="card-title">{memeInfo.title}</h5>
-                <p className="rating">Rating: {memeInfo.rating} </p>
-                <Link to={`/posts/my-posts/edit/${id}`} ><button className={styles.upBtn} >
+        <div className="meme--card my" >
+            <h5 className="meme--title">{memeInfo.title} </h5>
+            <img src={memeInfo.image}  alt="Card img cap" />
+            <div className="meme--card--body">
+            <p className="meme--rating"> <text>Created on: </text>{memeInfo.createdOn.slice(0, 24)}</p>
+                <Link to={`/posts/my-posts/edit/${id}`} ><button  className="edit--btn">
                     Edit
                 </button>
                 </Link>
-                <button className={styles.downBtn} onClick={handleShow}>
+                <button  onClick={handleShow} className="delete--btn">
                     Delete
                 </button>
             </div>

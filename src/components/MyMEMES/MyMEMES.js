@@ -5,7 +5,7 @@ import { endpoints } from "../../services/services";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import Loading from "../Loading/Loading";
-import styles from "./MyMEMES.module.css";
+import "./MyMEMES.css";
 function MyMEMES() {
     const {user} = useContext(AuthContext);
     const [myMemes, setMyMemes] = useState([]);
@@ -24,9 +24,9 @@ function MyMEMES() {
             })
     },[]);
     return ( !user ? <ErrorPage/> :
-        <div className="row">
-            {isLoaded ?(myMemes.length > 0 ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <h1 id={styles.empty}>You don't have any posts!</h1> ) : <Loading/>}
-        </div>
+        <section className="my-memes-section">
+            {isLoaded ?(myMemes.length > 0 ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <h1 className="no--memes">You don't have any posts!</h1> ) : <Loading/>}
+        </section>
     )
 }
 

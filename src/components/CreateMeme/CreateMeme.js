@@ -16,7 +16,7 @@ function CreateMeme() {
         let title = formData.get('title');
         let imageUrl = formData.get('imageUrl');
         if (title.length > 0 && imageUrl.length > 0) {
-            services.createMEME(localStorage._id, title, imageUrl)
+            services.createMEME(localStorage._id, title, imageUrl, user)
                 .then(() => {
                         history.push("/posts/all")      
                 })
