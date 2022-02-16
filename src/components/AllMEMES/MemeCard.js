@@ -12,7 +12,6 @@ function MemeCard({ meme }) {
     const [id, setId] = useState(meme[0]);
     const [memeInfo, setMemeInfo] = useState(meme[1])
     const { user } = useContext(AuthContext);
-    const [rating, setRating] = useState(meme[1].rating);
     const [comments, setComm] = useState([meme[1].comments]);
     const [showConfirm, setShow] = useState(false);
     const [showVotes, setShowVotes] = useState(false);
@@ -22,9 +21,8 @@ function MemeCard({ meme }) {
     const handleShow = () => setShow(true);
     function voteUp(e) {
         e.preventDefault();
-        requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { rating: rating + 1, voters: [...memeInfo.voters, user], likes: [...memeInfo.likes, user] })
+        requester.patch(`${endpoints.baseUrl}memes/${id}.json`, {  voters: [...memeInfo.voters, user], likes: [...memeInfo.likes, user] })
             .then(() => {
-                setRating(rating + 1);
                 handleClose();
             })
     }
@@ -60,7 +58,7 @@ function MemeCard({ meme }) {
                     setIsOwner(true)
                 }
             })
-    }, [comments])
+    }, [])
 
 
     let upButton = <button className="heart-like" onClick={handleShow}><i class="fa-regular fa-heart"></i></button>

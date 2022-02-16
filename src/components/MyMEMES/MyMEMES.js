@@ -5,7 +5,7 @@ import { endpoints } from "../../services/services";
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import Loading from "../Loading/Loading";
-import "./MyMEMES.css";
+import "./MyMemes.css";
 function MyMEMES() {
     const {user} = useContext(AuthContext);
     const [myMemes, setMyMemes] = useState([]);
