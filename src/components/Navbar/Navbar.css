@@ -1,29 +1,33 @@
+
+
 .navigation{
   position: fixed;
-  display: inline-block;
-  background-color: rgb(44, 43, 43);
+  background-color: rgb(56, 55, 55);
   z-index: 40;
   color: aliceblue;
-  width: 90%;
-  margin: 5px 5%;
+  width: 80%;
+  margin: 5px 10%;
   border-style: solid;
   border-color: aliceblue;
   border-width: 2px 4px;
   border-radius: 18px;
-  line-height: 1.5rem;
-  padding: 0.4% 8%;
+  padding: 0.4% 1%;
   font-size: 16px;
   font-family: 'Roboto Slab', serif;
 }
+
+
 .navbar-list,
 .logged-in,
 .logged-out,
 .nav-item,
 .nav-brand{
   display: inline-block;
+  
 }
 .nav-link,
 .nav-brand {
+  transition: color 400ms ease-in-out;
   color: aliceblue;
 }
 
@@ -34,12 +38,10 @@
 }
 
 .greeting{
-  position:absolute;
-  right: 4%;
-  top: 25%;
+  display: inline-block;
   border-left-style: solid;
   border-width: 4px;
-  padding-left: 1%;
+  padding-left: 10%;
 }
 
 .nav-brand:hover,
@@ -50,8 +52,24 @@
   cursor: pointer;
 }
 
+.navbar-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.nav-item{
+  display: flex;
+  gap: auto;
+}
 
-
+.logged-in,
+.logged-out{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
 
 

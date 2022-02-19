@@ -30,9 +30,8 @@ function Navbar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    return (
+    return <header className="nav-header">
         <nav className="navigation">
-
             <ul className="navbar-list">
                 <NavLink className="nav-brand" activeClassName="active" to="/" >F1 FanHome</NavLink>
                 <li className="nav-item">
@@ -51,7 +50,7 @@ function Navbar() {
                     <NavLink className="nav-link" activeClassName="active" to="/standings" >Standings</NavLink>
                 </li>
                 {user ?
-                    (<div className="logged-in">
+                    (<ul className="logged-in">
                         <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts" >My Posts</NavLink>
                         </li>
@@ -62,10 +61,7 @@ function Navbar() {
                         <li className="nav-item" >
                             <a className="nav-link" onClick={handleShow} id="logout-tag">Logout</a>
                         </li>
-                        <li className="nav-item">
-                            <p className="greeting" >Welcome, {user ? username[0] : "guest"}!</p>
-                        </li>
-                    </div>
+                    </ul>
                     ) :
                     (
                         <div className="logged-out">
@@ -75,15 +71,15 @@ function Navbar() {
                             <li className="nav-item">
                                 <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <p className="greeting" >Welcome, {user ? username[0] : "guest"}!</p>
-                            </li>
+
                         </div>
                     )}
-
+                <li className="nav-item">
+                    <p className="greeting" >Welcome, {user ? username[0] : "guest"}!</p>
+                </li>
             </ul>
             <Modal show={show} onHide={handleClose}>
-            
+
                 <Modal.Header closeButton>
                     <Modal.Title>Are you sure?</Modal.Title>
                 </Modal.Header>
@@ -98,7 +94,7 @@ function Navbar() {
                 </Modal.Footer>
             </Modal>
         </nav>
-    )
+    </header>
 }
 
 export default Navbar

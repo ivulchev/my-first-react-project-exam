@@ -8,7 +8,7 @@ function Home() {
         ready = "yes"
     },[])
     return (
-        <header>
+        <header className="home-header">
             <DriverStandings/>
             <TeamsStandings/>
         </header>
