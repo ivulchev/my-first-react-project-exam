@@ -54,10 +54,6 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="active" to="/posts/my-posts" >My Posts</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" activeClassName="active" to="/posts/create">Create Post</NavLink>
-                        </li>
-
                         <li className="nav-item" >
                             <a className="nav-link" onClick={handleShow} id="logout-tag">Logout</a>
                         </li>

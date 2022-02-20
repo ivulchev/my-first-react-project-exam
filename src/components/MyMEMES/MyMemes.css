@@ -1,6 +1,15 @@
-.my{
-    margin-top: 5%;
-    margin-left: 5%;
+.my-memes-section{
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: auto;
+}
+
+.meme--card.my{
+    width: 260px;
+    margin: 0 auto;
+    margin-top: 70px;
 }
 .edit--btn,
 .delete--btn{
@@ -28,14 +37,33 @@
     background-color:#f14e4e;
 }
 .no--memes{
-
-	justify-content: center;
+    height: 100vh;
+    width: 100vw;
 	align-items: center;
-	height: 100%;
-	margin: auto;
-    margin-top: 150px;
-	font-family:'Roboto',sans-serif;
-    color: white;
-    letter-spacing: 13px;
-    font-size: 900;
+	
+}
+
+@keyframes loadNomemes {
+	0% {
+		opacity: 0.8;
+		
+		filter: blur(2px);
+		letter-spacing: 11px;
+	}
+	100% {
+        letter-spacing: 13px;
+	}
+}
+
+.no--memes h1{
+    font-family:'Roboto',sans-serif;
+    color: rgb(87, 85, 85);
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: loadNomemes 1.2s infinite 0s ease-in-out;
+	animation-direction: alternate;
 }

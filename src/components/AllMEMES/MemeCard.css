@@ -1,9 +1,9 @@
 
 
 .meme--card{
-    width: 30%;
+    width: 40vw;
     display: inline-block;
-    margin: 0 35%;
+    margin: 0 30vw;
     margin-top: 5%;
     overflow: hidden;
     background-color: white;
@@ -52,7 +52,7 @@
 .voted--by .modal-content{
     background-color: white;
     max-height: 300px;
-    overflow: scroll;
+    overflow: auto;
     border-radius: 0;
 
 }
@@ -64,7 +64,6 @@
 }
 
 .modal-body text{
-    margin-left: 15%;
     font-family: 'Roboto', sans-serif;
 }
 

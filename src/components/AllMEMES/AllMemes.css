@@ -1,0 +1,51 @@
+.meme-section{
+    position: relative;
+    width: 100vw;
+}
+
+.all-meme-buttons{
+    position: fixed;
+    max-width: 25%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5rem;
+    top: 120px;
+    left: 40px;
+}
+
+.sort-by{
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    
+}
+
+
+.create-meme{
+    position: absolute;
+    background-color: rgb(56, 55, 55);
+    border:0.2em solid rgba(255,255,255,0);
+    border-radius: 12px;
+    color: aliceblue;
+    top:40px;
+    left: 125px;
+    width: 205px;
+    padding: 5px 0;
+}
+
+.btn-popular,
+.btn-date,
+.btn-comments{
+    border:0.2em solid rgba(255,255,255,0);
+    color:aliceblue;
+    background-color: rgb(56, 55, 55);
+    margin-left: 1px;
+    border-radius: 12px;
+    transition: color 400ms ease-in-out;
+}
+
+
+.btn-popular.popular,
+.btn-date.newest,
+.btn-comments.most-comments{
+    background-color: rgb(42, 42, 236);
+}

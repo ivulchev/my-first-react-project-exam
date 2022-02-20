@@ -25,7 +25,7 @@ function MyMEMES() {
     },[]);
     return ( !user ? <ErrorPage/> :
         <section className="my-memes-section">
-            {isLoaded ?(myMemes.length > 0 ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <h1 className="no--memes">You don't have any posts!</h1> ) : <Loading/>}
+            {isLoaded ?(myMemes.length > 0 ? myMemes.map((x) => <MyMemesCard key={x[0]} meme={x}/>) : <section className="no--memes"><h1 >You don't have any posts!</h1></section> ) : <Loading/>}
         </section>
     )
 }
