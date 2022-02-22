@@ -59,15 +59,17 @@ function AllMEMES() {
     }, [sortBy, show]);
     return memes.length > 0 ?
         <section className="meme-section">
-            <div className="all-meme-buttons">
-                <section className="btn-group" role="group" >
-                    <h4 className="sort-by">SORT BY:</h4>
+            <aside className="all-meme-buttons">
+                <section className="button-group" >
+                    <h4 className="sort-by">Sort by:</h4>
                     <button className={`btn-date ${sortBy === "newest" ? "newest" : null}`} onClick={() => setSortbBy("newest")} >Newest</button>
                     <button className={`btn-popular ${sortBy === "popular" ? "popular" : null}`} onClick={() => setSortbBy("popular")}> Likes</button>
                     <button className={`btn-comments most-${sortBy === "comments" ? "comments" : null}`} onClick={() => setSortbBy("comments")}>Comments</button>
+                    <h4 className="sort-by">Create Post:</h4>
+                    <button className="create-meme" onClick={() => setShow(true)}><i class="fa-solid fa-circle-plus"></i> Create</button>
                 </section>
-                <button className="create-meme" onClick={() => setShow(true)}><i class="fa-solid fa-circle-plus"></i> Create</button>
-            </div>
+                
+            </aside>
             <Modal show={show} onHide={handleClose}>
                 <form onSubmit={onSubmit} >
                     <Modal.Header closeButton>
@@ -86,7 +88,9 @@ function AllMEMES() {
                     </Modal.Footer>
                 </form>
             </Modal>
+            <div className="meme--cards">
             {memes.map((x) => <MemeCard key={x[0]} meme={x} />)}
+            </div>
         </section> : <Loading />
 }
 

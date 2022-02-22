@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.about--contacts{
+    padding: 1% 5%;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "about about about contacts"
+    "about about about contacts";
+}
+
+.about--site,
+.contacts{
+    padding: 70px 5%;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    line-height: 2.2rem;
+    
+
+}
+
+
+.about--site h3,
+.contacts h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+
+.contacts{
+    grid-area: contacts;
+    padding: 70px 0%;
+}
+.about--site{
+    grid-area: about;
+}
+
+.about--contacts a{
+    text-decoration: none;
+    color: rgb(78, 78, 223);
+}

@@ -1,0 +1,60 @@
+.edit--section{
+    color: white;
+    padding: 7.5% 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.edit--form{
+    position:relative;
+    width: 70vw;
+    margin: 0 15vw;
+    padding: 5% 15%;
+    background-image: url("https://i.pinimg.com/originals/22/26/4b/22264b33231c3ca9586b8ad147a960ba.jpg");
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.edit--form::after{
+    position: absolute;
+    content: " ";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.edit--form h1{
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 200%;
+}
+
+.form-group{
+    position: relative;
+    z-index: 15;
+}
+
+.edit--form label{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.edit--form input{
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.edit--form p{
+    margin-bottom: 20px;
+    font-size: 80%;
+    color: gray;
+}
+
+    
+.edit--form .delete--btn a{
+    text-decoration: none;
+    color:black;
+}

@@ -1,4 +1,4 @@
-import styles from "./TeamDetails.module.css"
+import "./TeamDetails.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
@@ -23,25 +23,22 @@ function TeamDetails() {
                 }
             })
             .catch((function (error) {
-                setIsLoaded(false)
+                setIsError(true)
             }))
     }, []);
-    return (isError ? <ErrorPage /> : <div>
+    return (isError ? <ErrorPage /> : <section className={`details--section ${team.logocolor}`}>
         {isLoaded ?
-            <div className="card" id={styles.details} >
-                <img src={team.image} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{team.name}</h5>
-                    <p className="card-text">Drivers: {team.drivers}</p>
-                    <p className="card-text">Constructor Championships: {team.championships}</p>
-                    <p className="card-text"> {team.description}</p>
+            <article className="details--article ">
+                <h1 className="details--name">{team.name}</h1>
+                <img className="details--image"
+                    src={`${team.image}`} alt="team image"/>
+                <div className="details--info">
+                    <p className="details--team">Drivers: {team.drivers}</p>
+                    <p className="details--number">Championships: {team.championships}</p>
+                    <p className="details--debut">{team.description}</p>
                 </div>
-
-                <div className="card-body">
-                    <button onClick={() => history.goBack()} className="card-link" id={styles.goBack}>Go Back</button>
-                </div>
-            </div> : <Loading />}
-    </div>
-    )
+                <button onClick={() => history.goBack()} className={`details--button ${team.logocolor === "haas" ? "black" : null} ${team.logocolor}`} >Go Back</button>
+            </article> : <Loading />}
+    </section>)
 }
 export default TeamDetails

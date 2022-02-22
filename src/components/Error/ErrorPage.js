@@ -1,14 +1,9 @@
-import { Link } from "react-router-dom"
-import styles from "./ErrorPage.module.css";
+import { Link } from "react-router-dom";
+import "./ErrorPage.css"
 function ErrorPage() {
-    return (
-        <div className="card" id={styles.card}>
-            <img src="https://wallpaperaccess.com/full/6725718.jpg" class="card-img-top" alt="..."/>
-            <div className ="card-body">
-            <Link to="/"><p className ="card-text" id={styles.text}>Oops! Something's wrong go back to home page!</p></Link>
-            </div>
-        </div>
-    )
+    return <section className="error">
+            <Link to="/"><h1>Oops! Something's wrong go back to <strong>Home </strong>page!</h1></Link>
+            </section>
 }
 
 export default ErrorPage

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.home{
+    padding-top: 65px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+    "header"
+    "drivers"
+    "article"
+}
+
+
+.article-teams{
+    grid-area: article;
+}
+
+.article-drivers{
+    grid-area: drivers;
+}
+
+.about--site{
+    grid-area: about;
+}
+
+
+@keyframes welcome {
+	0% {
+		opacity: 0.7;
+		font-size: 46px;
+		filter: blur(1px);
+		letter-spacing: 8px;
+        font-weight: 900;
+	}
+	100% {
+        letter-spacing: 16px;
+        font-size: 46px;
+        font-weight: 900;
+	}
+}
+
+.home header{
+    background-color: whitesmoke;
+}
+.home-header{
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    animation: welcome 1.2s infinite 0s ease-in-out;
+	animation-direction: alternate;
+    grid-area: header;
+    margin-top: 15px;
+}
+
+.article-teams,
+.article-drivers{
+    background-color: whitesmoke;
+    overflow: hidden;
+    padding: 2% 6%;
+}
+.article-teams img,
+.article-drivers img{
+    width: 80%;
+    margin: 0 10%;
+
+}
+
+.article-teams h2,
+.article-drivers h2{
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 2%;
+}
+
+.article-teams p,
+.article-drivers p{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    line-height: 2rem;
+}
+

@@ -35,10 +35,13 @@ function Navbar() {
             <ul className="navbar-list">
                 <NavLink className="nav-brand" activeClassName="active" to="/" >F1 FanHome</NavLink>
                 <li className="nav-item">
-                    <NavLink className="nav-link" activeClassName="active" to="/pilots" >Drivers</NavLink>
+                    <NavLink className="nav-link" activeClassName="active" to="/drivers" >Drivers</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" activeClassName="active" to="/teams" >Teams</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" activeClassName="active" to="/top-voted" >Top Voted</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" activeClassName="active" to="/posts/all" >All Posts</NavLink>

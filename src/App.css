@@ -3,9 +3,16 @@
 
 body {
   background-color: rgb(171, 197, 193);
+
 }
 
+.App{
+	position: relative;
+}
 
+body .App button{
+	cursor: pointer;
+}
 
 
 html, body, div, span, applet, object, iframe,

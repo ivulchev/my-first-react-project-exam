@@ -1,9 +1,10 @@
 
 
 .meme--card{
-    width: 40vw;
+    width: 70%;
+    max-width: 700px;
     display: inline-block;
-    margin: 0 30vw;
+    margin: 0 10%;
     margin-top: 5%;
     overflow: hidden;
     background-color: white;
@@ -87,9 +88,7 @@
     margin: 0;
 }
 
-.fa-user-large{
-    width: 100%;
-}
+
 
 .and--others{
     font-weight: 600;

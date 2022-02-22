@@ -1,0 +1,27 @@
+.footer{
+    background-color: rgb(56, 55, 55);
+    color: aliceblue;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.7rem;
+    font-family:'Roboto',sans-serif;
+    padding: 0 2.2%;
+}
+
+.footer p{
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer p a,
+.footer p text{
+  color: aliceblue;
+  text-decoration: none;
+ 
+}
+
+.footer p a:hover{
+  color: darkcyan;
+}

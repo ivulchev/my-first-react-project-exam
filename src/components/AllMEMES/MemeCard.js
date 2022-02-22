@@ -12,10 +12,11 @@ function MemeCard({ meme }) {
     const [id, setId] = useState(meme[0]);
     const [memeInfo, setMemeInfo] = useState(meme[1])
     const { user } = useContext(AuthContext);
-    const [comments, setComm] = useState([meme[1].comments]);
     const [showConfirm, setShow] = useState(false);
     const [showVotes, setShowVotes] = useState(false);
     const { addNotification } = useNotificationContext();
+    const [comments, setComm] = useState([meme[1].comments]);
+    const [refresh, setRefresh] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -24,6 +25,7 @@ function MemeCard({ meme }) {
         requester.patch(`${endpoints.baseUrl}memes/${id}.json`, {  voters: [...memeInfo.voters, user], likes: [...memeInfo.likes, user] })
             .then(() => {
                 handleClose();
+                setRefresh(true)
             })
     }
     const onSubmit = (e) => {
@@ -31,9 +33,10 @@ function MemeCard({ meme }) {
         let formData = new FormData(e.currentTarget);
         let comment = formData.get('comment');
         if (comment.length > 0) {
-            requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { comments: [...memeInfo.comments, [user, comment]] })
+            requester.patch(`${endpoints.baseUrl}memes/${id}.json`, { comments: [...comments, [user, comment]] })
                 .then(() => {
                     e.target.reset()
+                    setRefresh(true)
                 })
                 .catch((function (error) {
                     addNotification(error.message, types.error)
@@ -48,6 +51,7 @@ function MemeCard({ meme }) {
         fetch(`${endpoints.baseUrl}memes/${id}.json`)
             .then((res) => res.json())
             .then((data) => {
+                setRefresh(false)
                 setComm(data.comments)
                 if ((data.likes).includes(user)) {
                     setIsVoted(true)
@@ -58,7 +62,7 @@ function MemeCard({ meme }) {
                     setIsOwner(true)
                 }
             })
-    }, [])
+    }, [refresh])
 
 
     let upButton = <button className="heart-like" onClick={handleShow}><i class="fa-regular fa-heart"></i></button>

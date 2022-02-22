@@ -81,11 +81,11 @@ function TeamCard({ team }) {
                 <div className="info">
                     <h3 className="name">{team.name}</h3>
                     <p className="debut">Drivers: {team.drivers} </p>
-                    <p className="team">Championships: {team.championships[0]} </p>
+                    <p className="team">Championships: {team.championships.slice(0, 2)} </p>
                     <p className="rating">
                     Rating: {rating}
                     </p>
-                    <Link to={`pilots/${team._id}`}><button className="details">Details</button></Link>
+                    <Link to={`teams/${team._id}`}><button className="details">Details</button></Link>
                     {user ?
                         <Voted key={team._id} /> :
                         <Link to="/login" className="login-link" >  Please, login to vote!</Link>

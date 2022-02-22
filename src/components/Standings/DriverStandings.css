@@ -4,7 +4,7 @@
     font-family: 'Audiowide', cursive;
     display:inline-block;
     margin-left: 15%;
-    margin-top: 5%;
+    margin-top: 4.7%;
     margin-bottom: 0%;
     background: linear-gradient(to right , #121F25, #111118);
     max-width: 400px;
@@ -16,7 +16,7 @@
 }
 
 .drivers--standings.minimize{
-    max-height: 536px;
+    max-height: 531px;
 }
 
 .drivers--standings.maximize,
@@ -48,7 +48,7 @@
     width: 100%;
     min-width: 360px;
     max-width: 360px;
-    height: 142px;
+    height: 140px;
     border-radius: 20px;
     overflow: hidden;
     padding: 0px;

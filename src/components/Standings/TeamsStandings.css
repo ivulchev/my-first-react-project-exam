@@ -4,7 +4,7 @@
     font-family: 'Audiowide', cursive;
     display:inline-block;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 4.7%;
     margin-bottom: 0%;
     background: linear-gradient(to right , #121F25, #111118);
     max-width: 400px;
@@ -15,7 +15,7 @@
 }
 
 .teams--standings.minimize{
-    max-height: 536px;
+    max-height: 531px;
 }
 
 
@@ -27,7 +27,7 @@
     display: inline-block;
     width: 100%;
     min-width: 360px;
-    height: 142px;
+    height: 140px;
     border-radius: 20px;
     overflow: hidden;
     padding: 0px; 
@@ -38,7 +38,7 @@
     top: 37%;
     width: 70%;
     left: -150%;
-    transition: left 400ms ease-in-out;
+    transition: left 300ms ease-in-out;
     z-index: 10;
 }
 

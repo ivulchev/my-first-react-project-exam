@@ -1,34 +1,45 @@
 .meme-section{
-    position: relative;
-    width: 100vw;
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    grid-template-areas: 
+    "buttons cards";
 }
 
 .all-meme-buttons{
-    position: fixed;
-    max-width: 25%;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5rem;
-    top: 120px;
-    left: 40px;
+    grid-area: buttons;
+    padding: 0 5%;
+    
+}
+
+.meme--cards{
+    grid-area: cards;
+}
+
+.button-group{
+    position: fixed;
+    width: 20vw;
+    top: 20%;
+
 }
 
 .sort-by{
     font-size: 20px;
     letter-spacing: 3px;
     font-weight: 900;
-    
+    margin-bottom: 10px;
+    margin-top: 6px;
 }
 
 
 .create-meme{
-    position: absolute;
     background-color: rgb(56, 55, 55);
     border:0.2em solid rgba(255,255,255,0);
     border-radius: 12px;
     color: aliceblue;
-    top:40px;
-    left: 125px;
-    width: 205px;
+    width: 80%;
+    margin: 0.2% 10%;
     padding: 5px 0;
 }
 
@@ -38,9 +49,11 @@
     border:0.2em solid rgba(255,255,255,0);
     color:aliceblue;
     background-color: rgb(56, 55, 55);
-    margin-left: 1px;
+    width: 80%;
+    margin: 1% 10%;
     border-radius: 12px;
     transition: color 400ms ease-in-out;
+    overflow: hidden;
 }
 
 
