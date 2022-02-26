@@ -60,7 +60,7 @@
 }
 
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .about--contacts{
         display: block;
         padding-bottom: 125px;

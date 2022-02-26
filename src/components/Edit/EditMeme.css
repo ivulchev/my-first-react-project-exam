@@ -65,7 +65,7 @@
         padding: 15% 7.5%;      
     }
 }
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .edit--form{
         width: 90vw;
         margin: 20vw 5vw;

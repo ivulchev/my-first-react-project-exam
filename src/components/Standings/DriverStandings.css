@@ -209,28 +209,24 @@ button.expand-btn{
     }
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .drivers--standings{
-        min-width: unset;
-        max-width: unset;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+        padding: 18px;
         margin-top: 40px;
-        padding: 0 auto 25px auto;
+        margin-left: 8px;
         
     }
     .first--driver,
     .second--driver,
     .third--driver{
-        min-width: 315px;
+        min-width: 360px;
         max-width: 360px;
     }
     .drivers--standings.minimize{
-        max-height: 520px;
+        max-height: 535px;
     }
     .others{
-        min-width: 315px;
+        min-width: 360px;
     }
     .others .place,
     .others .team--logo,

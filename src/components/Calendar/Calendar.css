@@ -80,7 +80,7 @@ tbody tr:hover{
     }
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .calendar{
         width: 90vw;
        

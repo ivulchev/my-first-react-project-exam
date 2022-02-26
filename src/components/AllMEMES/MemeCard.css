@@ -123,7 +123,7 @@
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 500px) {
     .meme--card{
         width: 82%;
         margin-left: 7%;

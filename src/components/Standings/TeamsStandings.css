@@ -89,25 +89,22 @@
     }
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .teams--standings{
-        min-width: unset;
-        max-width: unset;
-        padding: 0 auto 25px auto;
-        margin-left: 5vw;
-        margin-right: 5vw;
-        margin-top: 15px;
-        margin-bottom: 95px;
+        padding: 18px;
+        margin-top: 20px;
+        margin-left: 8px;
+        margin-bottom: 115px;
     }
     .first--team,
     .second--team,
     .third--team{
-        min-width: 315px;
+        min-width: 360px;
         max-width: 360px;
     }
 
     .teams--standings.minimize{
-        max-height: 518px;
+        max-height: 535px;
     }
 }
 

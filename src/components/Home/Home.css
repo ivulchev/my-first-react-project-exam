@@ -111,7 +111,7 @@
     }
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .home{
         padding: 0px;
         
@@ -130,7 +130,7 @@
         font-weight: 600;
         font-size: 80%;
         line-height: 1.8rem;
-        padding-bottom: 80px;
+        padding-bottom: 100px;
     }
     .article-teams img,
     .article-drivers img{

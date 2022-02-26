@@ -45,7 +45,7 @@
 	}
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 500px) {
 	.animate{
 		width: 60vw;
 		font-size: 70px;

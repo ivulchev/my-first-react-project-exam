@@ -83,7 +83,7 @@
     }
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:500px) {
     .details--section{
         height: 100vh;
     }
@@ -102,6 +102,6 @@
     }
 
     .details--button{
-        margin-bottom: 95px;
+        margin-bottom: 125px;
     }
 }
