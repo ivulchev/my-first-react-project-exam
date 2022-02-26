@@ -72,6 +72,23 @@
     color: whitesmoke;
 }
 
+@media screen and (max-width:780px) {
+    .teams--standings{
+        padding: 0 auto 25px auto;
+        margin-left: calc((100vw - 381px)/2);
+        margin-bottom: 50px;
+    }
+    .first--team,
+    .second--team,
+    .third--team{
+        min-width: 380px;
+    }
+
+    .teams--standings.minimize{
+        max-height: 522px;
+    }
+}
+
 @media screen and (max-width:380px) {
     .teams--standings{
         min-width: unset;
@@ -93,3 +110,4 @@
         max-height: 518px;
     }
 }
+

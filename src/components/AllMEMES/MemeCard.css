@@ -114,6 +114,15 @@
     margin: 0
 }
 
+@media screen and (max-width: 780px) {
+    .meme--card{
+        width: 82%;
+        margin-left: 7%;
+        margin-top: 8%;
+        padding: 1.8%;
+    }
+}
+
 @media screen and (max-width: 380px) {
     .meme--card{
         width: 82%;
@@ -122,3 +131,4 @@
         padding: 1.8%;
     }
 }
+

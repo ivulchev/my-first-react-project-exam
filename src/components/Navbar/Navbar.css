@@ -147,6 +147,24 @@
   color: aliceblue;
 }
 
+
+@media screen and (max-width:780px) {
+  .toggle-btn{
+    display: block;
+  }
+  .navbar-list.hide{
+    display: none;
+  }
+  .logged-in,
+  .logged-out{
+    border-style: none;
+  }
+  .greeting{
+    display: none;
+  }
+}
+
+
 @media screen and (max-width:380px) {
   .toggle-btn{
     display: block;
@@ -162,3 +180,4 @@
     display: none;
   }
 }
+

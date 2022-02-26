@@ -17,7 +17,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
 
 .footer p a,
@@ -31,10 +30,19 @@
   color: darkcyan;
 }
 
+@media screen and (max-width:780px) {
+  .footer{
+    z-index: 40;
+  }
+  .footer p{
+    gap:5px
 
+  }
+}
 
 @media screen and (max-width:380px) {
   .footer{
     z-index: 40;
   }
 }
+

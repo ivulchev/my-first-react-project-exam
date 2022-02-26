@@ -33,6 +33,18 @@
     color: lightskyblue;
 }
 
+@media screen and (max-width: 780px){
+    .error{
+        background-image: url("https://lh3.googleusercontent.com/Q-89ZHZwRqEdoI1byArQeuJPb__vvBUt48dOYegyacYAmQaG3-iqLQiRlkz5VmD70zPUzGzEA7YTepvRwdLwQmh_KO6e3ZP0FiwV8sSP_3PzHr4=s1500-pp");
+        background-size: cover;
+        background-position: center;
+    }
+    .error h1{
+        top: 35vh;
+        font-size: 45px;
+    }
+}
+
 @media screen and (max-width: 380px){
     .error{
         background-image: url("https://lh3.googleusercontent.com/Q-89ZHZwRqEdoI1byArQeuJPb__vvBUt48dOYegyacYAmQaG3-iqLQiRlkz5VmD70zPUzGzEA7YTepvRwdLwQmh_KO6e3ZP0FiwV8sSP_3PzHr4=s1500-pp");

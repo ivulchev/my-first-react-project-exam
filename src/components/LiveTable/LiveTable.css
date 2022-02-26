@@ -12,6 +12,15 @@
     right: 20%;
 }
 
+@media screen and (max-width:780px) {
+    .drivers--standings.livetable{
+        padding: 15px
+    }
+    .leaderboards{
+        padding-bottom: 55px;
+    }
+}
+
 @media screen and (max-width:380px) {
     .drivers--standings.livetable{
         padding: 7px
@@ -20,3 +29,4 @@
         padding-bottom: 100px;
     }
 }
+

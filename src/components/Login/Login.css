@@ -59,3 +59,11 @@
     
     }
 }
+
+@media screen and (max-width: 780px) {
+    .login-register--form{
+        width: 70%;
+        margin: 30% 15%;
+    
+    }
+}

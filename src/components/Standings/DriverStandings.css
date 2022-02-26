@@ -181,6 +181,34 @@ button.expand-btn{
     left: 25%;
 }
 
+@media screen and (max-width:780px) {
+    .drivers--standings{
+        margin-top: 45px;
+        margin-left: calc((100vw - 380px)/2)
+        
+    }
+    .first--driver,
+    .second--driver,
+    .third--driver{
+        min-width: 380px;
+    }
+    .drivers--standings.minimize{
+        max-height: 525px;
+    }
+    .others{
+        min-width: 380px;
+    }
+    .others .place,
+    .others .team--logo,
+    .others .name,
+    .others .points{
+        line-height: 2rem;
+    }
+    .others .team--logo{
+        right: 2%;
+    }
+}
+
 @media screen and (max-width:380px) {
     .drivers--standings{
         min-width: unset;
@@ -214,3 +242,4 @@ button.expand-btn{
         right: 2%;
     }
 }
+

@@ -44,3 +44,31 @@
     text-decoration: none;
     color: rgb(78, 78, 223);
 }
+
+
+@media screen and (max-width:780px) {
+    .about--contacts{
+        display: block;
+        padding-bottom: 65px;
+    }
+    .about--site,
+    .contacts{
+        padding-top: 50px;
+        padding-bottom: 0;
+        padding-left: 10px;
+    }
+}
+
+
+@media screen and (max-width:380px) {
+    .about--contacts{
+        display: block;
+        padding-bottom: 125px;
+    }
+    .about--site,
+    .contacts{
+        padding-top: 40px;
+        padding-bottom: 0;
+        padding-left: 10px;
+    }
+}
