@@ -52,3 +52,10 @@
     border-radius: 6px;
 }
 
+@media screen and (max-width: 380px) {
+    .login-register--form{
+        width: 80%;
+        margin: 30% 10%;
+    
+    }
+}

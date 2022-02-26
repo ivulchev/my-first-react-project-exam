@@ -30,7 +30,7 @@ function TeamDetails() {
         {isLoaded ?
             <article className="details--article ">
                 <h1 className="details--name">{team.name}</h1>
-                <img className="details--image"
+                <img className="details--image teams"
                     src={`${team.image}`} alt="team image"/>
                 <div className="details--info">
                     <p className="details--team">Drivers: {team.drivers}</p>

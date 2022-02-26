@@ -63,3 +63,22 @@ tbody tr:hover{
     font-weight: 900;
     color:white;
 }
+
+@media screen and (max-width:380px) {
+    .calendar{
+        width: 90vw;
+       
+    }
+    tbody td,
+    body th,
+    thead th{
+        min-width: unset;
+        border-bottom-style: solid;
+        border-width: 2px;
+    }
+    table{
+        margin: 10vw 5vw;
+        margin-bottom: 95px;
+        font-size: 73%;
+    }
+}

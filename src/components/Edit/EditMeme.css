@@ -58,3 +58,15 @@
     text-decoration: none;
     color:black;
 }
+
+@media screen and (max-width:380px) {
+    .edit--form{
+        width: 90vw;
+        margin: 20vw 5vw;
+        padding: 30% 7.5%;
+        background-image: url("https://i.pinimg.com/originals/22/26/4b/22264b33231c3ca9586b8ad147a960ba.jpg");
+        background-position: center;
+        background-size: cover;
+        
+    }
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width:380px) {
+    .details--image.teams{
+        border-radius: 0px;
+    }
+}

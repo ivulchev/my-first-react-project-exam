@@ -59,3 +59,23 @@
     font-weight: 500;
     width: 154px;
 }
+
+@media screen and (max-width:380px) {
+    .details--article{
+        margin: 0;
+        width: 100%;
+    }
+    .details--section{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 45px;
+    }
+    .details--info{
+        margin-bottom: 10px;
+    }
+
+    .details--button{
+        margin-bottom: 95px;
+    }
+}

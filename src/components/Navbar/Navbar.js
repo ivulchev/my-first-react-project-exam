@@ -11,6 +11,8 @@ import { useState } from "react";
 
 function Navbar() {
     const { user, logout } = useContext(AuthContext);
+
+    const[toggle, setToggle] = useState("show")
     let username = [];
     if (user) {
         username = user.split("@");
@@ -31,9 +33,10 @@ function Navbar() {
     const handleShow = () => setShow(true);
 
     return <header className="nav-header">
+        
         <nav className="navigation">
-            <ul className="navbar-list">
-                <NavLink className="nav-brand" activeClassName="active" to="/" >F1 FanHome</NavLink>
+        <NavLink className="nav-brand" activeClassName="active" to="/" >F1 FanHome</NavLink>
+            <ul className={`navbar-list  ${toggle}`}>
                 <li className="nav-item">
                     <NavLink className="nav-link" activeClassName="active" to="/drivers" >Drivers</NavLink>
                 </li>
@@ -76,7 +79,9 @@ function Navbar() {
                 <li className="nav-item">
                     <p className="greeting" >Welcome, {user ? username[0] : "guest"}!</p>
                 </li>
+                
             </ul>
+            <button className="toggle-btn" onClick={() => toggle === "show" ? setToggle("hide") : setToggle("show")}><i class="fa-solid fa-bars"></i></button>
             <Modal show={show} onHide={handleClose}>
 
                 <Modal.Header closeButton>

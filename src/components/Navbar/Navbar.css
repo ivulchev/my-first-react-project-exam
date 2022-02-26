@@ -14,6 +14,10 @@
   padding: 0.4% 1%;
   font-size: 16px;
   font-family: 'Roboto Slab', serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 
@@ -23,6 +27,9 @@
 .nav-item,
 .nav-brand{
   display: inline-block;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
   
 }
 .nav-link,
@@ -52,16 +59,6 @@
   cursor: pointer;
 }
 
-.navbar-list{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.nav-item{
-  display: flex;
-  gap: auto;
-}
 
 .logged-in,
 .logged-out{
@@ -141,4 +138,27 @@
   width: 35%;
   margin-left: 10%;
   margin-right: 5%
+}
+
+.toggle-btn{
+  display:none;
+  background-color: transparent;
+  border-style: none;
+  color: aliceblue;
+}
+
+@media screen and (max-width:380px) {
+  .toggle-btn{
+    display: block;
+  }
+  .navbar-list.hide{
+    display: none;
+  }
+  .logged-in,
+  .logged-out{
+    border-style: none;
+  }
+  .greeting{
+    display: none;
+  }
 }

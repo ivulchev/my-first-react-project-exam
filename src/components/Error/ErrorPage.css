@@ -15,7 +15,7 @@
     right: 0;
     bottom: 0;
     background-color: black;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 .error h1{
     font-size: 44px;
@@ -31,4 +31,16 @@
 
 .error h1:hover{
     color: lightskyblue;
+}
+
+@media screen and (max-width: 380px){
+    .error{
+        background-image: url("https://lh3.googleusercontent.com/Q-89ZHZwRqEdoI1byArQeuJPb__vvBUt48dOYegyacYAmQaG3-iqLQiRlkz5VmD70zPUzGzEA7YTepvRwdLwQmh_KO6e3ZP0FiwV8sSP_3PzHr4=s1500-pp");
+        background-size: cover;
+        background-position: center;
+    }
+    .error h1{
+        top: 30vh;
+        font-size: 40px;
+    }
 }

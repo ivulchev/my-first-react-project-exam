@@ -10,6 +10,18 @@
 	}
 }
 
+@keyframes loadSmall {
+	0% {
+		opacity: 0.08;
+		
+		filter: blur(2px);
+		letter-spacing: 8px;
+	}
+	100% {
+        letter-spacing: 11px;
+	}
+}
+
 .animate {
 	display: flex;
 	justify-content: center;
@@ -25,3 +37,10 @@
     font-size: 90px;
 }
 
+@media screen and (max-width: 380px) {
+	.animate{
+		width: 60vw;
+		font-size: 70px;
+		animation: loadSmall 1.2s infinite 0s ease-in-out;
+	}
+}

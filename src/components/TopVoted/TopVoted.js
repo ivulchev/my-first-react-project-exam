@@ -1,4 +1,4 @@
-
+import "./TopVoted.css"
 import DriverStandings from "../Standings/DriverStandings";
 import TeamsStandings from "../Standings/TeamStandings";
 import { useEffect } from "react";

@@ -180,3 +180,37 @@ button.expand-btn{
 .expand-btn:hover text{
     left: 25%;
 }
+
+@media screen and (max-width:380px) {
+    .drivers--standings{
+        min-width: unset;
+        max-width: unset;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 40px;
+        padding: 0 auto 25px auto;
+        
+    }
+    .first--driver,
+    .second--driver,
+    .third--driver{
+        min-width: 315px;
+        max-width: 360px;
+    }
+    .drivers--standings.minimize{
+        max-height: 520px;
+    }
+    .others{
+        min-width: 315px;
+    }
+    .others .place,
+    .others .team--logo,
+    .others .name,
+    .others .points{
+        line-height: 2rem;
+    }
+    .others .team--logo{
+        right: 2%;
+    }
+}

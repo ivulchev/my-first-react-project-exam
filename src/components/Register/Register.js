@@ -25,7 +25,7 @@ function Register() {
         }
     }
     return (localStorage.email ? <ErrorPage/> :
-        <form onSubmit={onSubmit} className="login-register--form">
+        <form onSubmit={onSubmit} className="login-register--form register">
             <div className="form-group">
                 <h1>Create new Account</h1>
                 <label htmlFor="register--input">Email address</label>

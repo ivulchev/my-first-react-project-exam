@@ -27,7 +27,7 @@ function LiveTable() {
             });
     }, []);
     let driverLeaderboard = (
-        <section className={`drivers--standings`}>
+        <section className="drivers--standings livetable">
             <h2>Season 2022 Drivers Leaderboard</h2>
             <ul>
             {drivers.map((x)=><li>
@@ -44,7 +44,7 @@ function LiveTable() {
     )
 
     let teamLeaderboard = (
-        <section className={`drivers--standings`}>
+        <section className="drivers--standings livetable">
             <h2>Season 2022 Constructors Leaderboard</h2>
             <ul>
             {constructors.map((x)=><li>

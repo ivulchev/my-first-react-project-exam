@@ -12,7 +12,7 @@ function About() {
     <section className="contacts">
     <h3>Contacts and About me</h3>
     <p>
-        I am a student at <a href="https://softuni.bg/">SoftUni</a>. I live in Plovdiv, Bulgaria. I'm 29 years old and I love coding. I am studying JavaScript, HTML and CSS. I also work with React JS. I search a new fresh start for my career.
+        My name is Ivan Valchev. <br/>I am a student at <a href="https://softuni.bg/">SoftUni</a>. I live in Plovdiv, Bulgaria. I'm 29 years old and I love coding. I am studying JavaScript, HTML and CSS. I also work with React JS. I search a new fresh start for my career.
         <br/>
         At the Footer you can find my contacts(Email, GitHub profile, LinkedIn profile and phone number).
     </p>

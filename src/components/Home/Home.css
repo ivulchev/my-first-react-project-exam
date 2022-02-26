@@ -82,3 +82,31 @@
     line-height: 2rem;
 }
 
+@media screen and (max-width:380px) {
+    .home{
+        padding: 0px;
+        
+    }
+    .home-header{
+        animation: unset;
+        margin-top: 40px;
+        font-size: 36px;
+    }
+    .article-drivers h2{
+        font-size: 18px;
+    }
+    .article-teams p{
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        font-weight: 600;
+        font-size: 80%;
+        line-height: 1.8rem;
+        padding-bottom: 80px;
+    }
+    .article-teams img,
+    .article-drivers img{
+        width: 90%;
+        margin: 5% 5%;
+        border-radius: 12px;
+    }
+}

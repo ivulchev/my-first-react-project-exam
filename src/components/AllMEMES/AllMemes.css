@@ -62,3 +62,12 @@
 .btn-comments.most-comments{
     background-color: rgb(42, 42, 236);
 }
+
+@media screen and (max-width: 380px) {
+    .all-meme-buttons{
+        font-size: 70%;
+    }
+    .sort-by{
+        font-size: 100%;
+    }
+}
