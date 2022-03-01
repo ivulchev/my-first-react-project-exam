@@ -5,8 +5,8 @@
   background-color: rgb(56, 55, 55);
   z-index: 40;
   color: aliceblue;
-  width: 80%;
-  margin: 5px 10%;
+  width: 85%;
+  margin: 5px 7.5%;
   border-style: solid;
   border-color: aliceblue;
   border-width: 2px 4px;
@@ -20,6 +20,9 @@
   
 }
 
+.nav-brand{
+  margin-left: 15px;
+}
 
 .navbar-list,
 .logged-in,

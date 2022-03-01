@@ -114,6 +114,14 @@
     margin: 0
 }
 
+.meme--card a{
+    text-decoration: none;
+    color: #286bbd;
+}
+
+.meme--card a:hover{
+    color: #4e9af1;
+}
 @media screen and (max-width: 780px) {
     .meme--card{
         width: 82%;

@@ -89,7 +89,7 @@ function Card({ driver }) {
                     <Link to={`drivers/${driver._id}`}><button className="details">Details</button></Link>
                     {user ?
                         <Voted key={driver._id} /> :
-                        <Link to="/login" className="login-link" >  Please, login to vote!</Link>
+                        <Link to="/login" className="login-link" > Log in to vote!</Link>
                     }
                 </div>
             </div>

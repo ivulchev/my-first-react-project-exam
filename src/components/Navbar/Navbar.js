@@ -12,7 +12,7 @@ import { useState } from "react";
 function Navbar() {
     const { user, logout } = useContext(AuthContext);
 
-    const[toggle, setToggle] = useState("show")
+    const[toggle, setToggle] = useState("hide")
     let username = [];
     if (user) {
         username = user.split("@");
